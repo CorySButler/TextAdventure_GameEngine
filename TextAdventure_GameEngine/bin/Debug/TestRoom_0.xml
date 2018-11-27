@@ -5,6 +5,6 @@
   <exit>
     <direction>north</direction>
     <description>There is an exit to the north.</description>
-    <destination>TextRoom_1.xml</destination>
+    <destination>TestRoom_1.xml</destination>
   </exit>
 </root>

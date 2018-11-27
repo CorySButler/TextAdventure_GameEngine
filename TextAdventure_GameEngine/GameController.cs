@@ -8,10 +8,30 @@ namespace TextAdventure_GameEngine
 {
     class GameController
     {
+        private Room _room;
         public GameController()
         {
-            var room = new Room("..\\..\\TestRoom_0.xml");
-            Console.ReadLine();
+            _room = new Room("TestRoom_0.xml");
+
+            while (true)
+            {
+                var input = Console.ReadLine();
+
+                ChangeRoom(input);
+            }
+        }
+
+        private void ChangeRoom(string direction)
+        {
+            if (_room.HasExit(direction))
+            {
+                Console.WriteLine("You head off to the {0}.", direction);
+                _room = _room.Exit(direction);
+            }
+            else
+            {
+                Console.WriteLine("There is no path to the {0}.", direction);
+            }
         }
     }
 }

@@ -5,11 +5,11 @@
   <exit>
     <direction>north</direction>
     <description>There is an exit to the north.</description>
-    <destination>TextRoom_2.xml</destination>
+    <destination>TestRoom_2.xml</destination>
   </exit>
   <exit>
     <direction>south</direction>
     <description>There is an exit to the south.</description>
-    <destination>TextRoom_0.xml</destination>
+    <destination>TestRoom_0.xml</destination>
   </exit>
 </root>

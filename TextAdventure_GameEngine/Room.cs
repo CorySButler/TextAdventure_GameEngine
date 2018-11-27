@@ -40,9 +40,23 @@ namespace TextAdventure_GameEngine
             return combinedText;
         }
 
-        public void Exit(string door)
+        public bool HasExit(string direction)
+        {
+            foreach (Exit exit in _exits)
+            {
+                if (exit.Direction == direction) return true;
+            }
+            return false;
+        }
+
+        public Room Exit(string direction)
         {
             Save();
+            foreach (Exit exit in _exits)
+            {
+                if (exit.Direction == direction) return new Room(exit.Destination);
+            }
+            return this;
         }
 
         private void Save()
