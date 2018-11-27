@@ -25,12 +25,12 @@ namespace TextAdventure_GameEngine
         {
             if (_room.HasExit(direction))
             {
-                Console.WriteLine("You head off to the {0}.", direction);
+                Console.WriteLine("\nYou head off to the {0}.\n", direction);
                 _room = _room.Exit(direction);
             }
             else
             {
-                Console.WriteLine("There is no path to the {0}.", direction);
+                Console.WriteLine("\nThere is no path to the {0}.\n", direction);
             }
         }
     }
