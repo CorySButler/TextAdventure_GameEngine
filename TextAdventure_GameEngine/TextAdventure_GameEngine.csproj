@@ -43,12 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserActions\Examine.cs" />
     <Compile Include="Exit.cs" />
     <Compile Include="GameController.cs" />
+    <Compile Include="Interaction.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="UserActions\Take.cs" />
+    <Compile Include="UserActions\Go.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="TextInput.cs" />
+    <Compile Include="UserActions\UserAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

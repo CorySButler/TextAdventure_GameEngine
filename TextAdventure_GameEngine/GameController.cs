@@ -1,36 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextAdventure_GameEngine
 {
-    class GameController
+    public class GameController
     {
         private Room _room;
+        private TextInput _textInput;
+
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Examine(), new Go(), new Take() };
+
         public GameController()
         {
             _room = new Room("TestRoom_0.xml");
+            _textInput = new TextInput(this);
 
             while (true)
             {
                 var input = Console.ReadLine();
-
-                ChangeRoom(input);
+                _textInput.Accept(input);
             }
         }
 
-        private void ChangeRoom(string direction)
+        public void ExamineItem(string keyword)
         {
-            if (_room.HasExit(direction))
+            if (_room.HasItem(keyword))
             {
-                Console.WriteLine("\nYou head off to the {0}.\n", direction);
-                _room = _room.Exit(direction);
+                Item item = _room.GetItem(keyword);
+                Console.WriteLine("\n{0}\n", item.DetailedDescription);
             }
             else
             {
-                Console.WriteLine("\nThere is no path to the {0}.\n", direction);
+                Console.WriteLine("\nThere is no {0}.\n", keyword);
+            }
+        }
+
+        public void ChangeRoom(string keyword)
+        {
+            if (_room.HasExit(keyword))
+            {
+                Console.WriteLine("\nYou head off to the {0}.\n", keyword);
+                _room = _room.Exit(keyword);
+            }
+            else
+            {
+                Console.WriteLine("\nThere is no path to the {0}.\n", keyword);
             }
         }
     }

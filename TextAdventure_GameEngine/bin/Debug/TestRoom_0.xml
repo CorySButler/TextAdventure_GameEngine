@@ -1,10 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <description>You are in Test Room 0.</description>
-  <item></item>
   <exit>
-    <direction>north</direction>
+    <keyword>north</keyword>
     <description>There is an exit to the north.</description>
     <destination>TestRoom_1.xml</destination>
   </exit>
+  <item>
+    <keyword>pie</keyword>
+    <description>There is a pie in this room.</description>
+    <detailedDescription>It is a blueberry pie.</detailedDescription>
+    <interaction>
+      <keyword>examine</keyword>
+      <textResponce>It is a blueberry pie.</textResponce>
+    </interaction>
+  </item>
+  <item>
+    <keyword>apple</keyword>
+    <description>There is an apple in this room.</description>
+    <detailedDescription>It is a fuji apple.</detailedDescription>
+    <interaction>
+      <keyword>examine</keyword>
+      <textResponce>It is a fuji apple.</textResponce>
+    </interaction>
+  </item>
 </root>
