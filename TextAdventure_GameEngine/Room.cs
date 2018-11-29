@@ -57,6 +57,12 @@ namespace TextAdventure_GameEngine
             return combinedText;
         }
 
+        public void AddItem(Item item)
+        {
+            _items.Add(item);
+            Save();
+        }
+
         public bool HasExit(string keyword)
         {
             foreach (Exit exit in _exits)

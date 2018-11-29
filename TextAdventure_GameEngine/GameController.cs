@@ -9,7 +9,7 @@ namespace TextAdventure_GameEngine
         private TextInput _textInput;
         private Room _room;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Examine(), new Go(), new Inventory(), new Take() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Drop(), new Examine(), new Go(), new Inventory(), new Take() };
 
         public GameController()
         {
@@ -48,6 +48,21 @@ namespace TextAdventure_GameEngine
             }
 
             Console.WriteLine(inventory);
+        }
+
+        public void DropItem(string keyword)
+        {
+            if (_player.HasItem(keyword))
+            {
+                Item item = _player.GetItem(keyword);
+                _room.AddItem(item);
+                _player.RemoveItem(item);
+                Console.WriteLine("\nYou drop the {0}.\n", keyword);
+            }
+            else
+            {
+                Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+            }
         }
 
         public void ExamineItem(string keyword)

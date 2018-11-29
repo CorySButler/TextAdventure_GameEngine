@@ -3,5 +3,17 @@
   <name>Henry</name>
   <gender>MALE</gender>
   <gold>10</gold>
-  <location>TestRoom_0.xml</location>
+  <location>TestRoom_2.xml</location>
+  <item>
+    <keyword>pie</keyword>
+    <description>There is a pie in this room.</description>
+    <detailedDescription>It is a blueberry pie.</detailedDescription>
+    <isTakeable>true</isTakeable>
+  </item>
+  <item>
+    <keyword>apple</keyword>
+    <description>There is an apple in this room.</description>
+    <detailedDescription>It is a fuji apple.</detailedDescription>
+    <isTakeable>true</isTakeable>
+  </item>
 </root>

@@ -21,6 +21,24 @@ namespace TextAdventure_GameEngine
             Save();
         }
 
+        public bool HasItem(string keyword)
+        {
+            foreach (Item item in _items)
+            {
+                if (item.Keyword == keyword) return true;
+            }
+            return false;
+        }
+
+        public Item GetItem(string keyword)
+        {
+            foreach (Item item in _items)
+            {
+                if (item.Keyword == keyword) return item;
+            }
+            return null;
+        }
+
         public void RemoveItem(Item item)
         {
             _items.Remove(item);
