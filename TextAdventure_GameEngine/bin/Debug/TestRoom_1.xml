@@ -11,8 +11,4 @@
     <description>There is an exit to the south.</description>
     <destination>TestRoom_0.xml</destination>
   </exit>
-  <item>
-    <keyword></keyword>
-    <description></description>
-  </item>
 </root>

@@ -8,3 +8,13 @@ C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\obj\Debug
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_0.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_2.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_1.xml
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_2.xml
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_1.xml
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TestRoom_0.xml
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TextAdventure_GameEngine.exe.config
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TextAdventure_GameEngine.exe
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\TextAdventure_GameEngine.pdb
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\obj\Debug\TextAdventure_GameEngine.csprojAssemblyReference.cache
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\obj\Debug\TextAdventure_GameEngine.csproj.CoreCompileInputs.cache
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\obj\Debug\TextAdventure_GameEngine.exe
+C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\obj\Debug\TextAdventure_GameEngine.pdb

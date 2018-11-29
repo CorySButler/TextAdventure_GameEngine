@@ -6,8 +6,4 @@
     <description>There is an exit to the south.</description>
     <destination>TestRoom_1.xml</destination>
   </exit>
-  <item>
-    <keyword></keyword>
-    <description></description>
-  </item>
 </root>

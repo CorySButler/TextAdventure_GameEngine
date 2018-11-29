@@ -10,18 +10,12 @@
     <keyword>pie</keyword>
     <description>There is a pie in this room.</description>
     <detailedDescription>It is a blueberry pie.</detailedDescription>
-    <interaction>
-      <keyword>examine</keyword>
-      <textResponce>It is a blueberry pie.</textResponce>
-    </interaction>
+    <isTakeable>true</isTakeable>
   </item>
   <item>
     <keyword>apple</keyword>
     <description>There is an apple in this room.</description>
     <detailedDescription>It is a fuji apple.</detailedDescription>
-    <interaction>
-      <keyword>examine</keyword>
-      <textResponce>It is a fuji apple.</textResponce>
-    </interaction>
+    <isTakeable>true</isTakeable>
   </item>
 </root>

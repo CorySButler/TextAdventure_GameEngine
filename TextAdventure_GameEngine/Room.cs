@@ -7,13 +7,18 @@ namespace TextAdventure_GameEngine
 {
     public class Room
     {
+        private string _filePath;
         private string _description;
         private List<Exit> _exits;
         private List<Item> _items;
 
+        public string FilePath { get { return _filePath; } }
+
         public Room(string filePath)
         {
-            var data = XElement.Load(filePath);
+            _filePath = filePath;
+
+            var data = XElement.Load(_filePath);
             _description = data.Element("description").Value;
             _exits = (from exit in data.Elements("exit")
                      select new Exit
@@ -33,18 +38,6 @@ namespace TextAdventure_GameEngine
                      }).ToList();
 
             Console.WriteLine(Describe());
-        }
-
-        private UserAction DetermineUserAction(string keyword)
-        {
-            switch (keyword)
-            {
-                case "examine":
-                    return new Examine();
-                case "take":
-                    return new Take();
-            }
-            return null;
         }
 
         public string Describe()
@@ -73,15 +66,6 @@ namespace TextAdventure_GameEngine
             return false;
         }
 
-        public Item GetItem(string keyword)
-        {
-            foreach (Item item in _items)
-            {
-                if (item.Keyword == keyword) return item;
-            }
-            return null;
-        }
-
         public bool HasItem(string keyword)
         {
             foreach (Item item in _items)
@@ -91,9 +75,23 @@ namespace TextAdventure_GameEngine
             return false;
         }
 
+        public Item GetItem(string keyword)
+        {
+            foreach (Item item in _items)
+            {
+                if (item.Keyword == keyword) return item;
+            }
+            return null;
+        }
+
+        public void RemoveItem(Item item)
+        {
+            _items.Remove(item);
+            Save();
+        }
+
         public Room Exit(string keyword)
         {
-            Save();
             foreach (Exit exit in _exits)
             {
                 if (exit.Keyword == keyword) return new Room(exit.Destination);
@@ -103,7 +101,39 @@ namespace TextAdventure_GameEngine
 
         private void Save()
         {
+            var data = new XElement("root", new XElement("description", _description));
+            data = AddExitsToXElement(data);
+            data = AddItemsToXElement(data);
+            data.Save(_filePath);
+        }
 
+        private XElement AddExitsToXElement(XElement xElement)
+        {
+            foreach (Exit exit in _exits)
+            {
+                xElement.Add(new XElement("exit",
+                    new XElement("keyword", exit.Keyword),
+                    new XElement("description", exit.Description),
+                    new XElement("destination", exit.Destination)
+                    ));
+            }
+
+            return xElement;
+        }
+
+        private XElement AddItemsToXElement(XElement xElement)
+        {
+            foreach (Item item in _items)
+            {
+                xElement.Add(new XElement("item",
+                    new XElement("keyword", item.Keyword),
+                    new XElement("description", item.Description),
+                    new XElement("detailedDescription", item.DetailedDescription),
+                    new XElement("isTakeable", item.IsTakeable.ToString().ToLower())
+                    ));
+            }
+
+            return xElement;
         }
     }
 }

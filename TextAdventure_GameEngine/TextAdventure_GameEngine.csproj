@@ -49,6 +49,7 @@
     <Compile Include="Interaction.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="UserActions\Inventory.cs" />
     <Compile Include="UserActions\Take.cs" />
     <Compile Include="UserActions\Go.cs" />
     <Compile Include="Program.cs" />
