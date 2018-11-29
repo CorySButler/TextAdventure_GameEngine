@@ -9,7 +9,7 @@ namespace TextAdventure_GameEngine
         private TextInput _textInput;
         private Room _room;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Drop(), new Examine(), new Go(), new Inventory(), new Take() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Drop(), new Examine(), new Go(), new Inventory(), new Take(), new Use() };
 
         public GameController()
         {
@@ -29,9 +29,16 @@ namespace TextAdventure_GameEngine
         {
             if (_room.HasExit(keyword))
             {
-                Console.WriteLine("\nYou head off to the {0}.\n", keyword);
-                _room = _room.Exit(keyword);
-                _player.UpdateLocation(_room);
+                if (_room.GetExit(keyword).IsLocked)
+                {
+                    Console.WriteLine("\nThe path to the {0} is locked.\n", keyword);
+                }
+                else
+                { 
+                    Console.WriteLine("\nYou head off to the {0}.\n", keyword);
+                    _room = _room.Exit(keyword);
+                    _player.UpdateLocation(_room);
+                }
             }
             else
             {
@@ -91,6 +98,35 @@ namespace TextAdventure_GameEngine
             {
                 Console.WriteLine("\nThere is no {0} to take.\n", keyword);
             }
+        }
+
+        public void UseItem(string keyword, string targetKeyword)
+        {
+            Item item;
+            if (_player.HasItem(keyword))
+            {
+                item = _player.GetItem(keyword);
+            }
+            else
+            {
+                Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+                return;
+            }
+
+            Exit exit;
+            if (_room.HasExit(targetKeyword))
+            {
+                exit = _room.GetExit(targetKeyword);
+            }
+            else
+            {
+                Console.WriteLine("\nThere is no {0}.\n", targetKeyword);
+                return;
+            }
+
+            if (exit.IsLocked) exit.IsLocked = false;
+
+            Console.WriteLine("\nYou used the {0} on the {1}.\n", keyword, targetKeyword);
         }
     }
 }

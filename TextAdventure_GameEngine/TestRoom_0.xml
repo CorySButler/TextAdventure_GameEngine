@@ -5,11 +5,18 @@
     <keyword>north</keyword>
     <description>There is an exit to the north.</description>
     <destination>TestRoom_1.xml</destination>
+    <isLocked>true</isLocked>
   </exit>
   <item>
     <keyword>pie</keyword>
     <description>There is a pie in this room.</description>
     <detailedDescription>It is a blueberry pie.</detailedDescription>
+    <isTakeable>true</isTakeable>
+  </item>
+  <item>
+    <keyword>key</keyword>
+    <description>There is a key in this room.</description>
+    <detailedDescription>It is a door key.</detailedDescription>
     <isTakeable>true</isTakeable>
   </item>
   <item>

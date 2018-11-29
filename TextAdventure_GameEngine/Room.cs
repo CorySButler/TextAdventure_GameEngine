@@ -25,7 +25,8 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = exit.Element("keyword").Value,
                          Description = exit.Element("description").Value,
-                         Destination = exit.Element("destination").Value
+                         Destination = exit.Element("destination").Value,
+                         IsLocked = exit.Element("isLocked").Value == "true"
                      }).ToList();
 
             _items = (from item in data.Elements("item")
@@ -81,6 +82,15 @@ namespace TextAdventure_GameEngine
             return false;
         }
 
+        public Exit GetExit(string keyword)
+        {
+            foreach (Exit exit in _exits)
+            {
+                if (exit.Keyword == keyword) return exit;
+            }
+            return null;
+        }
+
         public Item GetItem(string keyword)
         {
             foreach (Item item in _items)
@@ -100,7 +110,12 @@ namespace TextAdventure_GameEngine
         {
             foreach (Exit exit in _exits)
             {
-                if (exit.Keyword == keyword) return new Room(exit.Destination);
+                if (exit.Keyword == keyword)
+                {
+                    if (exit.IsLocked) return this;
+                    Save();
+                    return new Room(exit.Destination);
+                }
             }
             return this;
         }

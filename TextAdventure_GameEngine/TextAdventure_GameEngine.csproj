@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserActions\Use.cs" />
     <Compile Include="UserActions\Drop.cs" />
     <Compile Include="UserActions\Examine.cs" />
     <Compile Include="Exit.cs" />

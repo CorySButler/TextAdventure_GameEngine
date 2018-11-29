@@ -4,11 +4,13 @@
   <exit>
     <keyword>north</keyword>
     <description>There is an exit to the north.</description>
-    <destination>TestRoom_2.xml</destination>  
+    <destination>TestRoom_2.xml</destination>
+    <isLocked>false</isLocked>
   </exit>
   <exit>
     <keyword>south</keyword>
     <description>There is an exit to the south.</description>
     <destination>TestRoom_0.xml</destination>
+    <isLocked>false</isLocked>
   </exit>
 </root>

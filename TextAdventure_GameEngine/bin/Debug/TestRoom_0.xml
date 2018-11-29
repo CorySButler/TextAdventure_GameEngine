@@ -6,4 +6,16 @@
     <description>There is an exit to the north.</description>
     <destination>TestRoom_1.xml</destination>
   </exit>
+  <item>
+    <keyword>pie</keyword>
+    <description>There is a pie in this room.</description>
+    <detailedDescription>It is a blueberry pie.</detailedDescription>
+    <isTakeable>true</isTakeable>
+  </item>
+  <item>
+    <keyword>apple</keyword>
+    <description>There is an apple in this room.</description>
+    <detailedDescription>It is a fuji apple.</detailedDescription>
+    <isTakeable>true</isTakeable>
+  </item>
 </root>

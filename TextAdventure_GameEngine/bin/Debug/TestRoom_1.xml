@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <description>You are in Test Room 1.</description>
   <exit>
     <keyword>north</keyword>
     <description>There is an exit to the north.</description>
     <destination>TestRoom_2.xml</destination>
+    <isLocked>false</isLocked>
   </exit>
   <exit>
     <keyword>south</keyword>
     <description>There is an exit to the south.</description>
     <destination>TestRoom_0.xml</destination>
+    <isLocked>false</isLocked>
   </exit>
 </root>
