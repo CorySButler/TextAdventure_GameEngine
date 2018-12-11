@@ -102,6 +102,13 @@ namespace TextAdventure_GameEngine
 
         public void UseItem(string keyword, string targetKeyword)
         {
+            // Give interactable the item
+            // Check interactable's inventory
+            //      If has needed item
+            //          perform action
+            //      Else
+            //          give back
+            //          "cannot use item on interactable"
             Item item;
             if (_player.HasItem(keyword))
             {

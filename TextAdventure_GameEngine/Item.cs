@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace TextAdventure_GameEngine
+﻿namespace TextAdventure_GameEngine
 {
-    public class Item
+    public class Item : InteractableObject
     {
-        public string Keyword;
-        public string Description;
-        public string DetailedDescription;
-        public bool IsTakeable;
     }
 }
