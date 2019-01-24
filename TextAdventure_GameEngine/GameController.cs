@@ -79,6 +79,11 @@ namespace TextAdventure_GameEngine
                 Item item = _room.GetItem(keyword);
                 Console.WriteLine("\n{0}\n", item.DetailedDescription);
             }
+            else if (_room.HasProp(keyword))
+            {
+                Prop prop = _room.GetProp(keyword);
+                Console.WriteLine("\n{0}\n", prop.DetailedDescription);
+            }
             else
             {
                 Console.WriteLine("\nThere is no {0} to examine.\n", keyword);
@@ -93,6 +98,10 @@ namespace TextAdventure_GameEngine
                 _player.AddItem(item);
                 _room.RemoveItem(item);
                 Console.WriteLine("\nYou take the {0}.\n", keyword);
+            }
+            else if (_room.HasProp(keyword))
+            {
+                Console.WriteLine("\nYou cannot take the {0}.\n", keyword);
             }
             else
             {

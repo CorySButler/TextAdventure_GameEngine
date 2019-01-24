@@ -11,6 +11,7 @@ namespace TextAdventure_GameEngine
         private string _description;
         private List<Exit> _exits;
         private List<Item> _items;
+        private List<Prop> _props;
 
         public string FilePath { get { return _filePath; } }
 
@@ -34,9 +35,16 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = item.Element("keyword").Value,
                          Description = item.Element("description").Value,
-                         DetailedDescription = item.Element("detailedDescription").Value,
-                         IsTakeable = item.Element("isTakeable").Value == "true"
+                         DetailedDescription = item.Element("detailedDescription").Value
                      }).ToList();
+
+            _props = (from prop in data.Elements("prop")
+                      select new Prop
+                      {
+                          Keyword = prop.Element("keyword").Value,
+                          Description = prop.Element("description").Value,
+                          DetailedDescription = prop.Element("detailedDescription").Value
+                      }).ToList();
 
             Console.WriteLine(Describe());
         }
@@ -53,6 +61,11 @@ namespace TextAdventure_GameEngine
             foreach (Item item in _items)
             {
                 combinedText += item.Description + "\n";
+            }
+
+            foreach (Prop prop in _props)
+            {
+                combinedText += prop.Description + "\n";
             }
 
             return combinedText;
@@ -82,6 +95,15 @@ namespace TextAdventure_GameEngine
             return false;
         }
 
+        public bool HasProp(string keyword)
+        {
+            foreach (Prop prop in _props)
+            {
+                if (prop.Keyword == keyword) return true;
+            }
+            return false;
+        }
+
         public Exit GetExit(string keyword)
         {
             foreach (Exit exit in _exits)
@@ -96,6 +118,15 @@ namespace TextAdventure_GameEngine
             foreach (Item item in _items)
             {
                 if (item.Keyword == keyword) return item;
+            }
+            return null;
+        }
+
+        public Prop GetProp(string keyword)
+        {
+            foreach (Prop prop in _props)
+            {
+                if (prop.Keyword == keyword) return prop;
             }
             return null;
         }
@@ -149,8 +180,7 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("item",
                     new XElement("keyword", item.Keyword),
                     new XElement("description", item.Description),
-                    new XElement("detailedDescription", item.DetailedDescription),
-                    new XElement("isTakeable", item.IsTakeable.ToString().ToLower())
+                    new XElement("detailedDescription", item.DetailedDescription)
                     ));
             }
 

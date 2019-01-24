@@ -2,7 +2,7 @@
 {
     public class Exit : InteractableObject
     {
-        //public string Destination { get; set; }
-        //public bool IsLocked { get; set; }
+        public string Destination { get; set; }
+        public bool IsLocked { get; set; }
     }
 }

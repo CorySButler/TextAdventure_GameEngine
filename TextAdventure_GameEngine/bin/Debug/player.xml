@@ -3,11 +3,10 @@
   <name>Henry</name>
   <gender>MALE</gender>
   <gold>10</gold>
-  <location>TestRoom_1.xml</location>
+  <location>TestRoom_0.xml</location>
   <item>
-    <keyword>key</keyword>
-    <description>There is a key in this room.</description>
-    <detailedDescription>It is a door key.</detailedDescription>
-    <isTakeable>true</isTakeable>
+    <keyword>pie</keyword>
+    <description>There is a pie in this room.</description>
+    <detailedDescription>It is a blueberry pie.</detailedDescription>
   </item>
 </root>

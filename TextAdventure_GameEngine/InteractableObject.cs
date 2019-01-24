@@ -5,6 +5,5 @@
         public string Keyword { get; set; }
         public string Description { get; set; }
         public string DetailedDescription { get; set; }
-        public bool IsTakeable { get; set; }
     }
 }

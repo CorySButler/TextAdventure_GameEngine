@@ -69,8 +69,7 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("item",
                     new XElement("keyword", item.Keyword),
                     new XElement("description", item.Description),
-                    new XElement("detailedDescription", item.DetailedDescription),
-                    new XElement("isTakeable", item.IsTakeable.ToString().ToLower())
+                    new XElement("detailedDescription", item.DetailedDescription)
                     ));
             }
 

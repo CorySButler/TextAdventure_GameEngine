@@ -16,25 +16,27 @@
     <keyword>pie</keyword>
     <description>There is a pie in this room.</description>
     <detailedDescription>It is a blueberry pie.</detailedDescription>
-    <isTakeable>true</isTakeable>
   </item>
   <item>
     <keyword>key</keyword>
     <description>There is a key in this room.</description>
     <detailedDescription>It is a door key.</detailedDescription>
-    <isTakeable>true</isTakeable>
   </item>
   <item>
     <keyword>apple</keyword>
     <description>There is an apple in this room.</description>
     <detailedDescription>It is a fuji apple.</detailedDescription>
-    <isTakeable>true</isTakeable>
   </item>
   <item>
     <keyword>chest</keyword>
     <description>There is a chect in this room.</description>
     <detailedDescription>It is a treasure chest.</detailedDescription>
-    <isTakeable>true</isTakeable>
   </item>
+
+  <prop>
+    <keyword>table</keyword>
+    <description>There is a table in this room.</description>
+    <detailedDescription>It looks pretty heavy.</detailedDescription>
+  </prop>
   
 </root>

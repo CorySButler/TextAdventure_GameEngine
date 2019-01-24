@@ -7,15 +7,18 @@
     <destination>TestRoom_1.xml</destination>
   </exit>
   <item>
-    <keyword>pie</keyword>
-    <description>There is a pie in this room.</description>
-    <detailedDescription>It is a blueberry pie.</detailedDescription>
-    <isTakeable>true</isTakeable>
+    <keyword>key</keyword>
+    <description>There is a key in this room.</description>
+    <detailedDescription>It is a door key.</detailedDescription>
   </item>
   <item>
     <keyword>apple</keyword>
     <description>There is an apple in this room.</description>
     <detailedDescription>It is a fuji apple.</detailedDescription>
-    <isTakeable>true</isTakeable>
+  </item>
+  <item>
+    <keyword>chest</keyword>
+    <description>There is a chect in this room.</description>
+    <detailedDescription>It is a treasure chest.</detailedDescription>
   </item>
 </root>
