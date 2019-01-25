@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+<description>A guide has lead you and twelve other children to a clearing in the forest.
+Though it is still early in the day, the sun shines through the clouds,
+and its rays are warm on your face.  The leaves of the trees are thick,
+and the world is dark beneath them.
+    
+Your guide speaks, "You have all done well in following me through this
+tangled wood.  Now we come to the point in your training where you will
+no longer follow, but will lead yourselves.  Be aware of your surroundings
+and you will find your way, wherever your way may go.  Look diligently for
+signs that will guide down a sure path. Examine the various thing you find."
+    
+You learned the examine command!
+Type "examine" and then the name of what you want to take a closer look at.
+Then hit ENTER.
+Example:  examine guide
+</description>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, there is a slight gap in the trees encircling the clearing.</description>
+    <detailedDescription>Though you could easily walk through the gap, the path appears to have seen little use.
+Whisps of fog linger deep within.</detailedDescription>
+    <destination>GameData/GapInTrees.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>guide</keyword>
+    <description>Your guide stands near the gap in the trees.</description>
+    <detailedDescription>Your guide is clad in leather armor and a dark green cloak.
+He speaks, "Well done. Now explore your surrounds and move through the forest.
+Go to new areas."
+
+You learned the go command!
+Type "go" and then the name of the you want to follow.
+Then hit ENTER.
+Example:  go south</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>children</keyword>
+    <description>The other children in your group are listening to the guide.</description>
+    <detailedDescription>There are 12 other children in your group.  Some look confident, others nervous, but all are happy to see the sun.</detailedDescription>
+  </prop>
+
+</root>

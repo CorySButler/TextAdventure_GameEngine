@@ -4,7 +4,8 @@
   <exit>
     <keyword>south</keyword>
     <description>There is an exit to the south.</description>
-    <destination>TestRoom_1.xml</destination>
+    <detailedDescription>The exit has a keyhole.</detailedDescription>
+    <destination>GameData/TestRoom_1.xml</destination>
     <isLocked>false</isLocked>
   </exit>
 </root>

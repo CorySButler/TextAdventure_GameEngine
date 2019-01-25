@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The foreign cries grow louder as you enter the room. Goblins assail you from either side.
+Their claws clasp around your throat.  You are stifled and faint.
+
+Rolling onto something sharp, you awaken cold and alone.</description>
+
+  <exit>
+    <keyword>door</keyword>
+    <description>A rotting, wooden door hang on rope hinges.</description>
+    <detailedDescription>The door is open slightly and torchlight shines through.  You can hear nothing outside.</detailedDescription>
+    <destination>GameData/DungeonHall_FirstTime.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls of the room are of dirt.</description>
+    <detailedDescription>The dirt walks are cold and wet.  They ooze dark water at your touch.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>bones</keyword>
+    <description>Crushed bones lay about the ground.</description>
+    <detailedDescription>Many of the bones are splintered or crushed to nearly a powder.
+Other larger bones appear to have been gnawed by thin, sharp teeth.</detailedDescription>
+  </prop>
+
+</root>

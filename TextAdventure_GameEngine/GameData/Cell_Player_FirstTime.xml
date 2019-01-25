@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>You approach the light.  It is a torch fastened to the cave wall.
+A gnarled, grey hand snatches it up and extinguishes it.  Deep, cackling howls
+roar up the throat of the cave.  The other children's screams are drowned out by
+wicked laughter.  Numerous cold hands with long fingers and hooked claws grasp your limbs
+and cover your mouth.  The stench of unclean beasts overcomes you.  You grow dizzy and faint.
+
+A clash of steel and a gurgling shout awaken you. You are in a tight, dank room.</description>
+
+  <exit>
+    <keyword>door</keyword>
+    <description>A rotting, wooden door hang on rope hinges.</description>
+    <detailedDescription>The door is open slightly and torchlight shines through.  You can hear nothing outside.</detailedDescription>
+    <destination>GameData/DungeonHall_FirstTime.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls of the room are of dirt.</description>
+    <detailedDescription>The dirt walks are cold and wet.  They ooze dark water at your touch.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>bones</keyword>
+    <description>Crushed bones lay about the ground.</description>
+    <detailedDescription>Many of the bones are splintered or crushed to nearly a powder.
+Other larger bones appear to have been gnawed by thin, sharp teeth.</detailedDescription>
+  </prop>
+
+</root>

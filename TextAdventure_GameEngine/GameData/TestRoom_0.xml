@@ -7,8 +7,8 @@
     <keyword>north</keyword>
     <description>There is an exit to the north.</description>
     <detailedDescription>The exit has a keyhole.</detailedDescription>
-    <destination>TestRoom_1.xml</destination>
-    <isLocked>true</isLocked>
+    <destination>GameData/TestRoom_1.xml</destination>
+    <isLocked>false</isLocked>
     <isTakeable>false</isTakeable>
   </exit>
   

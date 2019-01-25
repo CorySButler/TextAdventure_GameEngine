@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  
+<description>You enter the cave and all goes black.  Even the cave entrance offers no light,
+and you can no longer find your way out.</description>
+
+<exit>
+  <keyword>north</keyword>
+  <description>To the north, an orange light flickers faintly.</description>
+  <detailedDescription>The light flickers and dances like flame.  It may be a touch.</detailedDescription>
+  <destination>GameData/Cell_Player_FirstTime.xml</destination>
+  <isLocked>false</isLocked>
+</exit>
+  
+<prop>
+  <keyword>children</keyword>
+  <description>The footstep of the other children entering the cave begin to fade away.</description>
+  <detailedDescription>You cannot find the other children, but their footstep can be heard far off.</detailedDescription>
+</prop>
+
+</root>

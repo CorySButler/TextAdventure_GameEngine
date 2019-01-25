@@ -15,7 +15,7 @@ namespace TextAdventure_GameEngine
         {
             _player = new Player() { Name = "Henry", Gender = Genders.MALE, Gold = 10 };
             _textInput = new TextInput();
-            _room = new Room("TestRoom_0.xml");
+            _room = new Room("GameData/Cell_Player_FirstTime.xml");
             _player.UpdateLocation(_room);
 
             while (true)
@@ -74,7 +74,12 @@ namespace TextAdventure_GameEngine
 
         public void ExamineItem(string keyword)
         {
-            if (_room.HasItem(keyword))
+            if (_room.HasExit(keyword))
+            {
+                Exit exit = _room.GetExit(keyword);
+                Console.WriteLine("\n{0}\n", exit.DetailedDescription);
+            }
+            else if (_room.HasItem(keyword))
             {
                 Item item = _room.GetItem(keyword);
                 Console.WriteLine("\n{0}\n", item.DetailedDescription);
@@ -129,18 +134,24 @@ namespace TextAdventure_GameEngine
                 return;
             }
 
-            Exit exit;
+            InteractableObject interactableObject;
             if (_room.HasExit(targetKeyword))
             {
-                exit = _room.GetExit(targetKeyword);
+                interactableObject = _room.GetExit(targetKeyword);
+            }
+            else if (_room.HasProp(targetKeyword))
+            {
+                interactableObject = _room.GetProp(targetKeyword);
+            }
+            else if (_room.HasItem(targetKeyword))
+            {
+                interactableObject = _room.GetItem(targetKeyword);
             }
             else
             {
                 Console.WriteLine("\nThere is no {0}.\n", targetKeyword);
                 return;
             }
-
-            if (exit.IsLocked) exit.IsLocked = false;
 
             Console.WriteLine("\nYou used the {0} on the {1}.\n", keyword, targetKeyword);
         }

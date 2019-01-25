@@ -26,16 +26,9 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = exit.Element("keyword").Value,
                          Description = exit.Element("description").Value,
+                         DetailedDescription = exit.Element("detailedDescription").Value,
                          Destination = exit.Element("destination").Value,
                          IsLocked = exit.Element("isLocked").Value == "true"
-                     }).ToList();
-
-            _items = (from item in data.Elements("item")
-                     select new Item
-                     {
-                         Keyword = item.Element("keyword").Value,
-                         Description = item.Element("description").Value,
-                         DetailedDescription = item.Element("detailedDescription").Value
                      }).ToList();
 
             _props = (from prop in data.Elements("prop")
@@ -46,6 +39,14 @@ namespace TextAdventure_GameEngine
                           DetailedDescription = prop.Element("detailedDescription").Value
                       }).ToList();
 
+            _items = (from item in data.Elements("item")
+                     select new Item
+                     {
+                         Keyword = item.Element("keyword").Value,
+                         Description = item.Element("description").Value,
+                         DetailedDescription = item.Element("detailedDescription").Value
+                     }).ToList();
+
             Console.WriteLine(Describe());
         }
 
@@ -55,17 +56,17 @@ namespace TextAdventure_GameEngine
 
             foreach (Exit exit in _exits)
             {
-                combinedText += exit.Description + "\n";
-            }
-
-            foreach (Item item in _items)
-            {
-                combinedText += item.Description + "\n";
+                if (exit.Description != "") combinedText += exit.Description + "\n";
             }
 
             foreach (Prop prop in _props)
             {
-                combinedText += prop.Description + "\n";
+                if (prop.Description != "") combinedText += prop.Description + "\n";
+            }
+
+            foreach (Item item in _items)
+            {
+                if (item.Description != "") combinedText += item.Description + "\n";
             }
 
             return combinedText;
@@ -155,6 +156,7 @@ namespace TextAdventure_GameEngine
         {
             var data = new XElement("root", new XElement("description", _description));
             data = AddExitsToXElement(data);
+            data = AddPropsToXElement(data);
             data = AddItemsToXElement(data);
             data.Save(_filePath);
         }
@@ -166,7 +168,23 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("exit",
                     new XElement("keyword", exit.Keyword),
                     new XElement("description", exit.Description),
-                    new XElement("destination", exit.Destination)
+                    new XElement("detailedDescription", exit.DetailedDescription),
+                    new XElement("destination", exit.Destination),
+                    new XElement("isLocked", exit.IsLocked)
+                    ));
+            }
+
+            return xElement;
+        }
+
+        private XElement AddPropsToXElement(XElement xElement)
+        {
+            foreach (Prop prop in _props)
+            {
+                xElement.Add(new XElement("item",
+                    new XElement("keyword", prop.Keyword),
+                    new XElement("description", prop.Description),
+                    new XElement("detailedDescription", prop.DetailedDescription)
                     ));
             }
 

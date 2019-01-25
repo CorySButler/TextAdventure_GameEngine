@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The air becomes colder as you go down the stairs.</description>
+
+  <exit>
+    <keyword>north</keyword>
+    <description>To the north, stairs lead upward.</description>
+    <detailedDescription>The stairs are made of stone slabs.  The air above is warmer.</detailedDescription>
+    <destination>GameData/DungeonHall.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, the narrow hall runs further down.</description>
+    <detailedDescription>The hall is dark, but sparse torches hang along the way.</detailedDescription>
+    <destination>GameData/Dungeon_B2_Hall2.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>west</keyword>
+    <description>To the west, there is a locked door, but there is small gap between it and the floor.</description>
+    <detailedDescription>The door is locked, but you cannot see how. From behind the door, a boy speaks,
+"This door is locked from the inside.  The goblins forced me to lock it and pass the key under the door.
+They told me the would send rats under the door if I didn't obey.  I gave them the key, but the rats
+came anyways.  If you drop the key in the hall, I can grab it from under the door."</detailedDescription>
+    <destination>GameData/TBD.xml</destination>
+    <isLocked>true</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls are of grey stone.</description>
+    <detailedDescription>Large stones are press into the wet, dirt walls.</detailedDescription>
+  </prop>
+
+</root>

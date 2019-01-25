@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The rotting, wooden door creaks as you push it open.
+You are in a narrow hall lit by torches.</description>
+
+  <exit>
+    <keyword>north</keyword>
+    <description>To the north, stairs lead upward.</description>
+    <detailedDescription>The stairs are made of stone slabs.  The air above is foul.</detailedDescription>
+    <destination>GameData/DungeonEntrance.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>east</keyword>
+    <description>To the east, the door to your dungeon cell is open.</description>
+    <detailedDescription>The rotting, wooden door hangs on rope hinges.  The fastening rope has been cut,
+and hangs from a hook on the wall.</detailedDescription>
+    <destination>GameData/Cell_Player.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, stairs lead downward.</description>
+    <detailedDescription>The stairs are made of stone slabs.
+The air is chill, but touchligh can be seen at the lower landing.</detailedDescription>
+    <destination>GameData/Dungeon_B2.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>west</keyword>
+    <description>To the west, across the hall, there is a closed door.  A lock holds the door closed.</description>
+    <detailedDescription>The door build of solid wood and its hinges are iron.
+Pressing your ear to the door, you hear whimpering within.</detailedDescription>
+    <destination>GameData/TBD.xml</destination>
+    <isLocked>true</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls are of grey stone.</description>
+    <detailedDescription>Large stones are press into the wet, dirt walls.  At each door, the stone are
+scratched and stained.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>floor</keyword>
+    <description>The floor is of uneven, but solid dirt.</description>
+    <detailedDescription>It has seen much use and has been pressed solid by heavy boots.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>creature</keyword>
+    <description>A grey and hairy creature clad in rusted mail is sprawled out, motionless on the ground.</description>
+    <detailedDescription>The creature lies in a stinking black pool of blood.  Its yellow eyes and its
+jaws of dagger-like teeth are open, but the creature is dead.
+Its gloved fingers are long and tipped with bony claws.  This must be a goblin.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>guide</keyword>
+    <description>A man in leather armor is doubled over near the locked door.  He is your guide.  His raspy breath grows ever weaker.</description>
+    <detailedDescription>Through bubbling gasps, he speaks, "The dark laughter drew me to this place.
+What misfortune lead you thirteen children to this golbins' nest?  And I have rescued but one of you.
+That goblin there felled me even as I felled him.  A path I hewed through the armed goblin guard
+to reach this depth.  Accend the stair and be free.  But what of the other twelve?"</detailedDescription>
+  </prop>
+
+</root>

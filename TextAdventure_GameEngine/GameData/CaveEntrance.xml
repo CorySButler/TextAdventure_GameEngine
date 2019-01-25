@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The fog clears slightly and thin shafts of sunlight speckle the ground.</description>
+
+  <exit>
+    <keyword>cave</keyword>
+    <description>A cave yawns black before you.</description>
+    <detailedDescription>The dark of the cave chills you with fear, though this fear
+is mixed with curiosity and a longing for adventure.</detailedDescription>
+    <destination>GameData/CaveMouth.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>children</keyword>
+    <description>The other 12 children have found their way to the mouth of the cave.</description>
+    <detailedDescription>The children are fixed on the cave. Some are lured within.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>bugs</keyword>
+    <description>Bugs swarm amidst the thin fog.</description>
+    <detailedDescription>The bugs are large and the dry beating of their wings is unsettling.</detailedDescription>
+  </prop>
+  
+  <prop>
+    <keyword>frogs</keyword>
+    <description>Several frogs croak in a nearby pool.</description>
+    <detailedDescription>The frogs have grown large and fat, feasting on the bugs.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>pool</keyword>
+    <description></description>
+    <detailedDescription>The pool in dark and shallow.  Its water is cold.</detailedDescription>
+  </prop>
+  
+</root>

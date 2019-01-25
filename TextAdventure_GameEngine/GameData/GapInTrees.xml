@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>As you walk between the trees, the leaves blot out the sun
+and the fog closes in around you.  Somehow it seems to thicken behind you
+and to give way in front of you.</description>
+
+  <exit>
+    <keyword>west</keyword>
+    <description>A pale glow shine to the west.</description>
+    <detailedDescription>The glow in this direction may be sunlight.</detailedDescription>
+    <destination>GameData/CaveEntrance.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>children</keyword>
+    <description>Some of the other children are nearby. They are moving west.</description>
+    <detailedDescription>They look uneasy.  Judging by their pace, they are eager to reach the light.</detailedDescription>
+  </prop>
+
+</root>

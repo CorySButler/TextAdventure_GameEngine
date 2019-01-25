@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>This dungeon cell is wet and cramped and dark.</description>
+
+  <exit>
+    <keyword>door</keyword>
+    <description>A rotting, wooden door hang on rope hinges.</description>
+    <detailedDescription>Torchlight shines through the doorway.  You can hear nothing outside.</detailedDescription>
+    <destination>GameData/DungeonHall.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls of the room are of dirt.</description>
+    <detailedDescription>The dirt walks are cold and wet.  They ooze dark water at your touch.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>bones</keyword>
+    <description>Crushed bones lay about the ground.</description>
+    <detailedDescription>Many of the bones are splintered or crushed to nearly a powder.
+Other larger bones appear to have been gnawed by thin, sharp teeth.</detailedDescription>
+  </prop>
+
+</root>

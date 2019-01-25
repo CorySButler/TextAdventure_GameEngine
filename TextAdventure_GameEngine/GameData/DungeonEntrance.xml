@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>A large room opens before you.</description>
+
+  <exit>
+    <keyword>east</keyword>
+    <description>To the east is another toughlit room.</description>
+    <detailedDescription>Shouts can be heard through the doorway. "Maggolan arant hur!"  "Gwu-tuli ara hur!"</detailedDescription>
+    <destination>GameData/Cell_Player_RepeatOffender.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, a stone stair leads to the dungeon.</description>
+    <detailedDescription>The steps are wide and flat.</detailedDescription>
+    <destination>GameData/DungeonHall.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>table</keyword>
+    <description>A large, wooden table stands in the center of the room</description>
+    <detailedDescription>The table is covered with an old cloth.  Human teeth and paper cards are flung across it.
+It appears the goblins were engaged in some game of chance when you guide arrived.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>goblins</keyword>
+    <description>Four goblins lie dead about the table.</description>
+    <detailedDescription>The hidious beasts are all cloven across the face.  Two in a heap on the floor.
+The two nearest the door died before the could even rise from their chairs.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>teeth</keyword>
+    <description>On the table lie several human teeth.</description>
+    <detailedDescription>In the teeth are carved strange runes.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>cards</keyword>
+    <description></description>
+    <detailedDescription>The figures and writing on the cards are man-made but ancient.</detailedDescription>
+  </prop>
+
+  <item>
+    <keyword>key</keyword>
+    <description>There also lies a key.</description>
+    <detailedDescription>An iron key.</detailedDescription>
+  </item>
+
+</root>

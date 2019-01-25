@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The hall continutes.</description>
+
+  <exit>
+    <keyword>north</keyword>
+    <description>To the north, the narrow hall runs further down.</description>
+    <detailedDescription>The hall is dark, but sparse torches hang along the way.</detailedDescription>
+    <destination>GameData/Dungeon_B2.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, the narrow hall runs further down.</description>
+    <detailedDescription>The hall is dark, but sparse torches hang along the way.</detailedDescription>
+    <destination>GameData/TBD.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>west</keyword>
+    <description>To the west, a door hangs loosely on wooden hinges.</description>
+    <detailedDescription>A voice is moaning pitifully within.</detailedDescription>
+    <destination>GameData/Dungeon_B2_Hall2_Room1.xml</destination>
+    <isLocked>true</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls are re-enforced with wood beams.</description>
+    <detailedDescription>They walls are wet and soft, made of pressed mud.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>girl</keyword>
+    <description>A girl lies quivering in the mud.</description>
+    <detailedDescription>The clothes on her back are split as is the flesh beneath them.
+She speaks, "Get that whip out of here.  When you take an item,
+you can see it in your inventroy.  It's odd, but items are often
+amoung the last things you see in a room."
+
+You learned the inventory command!
+Type "inventory" and hit ENTER.</detailedDescription>
+  </prop>
+
+  <item>
+    <keyword>whip</keyword>
+    <description>On the wall near the entrance, hangs a whip.</description>
+    <detailedDescription>The whip is frayed at the end and dripping with blood.</detailedDescription>
+  </item>
+
+</root>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The hall continutes.</description>
+
+  <exit>
+    <keyword>north</keyword>
+    <description>To the north, the narrow hall runs further down.</description>
+    <detailedDescription>The hall is dark, but sparse torches hang along the way.</detailedDescription>
+    <destination>GameData/Dungeon_B2.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>south</keyword>
+    <description>To the south, the narrow hall runs further down.</description>
+    <detailedDescription>The hall is dark, but sparse torches hang along the way.</detailedDescription>
+    <destination>GameData/TBD.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>west</keyword>
+    <description>To the west, a door hangs loosely on wooden hinges.</description>
+    <detailedDescription>A voice is moaning pitifully within.</detailedDescription>
+    <destination>GameData/Dungeon_B2_Hall2_Room1.xml</destination>
+    <isLocked>true</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The walls are of grey stone.</description>
+    <detailedDescription>Large stones are press into the wet, dirt walls.</detailedDescription>
+  </prop>
+
+  <prop>
+    <keyword>boy</keyword>
+    <description>A boy is chained to the wall at the wrists.</description>
+    <detailedDescription>The boy is weak, but lifts his head and speaks, "You are unbound?
+You must help Nyellin.  The goblins took her west.  They whipped her cruelly.
+Did you not hear her cries?  Go take the whip from her cell before they return."
+
+You learned the take command!
+Type "take" and then the name of the item you want to take.
+Example: take whip</detailedDescription>
+  </prop>
+
+</root>
