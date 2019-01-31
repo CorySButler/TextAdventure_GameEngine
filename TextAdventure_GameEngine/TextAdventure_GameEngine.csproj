@@ -46,6 +46,8 @@
     <Compile Include="Character.cs" />
     <Compile Include="InteractableObject.cs" />
     <Compile Include="Prop.cs" />
+    <Compile Include="UserActions\Discard.cs" />
+    <Compile Include="UserActions\Restart.cs" />
     <Compile Include="UserActions\Talk.cs" />
     <Compile Include="UserActions\Use.cs" />
     <Compile Include="UserActions\Drop.cs" />

@@ -1,11 +1,11 @@
 ﻿namespace TextAdventure_GameEngine
 {
-    public class Drop : UserAction
+    public class Restart : UserAction
     {
-        public override string Keyword { get { return "drop"; } }
+        public override string Keyword { get { return "restart"; } }
         public override void Respond(GameController gameController, string[] inputWords)
         {
-            gameController.Drop(inputWords[1]);
+            gameController.Restart();
         }
     }
 }

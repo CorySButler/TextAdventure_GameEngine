@@ -2,14 +2,13 @@
 <root>
 
   <description>Thorns prick you skin as you push through the deep woods.
-Jask is no where to be found</description>
+Jask has returned to the village.</description>
 
   <exit>
     <keyword>stream</keyword>
     <description>A [stream] babble quietly a short way off.</description>
-    <detailedDescription>The [stream] has an easy current.  It's shallow, but cold.</detailedDescription>
+    <onCheck>The [stream] has an easy current.  It's shallow, but cold.</onCheck>
     <destination>Stream.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
 </root>

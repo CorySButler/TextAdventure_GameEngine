@@ -8,7 +8,7 @@
             var targetKeyword = "";
             if (inputWords.Length >= 3)
                 targetKeyword = inputWords[2];
-            gameController.UseItem(inputWords[1], targetKeyword);
+            gameController.Use(inputWords[1], targetKeyword);
         }
     }
 }

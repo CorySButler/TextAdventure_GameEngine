@@ -8,33 +8,27 @@ now stands a wall of solid stone.</description>
   <exit>
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>
-    <detailedDescription>It looks sturdy enough to hold your weight.  A cackling voice can be heard above.</detailedDescription>
+    <onCheck>It looks sturdy enough to hold your weight.  A cackling voice can be heard above.</onCheck>
     <destination>WitchsHut.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <exit>
     <keyword>stairs</keyword>
     <description>A set of uneven stone [stairs] tumbles downward.</description>
-    <detailedDescription>The air grows colder this way.  Mingled sounds of whimpers and growls come up the [stairs].</detailedDescription>
+    <onCheck>The air grows colder this way.  Mingled sounds of whimpers and growls come up the [stairs].</onCheck>
     <destination>Basement_JossWolf.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <prop>
     <keyword>walls</keyword>
     <description>The [walls] of the room are close and build of stone.</description>
-    <detailedDescription>Claw [marks] are carved into one of the [walls].</detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    <onCheck>Claw [marks] are carved into one of the [walls].</onCheck>
   </prop>
 
   <prop>
     <keyword>marks</keyword>
     <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
-    <detailedDescription>Deep stratches like these can only mean one thing: nekkers.  What's a nekker doing in Toussaint?</detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    <onCheck>Deep stratches like these can only mean one thing: nekkers.  What's a nekker doing in Toussaint?</onCheck>
   </prop>
 
 </root>

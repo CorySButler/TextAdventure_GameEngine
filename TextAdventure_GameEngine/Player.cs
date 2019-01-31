@@ -12,27 +12,33 @@ namespace TextAdventure_GameEngine
         public int Gold;
         private List<Item> _items = new List<Item> { new Item
                      {
+                         Keyword = "crowns",
+                         Description = "12",
+                         OnCheck = "12",
+                         Id = "00"
+                     }, new Item
+                     {
                          Keyword = "florens",
                          Description = "2",
-                         DetailedDescription = "2",
+                         OnCheck = "2",
                          Id = "00"
                      }, new Item
                      {
                          Keyword = "orens",
                          Description = "1",
-                         DetailedDescription = "1",
+                         OnCheck = "1",
                          Id = "00"
                      }, new Item
                      {
                          Keyword = "steelblade",
                          Description = "",
-                         DetailedDescription = "Best for thwarting men and elves.",
+                         OnCheck = "Best for thwarting men and elves.",
                          Id = "2"
                      }, new Item
                      {
                          Keyword = "silverblade",
                          Description = "",
-                         DetailedDescription = "Ideal for slaying monsters.",
+                         OnCheck = "Ideal for slaying monsters.",
                          Id = "3"
                      }};
         private string _location;
@@ -93,7 +99,7 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("item",
                     new XElement("keyword", item.Keyword),
                     new XElement("description", item.Description),
-                    new XElement("detailedDescription", item.DetailedDescription)
+                    new XElement("detailedDescription", item.OnCheck)
                     ));
             }
 

@@ -6,54 +6,44 @@
   <exit>
     <keyword>village</keyword>
     <description>The [village] is not far off.  Pale candle light can still be seen in the windows.</description>
-    <detailedDescription>The [village] seems more cheerful and inviting with every step you take away from it.</detailedDescription>
+    <onCheck>The [village] seems more cheerful and inviting with every step you take away from it.</onCheck>
     <destination>Village_Jack.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <exit>
     <keyword>woods</keyword>
     <description></description>
-    <detailedDescription>Thorn plants twist and catch eachother behind the [bushes] like a spider's web.</detailedDescription>
+    <onCheck>Thorn plants twist and catch eachother behind the [bushes] like a spider's web.</onCheck>
     <destination>DeepWoods_Jack.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <prop>
     <keyword>trees</keyword>
     <description>The [trees] are dense and black.</description>
-    <detailedDescription>The [trees] have no scratches or markings on them,
-though their bark is dry and brittle.</detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    <onCheck>The [trees] have no scratches or markings on them,
+though their bark is dry and brittle.</onCheck>
   </prop>
 
   <prop>
     <keyword>bushes</keyword>
     <description>Small [bushes] hem the [path].</description>
-    <detailedDescription>They are blackberry [bushes].</detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    <onCheck>They are blackberry [bushes].</onCheck>
   </prop>
 
   <prop>
     <keyword>path</keyword>
     <description>The [path] itself is made of dirt.</description>
-    <detailedDescription>
+    <onCheck>
       The [path] is clear of root and twig, but [crumbs] lie about it.
       The [crumbs] seem out of place.
-    </detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    </onCheck>
   </prop>
 
   <prop>
     <keyword>crumbs</keyword>
     <description></description>
-    <detailedDescription>They are bread [crumbs], and they lead into the [woods] through
-a small gap in the [bushes].</detailedDescription>
-    <wantsItemID></wantsItemID>
-    <onUse></onUse>
+    <onCheck>They are bread [crumbs], and they lead into the [woods] through
+a small gap in the [bushes].</onCheck>
   </prop>
 
   <character>
@@ -66,7 +56,7 @@ a witcher like you could (check) out the surrounding and find a clue."
 
 To (check) something out, type "check" followed by the name of the thing
 you want to (check) and hit ENTER.</description>
-    <detailedDescription>Jack looks around at the tree tops.</detailedDescription>
+    <onCheck>Jack looks around at the tree tops.</onCheck>
     <onTalk>Jack: "Don't look at me!  I've been searching for a sign all day."</onTalk>
   </character>
 

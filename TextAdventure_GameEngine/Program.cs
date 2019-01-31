@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            var gameController = new GameController();
+            while (true)
+            {
+                var gameController = new GameController();
+            }
         }
     }
 }

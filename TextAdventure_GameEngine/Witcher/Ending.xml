@@ -9,16 +9,16 @@ You sprint away from the inferno and back to the village.</description>
   <exit>
     <keyword>portal</keyword>
     <description>At the edge of town, a blue [portal] shines behind a small dark figure.</description>
-    <detailedDescription>Dawn is coming soon, but the portal reminds you of dusk.</detailedDescription>
+    <onCheck>Dawn is coming soon, but the portal reminds you of dusk.</onCheck>
     <destination>Village_Jack.xml</destination>
-    <isLocked>false</isLocked>
+    <onGo>restart</onGo>
   </exit>
 
   <character>
     <keyword>jack</keyword>
     <description>It is the figure of a boy.  [Jack] is quivering before the portal.
 Jack: "I see you are weary, but we must (talk)."</description>
-    <detailedDescription>He looks horrified.</detailedDescription>
+    <onCheck>He looks horrified.</onCheck>
     <onTalk>Jack: "Geralt, where is Joss?  You did not leave him behind, did you?
 No one can survive that burning.  The White Wolf has slain a witch
 but cursed a young man to death in return.  This [portal] will not

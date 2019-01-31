@@ -57,3 +57,16 @@ C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\D
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\HallDark.xml
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut.xml
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Ending.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Clearing.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\DeepWoods.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\DeepWoods_Jack.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Ending.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Hall.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\HallDark.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Stream.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench_GateOpen.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench_RelockGate.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Village_Jack.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Woods_Jack.xml

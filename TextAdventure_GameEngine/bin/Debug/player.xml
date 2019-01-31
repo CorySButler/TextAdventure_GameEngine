@@ -3,7 +3,12 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Witcher\Trench.xml</location>
+  <location>Witcher\Village_Jack.xml</location>
+  <item>
+    <keyword>crowns</keyword>
+    <description>12</description>
+    <detailedDescription>12</detailedDescription>
+  </item>
   <item>
     <keyword>florens</keyword>
     <description>2</description>
@@ -20,8 +25,8 @@
     <detailedDescription>Best for thwarting men and elves.</detailedDescription>
   </item>
   <item>
-    <keyword>stone</keyword>
+    <keyword>silverblade</keyword>
     <description></description>
-    <detailedDescription>It glows purple as though it is full of energy.</detailedDescription>
+    <detailedDescription>Ideal for slaying monsters.</detailedDescription>
   </item>
 </root>

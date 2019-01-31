@@ -6,26 +6,24 @@
   <exit>
     <keyword>stream</keyword>
     <description>A [stream] babble quietly a short way off.</description>
-    <detailedDescription>The [stream] has an easy current.  It's shallow, but cold.</detailedDescription>
+    <onCheck>The [stream] has an easy current.  It's shallow, but cold.</onCheck>
     <destination>Stream.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <exit>
     <keyword>hut</keyword>
     <description>A witch's [hut] crowns a hill overgrown with weeds.</description>
-    <detailedDescription>Green and orange light shoots from the windows.  A voice cackles within.</detailedDescription>
+    <onCheck>Green and orange light shoots from the windows.  A voice cackles within.</onCheck>
     <destination></destination>
-    <isLocked>true</isLocked>
+    <isLocked/>
   </exit>
 
   <exit>
     <keyword>trench</keyword>
     <description>The beginnings of a [trench] lead toward the back of the [hut].</description>
-    <detailedDescription>The [trench] starts off shallow, but slopes downward sharply
-as it makes its way toward the hill.</detailedDescription>
+    <onCheck>The [trench] starts off shallow, but slopes downward sharply
+as it makes its way toward the hill.</onCheck>
     <destination>Trench.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
 </root>

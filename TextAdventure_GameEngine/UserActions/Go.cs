@@ -5,7 +5,7 @@
         public override string Keyword { get { return "go"; } }
         public override void Respond(GameController gameController, string[] inputWords)
         {
-            gameController.ChangeRoom(inputWords[1]);
+            gameController.Go(inputWords[1]);
         }
     }
 }

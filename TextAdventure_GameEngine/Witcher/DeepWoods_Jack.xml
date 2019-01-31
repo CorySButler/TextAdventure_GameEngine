@@ -4,12 +4,17 @@
   <description>Thorns prick you skin as you push through the deep woods.</description>
 
   <exit>
-    <keyword>stream</keyword>
-    <description>A [stream] babble quietly a short way off.</description>
-    <detailedDescription>The [stream] has an easy current.  It's shallow, but cold.</detailedDescription>
-    <destination>Stream.xml</destination>
-    <isLocked>false</isLocked>
+    <keyword>deepwoods</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>DeepWoods.xml</destination>
   </exit>
+
+  <prop>
+    <keyword>stream</keyword>
+    <description>A stream babble quietly a short way off.</description>
+    <onCheck>The stream has an easy current.  It's shallow, but cold.</onCheck>
+  </prop>
 
   <character>
     <keyword>jack</keyword>
@@ -18,16 +23,16 @@ Here, (take) my [torch].  You can (use) it to light up dark places.
 
 To (take) the [torch], type "take torch" and hit ENTER.
     </description>
-    <detailedDescription>Jack is too weak to make is through the thorns.</detailedDescription>
+    <onCheck>Jack is too weak to make is through the thorns.</onCheck>
     <onTalk>Jack: "I'm going back home.  I'll leave it to you to find Joss."</onTalk>
   </character>
 
   <item>
     <keyword>torch</keyword>
     <description>Jack hold an unlit [torch] in his outstretched arm.</description>
-    <detailedDescription>This can light up dark places.</detailedDescription>
+    <onCheck>This can light up dark places.</onCheck>
     <id>0</id>
-    <onTake></onTake>
+    <onTake>go deepwoods</onTake>
   </item>
 
 </root>

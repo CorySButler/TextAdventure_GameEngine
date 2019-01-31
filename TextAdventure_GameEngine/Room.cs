@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -7,6 +8,7 @@ namespace TextAdventure_GameEngine
 {
     public class Room
     {
+        private string _savePath;
         private string _filePath;
         private string _description;
         private List<Exit> _exits;
@@ -16,9 +18,14 @@ namespace TextAdventure_GameEngine
 
         public string FilePath { get { return _filePath; } }
 
-        public Room(string filePath)
+        public Room(string fileName)
         {
-            _filePath = "Witcher\\" + filePath;
+            _savePath = "Save\\" + fileName;
+
+            if (File.Exists(_savePath))
+                _filePath = _savePath;
+            else
+                _filePath = "Witcher\\" + fileName;
 
             var data = XElement.Load(_filePath);
             _description = data.Element("description").Value;
@@ -27,9 +34,12 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = exit.Element("keyword").Value,
                          Description = exit.Element("description").Value,
-                         DetailedDescription = exit.Element("detailedDescription").Value,
+                         OnCheck = exit.Element("onCheck").Value,
                          Destination = exit.Element("destination").Value,
-                         IsLocked = exit.Element("isLocked").Value == "true"
+                         OnGo = exit.Elements("onGo").Any() ? exit.Element("onGo").Value : "",
+                         IsLocked = exit.Elements("isLocked").Any() ? exit.Element("isLocked").Value != "false" : false,
+                         WantsItemId = exit.Elements("wantsItemId").Any() ? exit.Element("wantsItemId").Value : "",
+                         OnUse = exit.Elements("onUse").Any() ? exit.Element("onUse").Value : ""
                      }).ToList();
 
             _props = (from prop in data.Elements("prop")
@@ -37,9 +47,9 @@ namespace TextAdventure_GameEngine
                       {
                           Keyword = prop.Element("keyword").Value,
                           Description = prop.Element("description").Value,
-                          DetailedDescription = prop.Element("detailedDescription").Value,
-                          WantItemId = prop.Element("wantsItemID").Value,
-                          OnUse = prop.Element("onUse").Value
+                          OnCheck = prop.Element("onCheck").Value,
+                          WantsItemId = prop.Elements("wantsItemId").Any() ? prop.Element("wantsItemId").Value : "",
+                          OnUse = prop.Elements("onUse").Any() ? prop.Element("onUse").Value : ""
                       }).ToList();
 
             _characters = (from character in data.Elements("character")
@@ -47,8 +57,10 @@ namespace TextAdventure_GameEngine
                       {
                           Keyword = character.Element("keyword").Value,
                           Description = character.Element("description").Value,
-                          DetailedDescription = character.Element("detailedDescription").Value,
-                          OnTalk = character.Element("onTalk").Value
+                          OnCheck = character.Element("onCheck").Value,
+                          OnTalk = character.Element("onTalk").Value,
+                          WantsItemId = character.Elements("wantsItemId").Any() ? character.Element("wantsItemId").Value : "",
+                          OnUse = character.Elements("onUse").Any() ? character.Element("onUse").Value : ""
                       }).ToList();
 
             _items = (from item in data.Elements("item")
@@ -56,9 +68,11 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = item.Element("keyword").Value,
                          Description = item.Element("description").Value,
-                         DetailedDescription = item.Element("detailedDescription").Value,
+                         OnCheck = item.Element("onCheck").Value,
                          Id = item.Element("id").Value,
-                         OnTake = item.Element("onTake").Value
+                         OnTake = item.Element("onTake").Value,
+                         WantsItemId = item.Elements("wantsItemId").Any() ? item.Element("wantsItemId").Value : "",
+                         OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();
 
             Console.WriteLine(Describe());
@@ -191,11 +205,14 @@ namespace TextAdventure_GameEngine
 
         private void Save()
         {
+            if (!Directory.Exists("Save")) Directory.CreateDirectory("Save");
+
             var data = new XElement("root", new XElement("description", _description));
+            data = AddCharactersToXElement(data);
             data = AddExitsToXElement(data);
             data = AddPropsToXElement(data);
             data = AddItemsToXElement(data);
-            data.Save(_filePath);
+            data.Save(_savePath);
         }
 
         private XElement AddCharactersToXElement(XElement xElement)
@@ -205,8 +222,10 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("character",
                     new XElement("keyword", character.Keyword),
                     new XElement("description", character.Description),
-                    new XElement("detailedDescription", character.DetailedDescription),
-                    new XElement("onTalk", character.OnTalk)
+                    new XElement("onCheck", character.OnCheck),
+                    new XElement("onTalk", character.OnTalk),
+                    new XElement("wantsItemId", character.WantsItemId),
+                    new XElement("onUse", character.OnUse)
                     ));
             }
 
@@ -220,9 +239,12 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("exit",
                     new XElement("keyword", exit.Keyword),
                     new XElement("description", exit.Description),
-                    new XElement("detailedDescription", exit.DetailedDescription),
+                    new XElement("onCheck", exit.OnCheck),
                     new XElement("destination", exit.Destination),
-                    new XElement("isLocked", exit.IsLocked)
+                    new XElement("isLocked", exit.IsLocked),
+                    new XElement("wantsItemId", exit.WantsItemId),
+                    new XElement("onUse", exit.OnUse),
+                    new XElement("onGo", exit.OnGo)
                     ));
             }
 
@@ -236,8 +258,8 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("prop",
                     new XElement("keyword", prop.Keyword),
                     new XElement("description", prop.Description),
-                    new XElement("detailedDescription", prop.DetailedDescription),
-                    new XElement("wantsItemID", prop.WantItemId),
+                    new XElement("onCheck", prop.OnCheck),
+                    new XElement("wantsItemId", prop.WantsItemId),
                     new XElement("onUse", prop.OnUse)
                     ));
             }
@@ -252,9 +274,11 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("item",
                     new XElement("keyword", item.Keyword),
                     new XElement("description", item.Description),
-                    new XElement("detailedDescription", item.DetailedDescription),
+                    new XElement("onCheck", item.OnCheck),
                     new XElement("id", item.Id),
-                    new XElement("onTake", item.OnTake)
+                    new XElement("onTake", item.OnTake),
+                    new XElement("wantsItemId", item.WantsItemId),
+                    new XElement("onUse", item.OnUse)
                     ));
             }
 

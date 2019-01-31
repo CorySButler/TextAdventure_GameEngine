@@ -6,24 +6,22 @@
   <exit>
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
-    <detailedDescription>Pale torch light flickers below.</detailedDescription>
+    <onCheck>Pale torch light flickers below.</onCheck>
     <destination>Hall.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
   
   <exit>
     <keyword>ending</keyword>
     <description></description>
-    <detailedDescription></detailedDescription>
+    <onCheck></onCheck>
     <destination>Ending.xml</destination>
-    <isLocked>false</isLocked>
   </exit>
 
   <prop>
     <keyword>witch</keyword>
     <description>A cackling [witch] cries some incantation in a hoarse voice.</description>
-    <detailedDescription>She is fat and aged, brimming with dark magic and a vile spirit.</detailedDescription>
-    <wantsItemID>3</wantsItemID>
+    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
+    <wantsItemId>3</wantsItemId>
     <onUse>go ending</onUse>
   </prop>
 
