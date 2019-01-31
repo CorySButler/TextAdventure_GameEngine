@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The mist of the gate vanishes, but tree roots spring from the walls
+of the trench you, barring the way out.</description>
+
+  <exit>
+    <keyword>clearing</keyword>
+    <description>The [clearning] is at the top of the slope, behind the tree roots.</description>
+    <detailedDescription>Star speckle the sky above the [clearning].</detailedDescription>
+    <destination></destination>
+    <isLocked>true</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>An open [gate] stands at the end of the trench.</description>
+    <detailedDescription>A dark void opens behind the [gate].</detailedDescription>
+    <destination>HallDark.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>trench_relockgate</keyword>
+    <description></description>
+    <detailedDescription></detailedDescription>
+    <destination>Trench.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>moss</keyword>
+    <description>[Moss] covers the walls of the trench.</description>
+    <detailedDescription>The moss is dry and grey.</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+  <prop>
+    <keyword>tiles</keyword>
+    <description>A group of polish [tiles] are pressed into the wall need the gate.</description>
+    <detailedDescription>At the center of the [tiles] is a small [hole].</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+  <prop>
+    <keyword>hole</keyword>
+    <description></description>
+    <detailedDescription>Something small could fit inside this hole.</detailedDescription>
+    <wantsItemID>1</wantsItemID>
+    <onUse>go trench_relockgate</onUse>
+  </prop>
+
+  <prop>
+    <keyword>paper</keyword>
+    <description>A leaf of [paper] rests on the ground.</description>
+    <detailedDescription>A note is written in Joss's hand: "To (use) and item in your (inventory)
+type 'use' then the item's name and then the name the thing
+you want to use the item on, and then hit ENTER.
+For example, to look a gate, a witch could type 'use stone hole'."</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+</root>

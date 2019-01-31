@@ -10,7 +10,31 @@ namespace TextAdventure_GameEngine
         public string Name;
         public Genders Gender;
         public int Gold;
-        private List<Item> _items = new List<Item>();
+        private List<Item> _items = new List<Item> { new Item
+                     {
+                         Keyword = "florens",
+                         Description = "2",
+                         DetailedDescription = "2",
+                         Id = "00"
+                     }, new Item
+                     {
+                         Keyword = "orens",
+                         Description = "1",
+                         DetailedDescription = "1",
+                         Id = "00"
+                     }, new Item
+                     {
+                         Keyword = "steelblade",
+                         Description = "",
+                         DetailedDescription = "Best for thwarting men and elves.",
+                         Id = "2"
+                     }, new Item
+                     {
+                         Keyword = "silverblade",
+                         Description = "",
+                         DetailedDescription = "Ideal for slaying monsters.",
+                         Id = "3"
+                     }};
         private string _location;
 
         public List<Item> Items { get { return _items; } }

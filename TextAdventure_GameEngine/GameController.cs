@@ -9,13 +9,13 @@ namespace TextAdventure_GameEngine
         private TextInput _textInput;
         private Room _room;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Drop(), new Examine(), new Go(), new Inventory(), new Take(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Drop(), new Go(), new Inventory(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
-            _player = new Player() { Name = "Henry", Gender = Genders.MALE, Gold = 10 };
+            _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _textInput = new TextInput();
-            _room = new Room("GameData/Cell_Player_FirstTime.xml");
+            _room = new Room("Village_Jack.xml");
             _player.UpdateLocation(_room);
 
             while (true)
@@ -35,7 +35,6 @@ namespace TextAdventure_GameEngine
                 }
                 else
                 { 
-                    Console.WriteLine("\nYou head off to the {0}.\n", keyword);
                     _room = _room.Exit(keyword);
                     _player.UpdateLocation(_room);
                 }
@@ -48,7 +47,7 @@ namespace TextAdventure_GameEngine
 
         public void CheckInventory()
         {
-            string inventory = "\nName: " + _player.Name + "\nGold: " + _player.Gold + "\n";
+            string inventory = "\nName: " + _player.Name + "\ncrowns: " + _player.Gold + "\n";
             foreach (Item item in _player.Items)
             {
                 inventory += item.Keyword + ": " + item.DetailedDescription + "\n";
@@ -79,15 +78,15 @@ namespace TextAdventure_GameEngine
                 Exit exit = _room.GetExit(keyword);
                 Console.WriteLine("\n{0}\n", exit.DetailedDescription);
             }
-            else if (_room.HasItem(keyword))
-            {
-                Item item = _room.GetItem(keyword);
-                Console.WriteLine("\n{0}\n", item.DetailedDescription);
-            }
             else if (_room.HasProp(keyword))
             {
                 Prop prop = _room.GetProp(keyword);
                 Console.WriteLine("\n{0}\n", prop.DetailedDescription);
+            }
+            else if (_room.HasItem(keyword))
+            {
+                Item item = _room.GetItem(keyword);
+                Console.WriteLine("\n{0}\n", item.DetailedDescription);
             }
             else
             {
@@ -103,10 +102,16 @@ namespace TextAdventure_GameEngine
                 _player.AddItem(item);
                 _room.RemoveItem(item);
                 Console.WriteLine("\nYou take the {0}.\n", keyword);
+                if (item.OnTake != "")
+                    _textInput.Accept(item.OnTake, this);
             }
             else if (_room.HasProp(keyword))
             {
                 Console.WriteLine("\nYou cannot take the {0}.\n", keyword);
+            }
+            else if (_room.HasCharacter(keyword))
+            {
+                Console.WriteLine("\nYou cannot take {0}.\n", keyword);
             }
             else
             {
@@ -114,15 +119,21 @@ namespace TextAdventure_GameEngine
             }
         }
 
+        public void Talk(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                Character character = _room.GetCharacter(keyword);
+                Console.WriteLine(character.OnTalk);
+            }
+            else
+            {
+                Console.WriteLine("You cannot talk to the {0}.", keyword);
+            }
+        }
+
         public void UseItem(string keyword, string targetKeyword)
         {
-            // Give interactable the item
-            // Check interactable's inventory
-            //      If has needed item
-            //          perform action
-            //      Else
-            //          give back
-            //          "cannot use item on interactable"
             Item item;
             if (_player.HasItem(keyword))
             {
@@ -134,26 +145,34 @@ namespace TextAdventure_GameEngine
                 return;
             }
 
-            InteractableObject interactableObject;
-            if (_room.HasExit(targetKeyword))
+            Prop interactableObject;
+            /*if (_room.HasExit(targetKeyword))
             {
                 interactableObject = _room.GetExit(targetKeyword);
             }
-            else if (_room.HasProp(targetKeyword))
+            else*/ if (_room.HasProp(targetKeyword))
             {
                 interactableObject = _room.GetProp(targetKeyword);
-            }
+            }/*
             else if (_room.HasItem(targetKeyword))
             {
                 interactableObject = _room.GetItem(targetKeyword);
-            }
+            }*/
             else
             {
                 Console.WriteLine("\nThere is no {0}.\n", targetKeyword);
                 return;
             }
 
+            if (interactableObject.WantItemId != item.Id)
+            {
+                Console.WriteLine("\nYou cannot use the {0} on the {1}.", keyword, targetKeyword);
+                return;
+            }
+
             Console.WriteLine("\nYou used the {0} on the {1}.\n", keyword, targetKeyword);
+            _textInput.Accept(interactableObject.OnUse, this);
+            _player.RemoveItem(item);
         }
     }
 }

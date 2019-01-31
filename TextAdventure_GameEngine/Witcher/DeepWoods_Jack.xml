@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>Thorns prick you skin as you push through the deep woods.</description>
+
+  <exit>
+    <keyword>stream</keyword>
+    <description>A [stream] babble quietly a short way off.</description>
+    <detailedDescription>The [stream] has an easy current.  It's shallow, but cold.</detailedDescription>
+    <destination>Stream.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <character>
+    <keyword>jack</keyword>
+    <description>Jack is caught in the thorns.  "Ouch!  I can't make it any further.
+Here, (take) my [torch].  You can (use) it to light up dark places.
+
+To (take) the [torch], type "take torch" and hit ENTER.
+    </description>
+    <detailedDescription>Jack is too weak to make is through the thorns.</detailedDescription>
+    <onTalk>Jack: "I'm going back home.  I'll leave it to you to find Joss."</onTalk>
+  </character>
+
+  <item>
+    <keyword>torch</keyword>
+    <description>Jack hold an unlit [torch] in his outstretched arm.</description>
+    <detailedDescription>This can light up dark places.</detailedDescription>
+    <id>0</id>
+    <onTake></onTake>
+  </item>
+
+</root>

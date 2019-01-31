@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>Thorns prick you skin as you push through the deep woods.
+Jask is no where to be found</description>
+
+  <exit>
+    <keyword>stream</keyword>
+    <description>A [stream] babble quietly a short way off.</description>
+    <detailedDescription>The [stream] has an easy current.  It's shallow, but cold.</detailedDescription>
+    <destination>Stream.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+</root>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>You come across a wooden bridge passing over a dark, shallow stream.</description>
+
+  <exit>
+    <keyword>woods</keyword>
+    <description>The black, thorn-ridden [woods] lie on one side of the bridge.</description>
+    <detailedDescription>The [woods] are dark, and a chill breeze blows from them.</detailedDescription>
+    <destination>DeepWoods.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>clearing</keyword>
+    <description>A [clearning] can be seen on the other side.</description>
+    <detailedDescription>Star speckle the sky above the [clearning].</detailedDescription>
+    <destination>Clearing.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>book</keyword>
+    <description>A thin [book] rests in the middle of the bridge.</description>
+    <detailedDescription>The cover has a hand-written title: Joss's Survival guide.
+Most of its pages have been torn out.  One of the remaining pages reads:
+"To see what items you are carrying with you, type "inventory" and hit ENTER."</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+</root>

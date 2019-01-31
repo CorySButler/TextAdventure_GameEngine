@@ -12,12 +12,13 @@ namespace TextAdventure_GameEngine
         private List<Exit> _exits;
         private List<Item> _items;
         private List<Prop> _props;
+        private List<Character> _characters;
 
         public string FilePath { get { return _filePath; } }
 
         public Room(string filePath)
         {
-            _filePath = filePath;
+            _filePath = "Witcher\\" + filePath;
 
             var data = XElement.Load(_filePath);
             _description = data.Element("description").Value;
@@ -36,7 +37,18 @@ namespace TextAdventure_GameEngine
                       {
                           Keyword = prop.Element("keyword").Value,
                           Description = prop.Element("description").Value,
-                          DetailedDescription = prop.Element("detailedDescription").Value
+                          DetailedDescription = prop.Element("detailedDescription").Value,
+                          WantItemId = prop.Element("wantsItemID").Value,
+                          OnUse = prop.Element("onUse").Value
+                      }).ToList();
+
+            _characters = (from character in data.Elements("character")
+                      select new Character
+                      {
+                          Keyword = character.Element("keyword").Value,
+                          Description = character.Element("description").Value,
+                          DetailedDescription = character.Element("detailedDescription").Value,
+                          OnTalk = character.Element("onTalk").Value
                       }).ToList();
 
             _items = (from item in data.Elements("item")
@@ -44,7 +56,9 @@ namespace TextAdventure_GameEngine
                      {
                          Keyword = item.Element("keyword").Value,
                          Description = item.Element("description").Value,
-                         DetailedDescription = item.Element("detailedDescription").Value
+                         DetailedDescription = item.Element("detailedDescription").Value,
+                         Id = item.Element("id").Value,
+                         OnTake = item.Element("onTake").Value
                      }).ToList();
 
             Console.WriteLine(Describe());
@@ -64,6 +78,11 @@ namespace TextAdventure_GameEngine
                 if (prop.Description != "") combinedText += prop.Description + "\n";
             }
 
+            foreach (Character character in _characters)
+            {
+                if (character.Description != "") combinedText += character.Description + "\n";
+            }
+
             foreach (Item item in _items)
             {
                 if (item.Description != "") combinedText += item.Description + "\n";
@@ -76,6 +95,15 @@ namespace TextAdventure_GameEngine
         {
             _items.Add(item);
             Save();
+        }
+
+        public bool HasCharacter(string keyword)
+        {
+            foreach (Character character in _characters)
+            {
+                if (character.Keyword == keyword) return true;
+            }
+            return false;
         }
 
         public bool HasExit(string keyword)
@@ -103,6 +131,15 @@ namespace TextAdventure_GameEngine
                 if (prop.Keyword == keyword) return true;
             }
             return false;
+        }
+
+        public Character GetCharacter(string keyword)
+        {
+            foreach (Character character in _characters)
+            {
+                if (character.Keyword == keyword) return character;
+            }
+            return null;
         }
 
         public Exit GetExit(string keyword)
@@ -161,6 +198,21 @@ namespace TextAdventure_GameEngine
             data.Save(_filePath);
         }
 
+        private XElement AddCharactersToXElement(XElement xElement)
+        {
+            foreach (Character character in _characters)
+            {
+                xElement.Add(new XElement("character",
+                    new XElement("keyword", character.Keyword),
+                    new XElement("description", character.Description),
+                    new XElement("detailedDescription", character.DetailedDescription),
+                    new XElement("onTalk", character.OnTalk)
+                    ));
+            }
+
+            return xElement;
+        }
+
         private XElement AddExitsToXElement(XElement xElement)
         {
             foreach (Exit exit in _exits)
@@ -181,10 +233,12 @@ namespace TextAdventure_GameEngine
         {
             foreach (Prop prop in _props)
             {
-                xElement.Add(new XElement("item",
+                xElement.Add(new XElement("prop",
                     new XElement("keyword", prop.Keyword),
                     new XElement("description", prop.Description),
-                    new XElement("detailedDescription", prop.DetailedDescription)
+                    new XElement("detailedDescription", prop.DetailedDescription),
+                    new XElement("wantsItemID", prop.WantItemId),
+                    new XElement("onUse", prop.OnUse)
                     ));
             }
 
@@ -198,7 +252,9 @@ namespace TextAdventure_GameEngine
                 xElement.Add(new XElement("item",
                     new XElement("keyword", item.Keyword),
                     new XElement("description", item.Description),
-                    new XElement("detailedDescription", item.DetailedDescription)
+                    new XElement("detailedDescription", item.DetailedDescription),
+                    new XElement("id", item.Id),
+                    new XElement("onTake", item.OnTake)
                     ));
             }
 

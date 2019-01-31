@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The witch screams in agony and perishes.  Flames spew from the cauldron.
+The entire hut begins to burn.  Orange and green fires rush to the very roots of the hill.
+You stomp the front door and its wooden planks splinter and fly into the night.
+You sprint away from the inferno and back to the village.</description>
+
+  <exit>
+    <keyword>portal</keyword>
+    <description>At the edge of town, a blue [portal] shines behind a small dark figure.</description>
+    <detailedDescription>Dawn is coming soon, but the portal reminds you of dusk.</detailedDescription>
+    <destination>Village_Jack.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <character>
+    <keyword>jack</keyword>
+    <description>It is the figure of a boy.  [Jack] is quivering before the portal.
+Jack: "I see you are weary, but we must (talk)."</description>
+    <detailedDescription>He looks horrified.</detailedDescription>
+    <onTalk>Jack: "Geralt, where is Joss?  You did not leave him behind, did you?
+No one can survive that burning.  The White Wolf has slain a witch
+but cursed a young man to death in return.  This [portal] will not
+send you far away from your misdeeds, but will instead give you
+a change to attone for them.  (Go) through the [portal] if you
+would not carry Joss's death on your shoulders for the rest of your days."</onTalk>
+  </character>
+
+</root>

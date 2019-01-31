@@ -1,7 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <name>Henry</name>
+  <name>Geralt</name>
   <gender>MALE</gender>
-  <gold>10</gold>
-  <location>GameData/Dungeon_B2.xml</location>
+  <gold>12</gold>
+  <location>Witcher\Trench.xml</location>
+  <item>
+    <keyword>florens</keyword>
+    <description>2</description>
+    <detailedDescription>2</detailedDescription>
+  </item>
+  <item>
+    <keyword>orens</keyword>
+    <description>1</description>
+    <detailedDescription>1</detailedDescription>
+  </item>
+  <item>
+    <keyword>steelblade</keyword>
+    <description></description>
+    <detailedDescription>Best for thwarting men and elves.</detailedDescription>
+  </item>
+  <item>
+    <keyword>stone</keyword>
+    <description></description>
+    <detailedDescription>It glows purple as though it is full of energy.</detailedDescription>
+  </item>
 </root>

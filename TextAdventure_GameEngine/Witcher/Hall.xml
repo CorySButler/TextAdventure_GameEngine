@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is lit by the light of your torch.  You hang the torch in an empty bracket above the wall.
+You can now see everything in this small room, except the gate.  Where it ought to be
+now stands a wall of solid stone.</description>
+
+  <exit>
+    <keyword>ladder</keyword>
+    <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>
+    <detailedDescription>It looks sturdy enough to hold your weight.  A cackling voice can be heard above.</detailedDescription>
+    <destination>WitchsHut.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone [stairs] tumbles downward.</description>
+    <detailedDescription>The air grows colder this way.  Mingled sounds of whimpers and growls come up the [stairs].</detailedDescription>
+    <destination>Basement_JossWolf.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The [walls] of the room are close and build of stone.</description>
+    <detailedDescription>Claw [marks] are carved into one of the [walls].</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+  <prop>
+    <keyword>marks</keyword>
+    <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
+    <detailedDescription>Deep stratches like these can only mean one thing: nekkers.  What's a nekker doing in Toussaint?</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+</root>

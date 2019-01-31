@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The trap door opens silently.  The room is bright and warm, but eerie.</description>
+
+  <exit>
+    <keyword>ladder</keyword>
+    <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
+    <detailedDescription>Pale torch light flickers below.</detailedDescription>
+    <destination>Hall.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+  
+  <exit>
+    <keyword>ending</keyword>
+    <description></description>
+    <detailedDescription></detailedDescription>
+    <destination>Ending.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>witch</keyword>
+    <description>A cackling [witch] cries some incantation in a hoarse voice.</description>
+    <detailedDescription>She is fat and aged, brimming with dark magic and a vile spirit.</detailedDescription>
+    <wantsItemID>3</wantsItemID>
+    <onUse>go ending</onUse>
+  </prop>
+
+</root>

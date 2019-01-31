@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is cold and dark.</description>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>The only source of light is star light twinkling in through the [gate].</description>
+    <detailedDescription>The [gate] is the only path you can see.</detailedDescription>
+    <destination>Trench_GateOpen.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <exit>
+    <keyword>hall</keyword>
+    <description></description>
+    <detailedDescription></detailedDescription>
+    <destination>Hall.xml</destination>
+    <isLocked>false</isLocked>
+  </exit>
+
+  <prop>
+    <keyword>darkness</keyword>
+    <description>The [darkness] is so dense it is almost blinking.</description>
+    <detailedDescription>The [darkness] is just waiting to be lit up.</detailedDescription>
+    <wantsItemID>0</wantsItemID>
+    <onUse>go hall</onUse>
+  </prop>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The sound of you breath echoes in your ears.  The [walls] of this room must be close.</description>
+    <detailedDescription>You cannot see anything, but reaching out your hand,
+you feel marks carved into one of the [walls].</detailedDescription>
+    <wantsItemID></wantsItemID>
+    <onUse></onUse>
+  </prop>
+
+</root>
