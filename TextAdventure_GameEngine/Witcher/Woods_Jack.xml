@@ -33,10 +33,8 @@ though their bark is dry and brittle.</onCheck>
   <prop>
     <keyword>path</keyword>
     <description>The [path] itself is made of dirt.</description>
-    <onCheck>
-      The [path] is clear of root and twig, but [crumbs] lie about it.
-      The [crumbs] seem out of place.
-    </onCheck>
+    <onCheck>The [path] is clear of root and twig, but [crumbs] lie about it.
+The [crumbs] seem out of place.</onCheck>
   </prop>
 
   <prop>

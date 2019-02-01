@@ -11,7 +11,7 @@ namespace TextAdventure_GameEngine
         private Room _room;
         private bool _isGameOver = false;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new Go(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -80,10 +80,21 @@ namespace TextAdventure_GameEngine
                 Item item = _player.GetItem(keyword);
                 _room.AddItem(item);
                 _player.RemoveItem(item);
+                Console.WriteLine("\nYou drop the {0}.\n", keyword);
             }
             else
             {
                 Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+            }
+        }
+
+        public void DropSilent(string keyword)
+        {
+            if (_player.HasItem(keyword))
+            {
+                Item item = _player.GetItem(keyword);
+                _room.AddItem(item);
+                _player.RemoveItem(item);
             }
         }
 
@@ -93,7 +104,7 @@ namespace TextAdventure_GameEngine
             {
                 if (_room.GetExit(keyword).IsLocked)
                 {
-                    Console.WriteLine("\nThe path to the {0} is locked.\n", keyword);
+                    Console.WriteLine("\nThe {0} is locked.\n", keyword);
                 }
                 else
                 {
@@ -108,13 +119,15 @@ namespace TextAdventure_GameEngine
 
                     if (isRestarting) return;
 
+                    Console.WriteLine();
+
                     _room = _room.Exit(keyword);
                     _player.UpdateLocation(_room);
                 }
             }
             else
             {
-                Console.WriteLine("\nThere is no path to the {0}.\n", keyword);
+                Console.WriteLine("\nYou cannot go to the {0}.\n", keyword);
             }
         }
 
@@ -166,11 +179,11 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                Console.WriteLine(character.OnTalk);
+                Console.WriteLine("\n{0}\n", character.OnTalk);
             }
             else
             {
-                Console.WriteLine("You cannot talk to the {0}.", keyword);
+                Console.WriteLine("\nYou cannot talk to the {0}.\n", keyword);
             }
         }
 

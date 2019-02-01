@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>The floor of the trench slopes steeply downward.</description>
+  <description>The floor of the trench slopes steeply downward.  Tree groping roots recoil into
+the soft dirt walls of the trench.</description>
 
   <exit>
     <keyword>clearing</keyword>
@@ -12,7 +13,7 @@
 
   <exit>
     <keyword>gate</keyword>
-    <description>A glowing [gate] of swirling purple mist stands at the end of the trench.</description>
+    <description>A glowing [gate] fills with swirling purple mist stands at the end of the trench.</description>
     <onCheck>One does not simple walk through this gate.  There must be some kind of
 mechanism to open it.</onCheck>
     <destination></destination>

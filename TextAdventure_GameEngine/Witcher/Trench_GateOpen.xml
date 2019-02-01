@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>The mist of the gate vanishes, but tree roots spring from the walls
-of the trench you, barring the way out.</description>
+  <description>The mist of the gate vanishes, but the tree roots spring from the walls
+of the trench, barring the way out.</description>
 
   <exit>
     <keyword>clearing</keyword>
@@ -43,7 +43,7 @@ of the trench you, barring the way out.</description>
     <description></description>
     <onCheck>Something small could fit inside this hole.</onCheck>
     <wantsItemId>1</wantsItemId>
-    <onUse>go trench|drop stone</onUse>
+    <onUse>go trench|dropsilent stone</onUse>
   </prop>
 
   <prop>
