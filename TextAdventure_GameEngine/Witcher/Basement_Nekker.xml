@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>A cold, stone celar is lit in a pale red light.</description>
+
+  <exit>
+    <keyword>basement_josswolf</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Basement_JossWolf.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone [stairs] stagger upward.</description>
+    <onCheck>Warm and torch light flow down the [stairs].</onCheck>
+    <destination>Hall.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>Swirling red mist bars entrance to a magical [gate].</description>
+    <onCheck>The [gate] lets nothing enter, but pours out malice and desire.</onCheck>
+    <destination></destination>
+    <isLocked/>
+  </exit>
+
+  <prop>
+    <keyword>carcass</keyword>
+    <description>A stinking [carcass] rots before the red [gate].</description>
+    <onCheck>It is the body of a wolf.  It was stabbed several times.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>boy</keyword>
+    <description>A [boy] shivers in the corner.</description>
+    <onCheck>The [boy] is tall.  His arms shield his face.  A mess of red hair peeks over them.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>wolf</keyword>
+    <description>A [wolf] stands strong, protecting the [boy] and yet more wicked creature.</description>
+    <onCheck>Its ears are down, and its hairs stand on end.  It gnashes its teeth when the nekker comes too near.</onCheck>
+  </prop>
+
+  <character>
+    <keyword>nekker</keyword>
+    <description>A vicious [nekker] leaps about the room, spitting and flailing and avoiding the [wolf].</description>
+    <onCheck>It is naked and enraged.  It's eye are on you, but is glaces to [wolf] as well.</onCheck>
+    <onTalk>It's vile speech is full of spitting and croaking.</onTalk>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go basement_josswolf</onUse>
+  </character>
+
+</root>

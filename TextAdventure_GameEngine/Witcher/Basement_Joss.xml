@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>A cold, stone celar is lit only the torch light from the [stairs].</description>
+
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone [stairs] stagger upward.</description>
+    <onCheck>Warm and torch light flow down the [stairs].</onCheck>
+    <destination>Hall_Joss.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>Satisfied with your sacrifice the magical [gate] clears away its red mist.</description>
+    <onCheck>The [gate] lets nothing enter, but pours out malice and desire.</onCheck>
+    <destination>Subbasement.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>nekker</keyword>
+    <description>The [nekker] sprawls on the floor, vanquished by the thrust of your silver blade.</description>
+    <onCheck>It haunts this world no more, though looking upon it still bring dread.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>carcasses</keyword>
+    <description>Two wolf [carcasses] now rest before the open [gate].</description>
+    <onCheck>One was stabbed several times.  The other was felled with one swift thrust.</onCheck>
+  </prop>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] throws himself upon the newly slain wolf.</description>
+    <onCheck>He is filled with despair and spite.</onCheck>
+    <onTalk>Joss: "How could you?  You are a monster yourself."
+    
+Geralt: "The gate needed a sacrifice.  The nekker didn't cut it.  It was either the wolf or you."
+
+Joss: "Whoever's through that gate can't be worth the life of this wolf."</onTalk>
+  </character>
+
+</root>

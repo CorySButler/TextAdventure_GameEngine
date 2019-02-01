@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>A cold, stone celar is lit in a pale red light.</description>
+
+  <exit>
+    <keyword>basement_joss</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Basement_Joss.xml</destination>
+  </exit>
+  
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone [stairs] stagger upward.</description>
+    <onCheck>Warm and torch light flow down the [stairs].</onCheck>
+    <destination>Hall_JossWolf.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>Swirling red mist bars entrance to a magical [gate].</description>
+    <onCheck>The [gate] lets nothing enter, but pours out malice and desire.</onCheck>
+    <destination></destination>
+    <isLocked/>
+  </exit>
+
+  <prop>
+    <keyword>nekker</keyword>
+    <description>The [nekker] sprawls on the floor, vanquished by the thrust of your silver blade.</description>
+    <onCheck>It haunts this world no more, though looking upon it still bring dread.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>carcass</keyword>
+    <description>A stinking [carcass] rots before the red [gate].</description>
+    <onCheck>It is the body of a wolf.  It was stabbed several times.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>wolf</keyword>
+    <description>The [wolf] stands next to the boy.</description>
+    <onCheck>It is calm, and yet it appears protective of [Joss].</onCheck>
+    <wantsItemId>2</wantsItemId>
+    <onUse>go basement_joss</onUse>
+  </prop>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>The boy is indeed [Joss].  He has grown much in the past few years.</description>
+    <onCheck>His sour attitude seems deminished.  The terror of the [nekker]
+and the support of the [wolf] may have cause a change in him.</onCheck>
+    <onTalk>Joss: "Can it be you?  First this grey [wolf] and now the White Wolf comes to my aid!  I am Joss,
+and I beg you to forgive me for my misleading words I spoke to you at our last meeting.
+I have been shaken to my core, and have grown because of it."
+
+Geralt: "Good.  So you can give me the truth, and all the truth.  Are you alone down here?"
+
+Joss: "I have this [wolf] with me.  I followed him and his mate to the clearing in the woods.
+I thought they would kill me when he finally spotted me, but then that moster appeared from
+the hut and chased us down here.  A can't tell you how many days ago that was."
+
+Geralt: "What can you tell me?"
+
+Joss: "That the wolves hated the moster more than they hated me.  And that this is a witch's hut!  That monster
+obeys her and watches us.  She killed the second wolf tonight to open the [gate].  She threw some poor woman in there.
+I covered my face when the witch came, but I think the woman my have come from my own village."
+
+Geralt: "A sacrifice to open the [gate], huh?"
+
+Joss: "I suppose, but you mussn't hurt this [wolf].  He has saved my life."</onTalk>
+  </character>
+
+</root>

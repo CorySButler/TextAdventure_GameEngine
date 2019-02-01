@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is wet and hot and dripping with slime.
+The light is a putrid yellow, but its source is unclear.</description>
+
+  <exit>
+    <keyword>subbasement_jossmother</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Subbasement_JossMother.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>The magical [gate] remains open.</description>
+    <onCheck>Though freedom stand outside the [gate], a sense of fear attempt to stop you from passing through.</onCheck>
+    <destination>Basement_Joss.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>table</keyword>
+    <description>A [table] is push against one of the walls.  It is covered with various items.</description>
+    <onCheck>On the [table] rest [papers], a glass [bottle], a wooden [box], and a [whip].</onCheck>
+  </prop>
+
+  <item>
+    <keyword>papers</keyword>
+    <description></description>
+    <onCheck>They have been torn and trampled.  The writing of them can no longer be read.</onCheck>
+    <id>00</id>
+  </item>
+
+  <item>
+    <keyword>bottle</keyword>
+    <description></description>
+    <onCheck>A wide, empty bottle with a cork lid.</onCheck>
+    <id>00</id>
+  </item>
+
+  <prop>
+    <keyword>box</keyword>
+    <description></description>
+    <onCheck>Lifting the lid of the wooden [box] you see a small, iron [key].</onCheck>
+  </prop>
+
+  <item>
+    <keyword>key</keyword>
+    <description></description>
+    <onCheck>A small, iron key.</onCheck>
+    <id>4</id>
+  </item>
+
+  <item>
+    <keyword>whip</keyword>
+    <description></description>
+    <onCheck>A long, leather whip with a frayed and blood-stained end.</onCheck>
+    <id>5</id>
+  </item>
+
+  <prop>
+    <keyword>bonds</keyword>
+    <description></description>
+    <onCheck>They are wrought of iron.  There is a small keyhole in the center.</onCheck>
+    <wantsItemId>4</wantsItemId>
+    <onUse>discard key|go subbasement_jossmother</onUse>
+  </prop>
+
+  <prop>
+    <keyword>geralt_whip</keyword>
+    <description></description>
+    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to further torture this tortured soul."</onCheck>
+  </prop>
+
+  <character>
+    <keyword>mother</keyword>
+    <description>A woman hangs from her wrists clasped to a wall with iron [bonds].</description>
+    <onCheck>She has been badly beaten and some of her skin is burnt.</onCheck>
+    <onTalk>Joss's mother: "I went look for [Joss] and came across this hut.  The witch let me in,
+but locked the door.  A monster came to her.  They tortured me."</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] seeing the woman cries out at once, "[Mother]!"</description>
+    <onCheck>He pulls fruitlessly at the iron [bonds].</onCheck>
+    <onTalk>Joss: "It's my [mother]! We need to unlock her [bonds]."</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+</root>

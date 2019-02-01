@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is lit by the light of your torch hanging in a bracket on the wall.</description>
+
+  <exit>
+    <keyword>ladder</keyword>
+    <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>
+    <onCheck>It looks sturdy enough to hold your weight.  A cackling voice can be heard above.</onCheck>
+    <destination>WitchsHut_JossMother.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone [stairs] tumbles downward.</description>
+    <onCheck>The air grows colder this way, but nothing can be heard.</onCheck>
+    <destination>Basement_JossMother.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The [walls] of the room are close and build of stone.</description>
+    <onCheck>Claw [marks] are carved into one of the [walls].</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>marks</keyword>
+    <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
+    <onCheck>The deep stratches are that of a nekker.  What was that nekker doing in Toussaint?</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>geralt_whip</keyword>
+    <description></description>
+    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to further torture this tortured soul."</onCheck>
+  </prop>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] is following you closely and supporting his [mother].</description>
+    <onCheck>He holds up his [mother]'s weight, her arm pulled over his shoulders.</onCheck>
+    <onTalk>Joss: "My [mother] is weak.  We must get her home so she can rest."</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+  <character>
+    <keyword>mother</keyword>
+    <description>Joss's [mother] staggers along, clinging to her son.</description>
+    <onCheck>She can hardly keep her eyes open.</onCheck>
+    <onTalk>Joss's mother: "Get us out of here, Geralt."</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+</root>

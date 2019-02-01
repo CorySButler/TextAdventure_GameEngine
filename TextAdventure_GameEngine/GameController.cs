@@ -133,7 +133,7 @@ namespace TextAdventure_GameEngine
 
         public void Inventory()
         {
-            string inventory = "\nName: " + _player.Name + "\n";// + "\ncrowns: " + _player.Gold + "\n";
+            string inventory = "\nName: " + _player.Name + "\n";// + "\nGold: " + _player.Gold + "\n";
             foreach (Item item in _player.Items)
             {
                 inventory += item.Keyword + ": " + item.OnCheck + "\n";

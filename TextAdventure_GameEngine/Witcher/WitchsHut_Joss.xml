@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The trap door opens silently.  The room is bright and warm, but eerie.</description>
+
+  <exit>
+    <keyword>ladder</keyword>
+    <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
+    <onCheck>Pale torch light flickers below.</onCheck>
+    <destination>Hall_Joss.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>ending</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Ending_Joss.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>witch</keyword>
+    <description>A cackling [witch] cries some incantation in a hoarse voice.</description>
+    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go ending</onUse>
+  </prop>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] glares at you.</description>
+    <onCheck>He clenches the rungs of the [ladder] below you.</onCheck>
+    <onTalk>Joss: "I know not which of you I despise more."</onTalk>
+  </character>
+
+</root>

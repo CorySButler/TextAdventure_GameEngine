@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The trap door opens silently.  The room is bright and warm, but eerie.</description>
+
+  <exit>
+    <keyword>ladder</keyword>
+    <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
+    <onCheck>Pale torch light flickers below.</onCheck>
+    <destination>Hall_JossWolf.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>ending</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Ending_JossWolf.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>witch</keyword>
+    <description>A cackling [witch] cries some incantation in a hoarse voice.</description>
+    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go ending</onUse>
+  </prop>
+
+  <prop>
+    <keyword>geralt_whip</keyword>
+    <description></description>
+    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to further torture this tortured soul."</onCheck>
+  </prop>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] pulls his [mother] through the trap door.</description>
+    <onCheck>He crouches low, pulling his [mother]'s are over his shoulder.</onCheck>
+    <onTalk>[Joss] will not speak so close to the [witch].</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+  <character>
+    <keyword>mother</keyword>
+    <description>She suppresses her panicked breaths.</description>
+    <onCheck>She leans over her son, nearly spent.</onCheck>
+    <onTalk>She will not speak so close to the [witch].</onTalk>
+    <wantsItemId>5</wantsItemId>
+    <onUse>check geralt_whip|drop whip</onUse>
+  </character>
+
+</root>

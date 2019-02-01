@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The witch screams in agony and perishes.  Flames spew from the cauldron.
+The entire hut begins to burn.  Orange and green fires rush to the very roots of the hill.
+You stomp the front door and its wooden planks splinter and fly into the night.
+You sprint away from the inferno and back to the village, [Joss] stumbling behind you.</description>
+
+  <exit>
+    <keyword>portal</keyword>
+    <description>At the edge of town, a blue [portal] shines behind a small, dark figure.</description>
+    <onCheck>Dawn is coming soon, but the portal reminds you of dusk.
+
+Geralt: "I hate portals.  They make my stomach churn."</onCheck>
+    <destination>Village_Jack.xml</destination>
+    <onGo>restart</onGo>
+  </exit>
+
+  <character>
+    <keyword>joss</keyword>
+    <description>[Joss] stops before the figure.</description>
+    <onCheck>He is out of breath.</onCheck>
+    <onTalk>Jack: "Joss!  You are safe!  The White Wolf has slain a witch."
+
+Joss: "In that I take but little cheer.  He has also slain my dear protect."
+
+Jack: "Say not your 'dear protect' was your dear mother!  For a beast drag her
+from your own home this night."
+
+Geralt: "Of course I did not slay his mother.  Where did they go?"
+
+Jack: "She was dragged deep into the forest where that pyre now burns."
+
+Joss: "She was the woman beyond the gate!  No one can survive that burning.
+My protector and my mother you have taken from me."
+
+Jack: "This [portal] will not send you far away from your misdeeds, but will
+instead give you a change to attone for them.  (Go) through the [portal] if you
+would not carry these deaths on your shoulders for the rest of your days."</onTalk>
+  </character>
+
+  <character>
+    <keyword>jack</keyword>
+    <description>It is the figure of a boy.  [Jack] is quivering before the portal.
+Jack: "I see you are weary, but we must (talk)."</description>
+    <onCheck>He looks worried.</onCheck>
+    <onTalk>Jack: "Joss!  You are safe!  The White Wolf has slain a witch."
+
+Joss: "In that I take but little cheer.  He has also slain my dear protect."
+
+Jack: "Say not your 'dear protect' was your dear mother!  For a beast drag her
+from your own home this night."
+
+Geralt: "Of course I did not slay his mother.  Where did they go?"
+
+Jack: "She was dragged deep into the forest where that pyre now burns."
+
+Joss: "She was the woman beyond the gate!  No one can survive that burning.
+My protector and my mother you have taken from me."
+
+Jack: "This [portal] will not send you far away from your misdeeds, but will
+instead give you a change to attone for them.  (Go) through the [portal] if you
+would not carry these deaths on your shoulders for the rest of your days."</onTalk>
+  </character>
+
+</root>

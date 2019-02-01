@@ -8,10 +8,10 @@ You sprint away from the inferno and back to the village.</description>
 
   <exit>
     <keyword>portal</keyword>
-    <description>At the edge of town, a blue [portal] shines behind a small dark figure.</description>
+    <description>At the edge of town, a blue [portal] shines behind a small, dark figure.</description>
     <onCheck>Dawn is coming soon, but the portal reminds you of dusk.
 
-Geralt: "I have portals.  They make my stomach churn."</onCheck>
+Geralt: "I hate portals.  They make my stomach churn."</onCheck>
     <destination>Village_Jack.xml</destination>
     <onGo>restart</onGo>
   </exit>
