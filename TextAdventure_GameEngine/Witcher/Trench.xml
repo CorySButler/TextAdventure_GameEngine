@@ -36,7 +36,14 @@ mechanism to open it.</onCheck>
   <prop>
     <keyword>tiles</keyword>
     <description>A group of polish [tiles] are pressed into the wall need the gate.</description>
-    <onCheck>At the center of the [tiles] is a small hole.  A purple, glowing [stone]
+    <onCheck>At the center of the [tiles] is a small [hole].  A purple, glowing [stone]
+hovers inside.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>hole</keyword>
+    <description></description>
+    <onCheck>At the center of the [tiles] is a small [hole].  A purple, glowing [stone]
 hovers inside.</onCheck>
   </prop>
 

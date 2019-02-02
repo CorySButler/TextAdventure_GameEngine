@@ -120,10 +120,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Witcher\Basement_Joss.xml" />
-    <Content Include="Witcher\Basement_JossMother.xml" />
-    <Content Include="Witcher\Basement_JossWolf.xml" />
-    <Content Include="Witcher\Basement_Nekker.xml" />
+    <Content Include="Witcher\Basement_Joss.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Basement_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Basement_JossWolf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Basement_Nekker.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\Clearing.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -137,22 +145,36 @@
     <Content Include="Witcher\Ending.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Ending_Joss.xml" />
-    <Content Include="Witcher\Ending_JossMother.xml" />
-    <Content Include="Witcher\Ending_JossWolf.xml" />
+    <Content Include="Witcher\Ending_Joss.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Ending_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Ending_JossWolf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\Hall.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Witcher\HallDark.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Hall_Joss.xml" />
-    <Content Include="Witcher\Hall_JossMother.xml" />
-    <Content Include="Witcher\Hall_JossWolf.xml" />
+    <Content Include="Witcher\Hall_Joss.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Hall_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\Hall_JossWolf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\Stream.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Subbasement.xml" />
+    <Content Include="Witcher\Subbasement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\Trench.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -163,17 +185,25 @@
     <Content Include="Witcher\Village_Jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut_Joss.xml" />
+    <Content Include="Witcher\WitchsHut_Joss.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\WitchsHut.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut_JossMother.xml" />
-    <Content Include="Witcher\WitchsHut_JossWolf.xml" />
+    <Content Include="Witcher\WitchsHut_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Witcher\WitchsHut_JossWolf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Witcher\Woods_Jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Witcher\Subbasement_JossMother.xml" />
+    <Content Include="Witcher\Subbasement_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

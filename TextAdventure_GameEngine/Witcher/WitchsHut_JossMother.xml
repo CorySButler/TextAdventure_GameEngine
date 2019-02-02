@@ -7,14 +7,14 @@
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
     <onCheck>Pale torch light flickers below.</onCheck>
-    <destination>Hall_JossWolf.xml</destination>
+    <destination>Hall_JossMother.xml</destination>
   </exit>
 
   <exit>
     <keyword>ending</keyword>
     <description></description>
     <onCheck></onCheck>
-    <destination>Ending_JossWolf.xml</destination>
+    <destination>Ending_JossMother.xml</destination>
   </exit>
 
   <prop>

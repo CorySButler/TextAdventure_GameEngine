@@ -13,7 +13,7 @@
   <exit>
     <keyword>gate</keyword>
     <description>Satisfied with your sacrifice the magical [gate] clears away its red mist.</description>
-    <onCheck>The [gate] lets nothing enter, but pours out malice and desire.</onCheck>
+    <onCheck>Eerie yellow light pours out of the open [gate].</onCheck>
     <destination>Subbasement.xml</destination>
   </exit>
 

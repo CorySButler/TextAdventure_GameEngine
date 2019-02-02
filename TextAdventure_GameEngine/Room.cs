@@ -70,7 +70,7 @@ namespace TextAdventure_GameEngine
                          Description = item.Element("description").Value,
                          OnCheck = item.Element("onCheck").Value,
                          Id = item.Element("id").Value,
-                         OnTake = item.Element("onTake").Value,
+                         OnTake = item.Elements("onTake").Any() ? item.Element("onTake").Value : "",
                          WantsItemId = item.Elements("wantsItemId").Any() ? item.Element("wantsItemId").Value : "",
                          OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();

@@ -15,12 +15,19 @@ The light is a putrid yellow, but its source is unclear.</description>
     <keyword>gate</keyword>
     <description>The magical [gate] remains open.</description>
     <onCheck>Though freedom stand outside the [gate], a sense of fear attempt to stop you from passing through.</onCheck>
-    <destination>Basement_Joss.xml</destination>
+    <destination>Subbasement.xml</destination>
+    <onGo>check joss_will_not_leave</onGo>
   </exit>
 
   <prop>
+    <keyword>joss_will_not_leave</keyword>
+    <description></description>
+    <onCheck>Joss: "Hold it!  We are not leaving without my [mother]."</onCheck>
+  </prop>
+
+  <prop>
     <keyword>table</keyword>
-    <description>A [table] is push against one of the walls.  It is covered with various items.</description>
+    <description>A [table] is pushed against one of the walls.  It is covered with various items.</description>
     <onCheck>On the [table] rest [papers], a glass [bottle], a wooden [box], and a [whip].</onCheck>
   </prop>
 

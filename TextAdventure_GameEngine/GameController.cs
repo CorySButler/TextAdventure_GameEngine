@@ -157,8 +157,12 @@ namespace TextAdventure_GameEngine
                 _player.AddItem(item);
                 _room.RemoveItem(item);
                 Console.WriteLine("\nYou take the {0}.\n", keyword);
-                if (item.OnTake != "")
-                    _textInput.Accept(item.OnTake, this);
+                var actions = item.OnTake.Split('|');
+                foreach (var action in actions)
+                {
+                    if (action == "") continue;
+                    _textInput.Accept(action, this);
+                }
             }
             else if (_room.HasProp(keyword))
             {

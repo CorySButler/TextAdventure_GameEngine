@@ -20,7 +20,7 @@
   <prop>
     <keyword>book</keyword>
     <description>A thin [book] rests in the middle of the bridge.</description>
-    <onCheck>The cover has a hand-written title: Joss's Survival guide.
+    <onCheck>The cover has a hand-written title: Joss's Survival Guide.
 Most of its pages have been torn out.  One of the remaining pages reads:
 "To see what items you are carrying with you, type "inventory" and hit ENTER."</onCheck>
   </prop>

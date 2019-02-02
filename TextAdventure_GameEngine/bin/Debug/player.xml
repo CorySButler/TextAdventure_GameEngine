@@ -3,7 +3,12 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Witcher\Clearing.xml</location>
+  <location>Witcher\Woods_Jack.xml</location>
+  <item>
+    <keyword>crowns</keyword>
+    <description>12</description>
+    <detailedDescription>12</detailedDescription>
+  </item>
   <item>
     <keyword>florens</keyword>
     <description>2</description>
@@ -23,15 +28,5 @@
     <keyword>silverblade</keyword>
     <description></description>
     <detailedDescription>Ideal for slaying monsters.</detailedDescription>
-  </item>
-  <item>
-    <keyword>torch</keyword>
-    <description>Jack hold an unlit [torch] in his outstretched arm.</description>
-    <detailedDescription>This can light up dark places.</detailedDescription>
-  </item>
-  <item>
-    <keyword>crowns</keyword>
-    <description>12</description>
-    <detailedDescription>12</detailedDescription>
   </item>
 </root>

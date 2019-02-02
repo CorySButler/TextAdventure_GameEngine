@@ -12,7 +12,7 @@
 
   <prop>
     <keyword>table</keyword>
-    <description>A [table] is push against one of the walls.  It is covered with various items.</description>
+    <description>A [table] is pushed against one of the walls.  It is covered with various items.</description>
     <onCheck>On the [table] rest various items of little importance.</onCheck>
   </prop>
 

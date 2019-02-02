@@ -7,7 +7,7 @@
     <keyword>stairs</keyword>
     <description>A set of uneven stone [stairs] stagger upward.</description>
     <onCheck>Warm and torch light flow down the [stairs].</onCheck>
-    <destination>Hall_JossWolf.xml</destination>
+    <destination>Hall_JossMother.xml</destination>
   </exit>
 
   <exit>
