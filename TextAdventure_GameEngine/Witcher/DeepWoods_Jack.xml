@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>Thorns prick you skin as you push through the deep woods.</description>
+  <description>Thorns prick your skin as you push through the deep woods.</description>
 
   <exit>
     <keyword>deepwoods</keyword>
@@ -12,7 +12,7 @@
 
   <prop>
     <keyword>stream</keyword>
-    <description>A stream babble quietly a short way off.</description>
+    <description>A stream babbles quietly a short way off.</description>
     <onCheck>The stream has an easy current.  It's shallow, but cold.</onCheck>
   </prop>
 
@@ -29,7 +29,7 @@ To (take) the [torch], type "take torch" and hit ENTER.
 
   <item>
     <keyword>torch</keyword>
-    <description>Jack hold an unlit [torch] in his outstretched arm.</description>
+    <description>Jack holds an unlit [torch] in his outstretched arm.</description>
     <onCheck>This can light up dark places.</onCheck>
     <id>0</id>
     <onTake>go deepwoods</onTake>

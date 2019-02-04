@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>A cold, stone celar is lit only the torch light from the [stairs].</description>
+  <description>A cold, stone cellar is lit only the torch light from the [stairs].</description>
 
   <exit>
     <keyword>stairs</keyword>
-    <description>A set of uneven stone [stairs] stagger upward.</description>
-    <onCheck>Warm and torch light flow down the [stairs].</onCheck>
+    <description>A set of uneven stone [stairs] staggers upward.</description>
+    <onCheck>Warmth and torch light flow down the [stairs].</onCheck>
     <destination>Hall_Joss.xml</destination>
   </exit>
 
@@ -20,7 +20,7 @@
   <prop>
     <keyword>nekker</keyword>
     <description>The [nekker] sprawls on the floor, vanquished by the thrust of your silver blade.</description>
-    <onCheck>It haunts this world no more, though looking upon it still bring dread.</onCheck>
+    <onCheck>It haunts this world no more, though looking upon it still brings dread.</onCheck>
   </prop>
 
   <prop>

@@ -5,7 +5,7 @@
 
   <exit>
     <keyword>ladder</keyword>
-    <description>A wooden [ladder] climbs down to a trap door in the floor.</description>
+    <description>A wooden [ladder] climbs down through a trap door in the floor.</description>
     <onCheck>Pale torch light flickers below.</onCheck>
     <destination>Hall_JossWolf.xml</destination>
   </exit>
@@ -18,24 +18,32 @@
   </exit>
 
   <prop>
-    <keyword>witch</keyword>
-    <description>A cackling [witch] cries some incantation in a hoarse voice.</description>
-    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
-    <wantsItemId>3</wantsItemId>
-    <onUse>go ending</onUse>
+    <keyword>cauldron</keyword>
+    <description>Fumes and flames erupt from a bubbling [cauldron].</description>
+    <onCheck>Teeming with energy, it shakes and rattles at the witch's words.</onCheck>
   </prop>
 
   <prop>
     <keyword>wolf</keyword>
-    <description>The [wolf] climbs into the room silently.</description>
-    <onCheck>It glares at the witch but does not move.</onCheck>
+    <description>The [wolf] climbs into the room without a sound.</description>
+    <onCheck>It glares at the [witch] but does not move.</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
-    <description>[Joss] glares at you.</description>
-    <onCheck>He crouches next to the trap door.</onCheck>
-    <onTalk>[Joss] will not speak so close to the [witch].</onTalk>
+    <description>[Joss] clings to the [wolf] with one arm.</description>
+    <onCheck>He is nearest to the trap door.</onCheck>
+    <onTalk>He will not speak so close to the [witch].</onTalk>
+  </character>
+
+  <character>
+    <keyword>witch</keyword>
+    <description>Lurching and cackling, a [witch] cries some incantation in a hoarse voice.</description>
+    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
+	<onTalk>Witch: "Duplex duplus labos et tribulatio;
+        ignis uro et lebes bullio."</onTalk>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go ending</onUse>
   </character>
 
 </root>

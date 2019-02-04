@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>A cold, stone celar is lit in a pale red light.</description>
+  <description>A cold, stone cellar is lit in a pale red light.</description>
 
   <exit>
     <keyword>basement_josswolf</keyword>
@@ -12,8 +12,8 @@
 
   <exit>
     <keyword>stairs</keyword>
-    <description>A set of uneven stone [stairs] stagger upward.</description>
-    <onCheck>Warm and torch light flow down the [stairs].</onCheck>
+    <description>A set of uneven stone [stairs] staggers upward.</description>
+    <onCheck>Warmth and torch light flow down the [stairs].</onCheck>
     <destination>Hall.xml</destination>
   </exit>
 
@@ -39,15 +39,15 @@
 
   <prop>
     <keyword>wolf</keyword>
-    <description>A [wolf] stands strong, protecting the [boy] and yet more wicked creature.</description>
+    <description>A [wolf] stands strong, protecting the [boy] from a yet more wicked creature.</description>
     <onCheck>Its ears are down, and its hairs stand on end.  It gnashes its teeth when the nekker comes too near.</onCheck>
   </prop>
 
   <character>
     <keyword>nekker</keyword>
     <description>A vicious [nekker] leaps about the room, spitting and flailing and avoiding the [wolf].</description>
-    <onCheck>It is naked and enraged.  It's eye are on you, but is glaces to [wolf] as well.</onCheck>
-    <onTalk>It's vile speech is full of spitting and croaking.</onTalk>
+    <onCheck>It is naked and enraged.  Its eyes are on you, but is glances to [wolf] as well.</onCheck>
+    <onTalk>Its vile speech is full of spitting and croaking.</onTalk>
     <wantsItemId>3</wantsItemId>
     <onUse>go basement_josswolf</onUse>
   </character>

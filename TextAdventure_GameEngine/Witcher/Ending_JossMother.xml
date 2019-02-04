@@ -10,11 +10,9 @@ his [mother] draw over his shoulder.</description>
   <exit>
     <keyword>portal</keyword>
     <description>At the edge of town, a blue [portal] shines behind a small, dark figure.</description>
-    <onCheck>
-      Dawn is coming soon, but the portal reminds you of dusk.
+    <onCheck>Dawn is coming soon, but the portal reminds you of dusk.
 
-      Geralt: "I hate portals.  They make my stomach churn."
-    </onCheck>
+Geralt: "I hate portals.  They make my stomach churn."</onCheck>
     <destination>Village_Jack.xml</destination>
     <onGo>restart</onGo>
   </exit>
@@ -35,7 +33,7 @@ his [mother] draw over his shoulder.</description>
     <keyword>joss</keyword>
     <description>[Joss] stops before the figure.</description>
     <onCheck>He is out of breath.</onCheck>
-    <onTalk>Jack: "Joss!  You are safe!  But your mother."
+    <onTalk>Jack: "Joss!  You are safe!  But your mother—"
 
 Joss's mother: "Is well, or will be after some rest.  The White Wolf has slain the witch."
 
@@ -60,12 +58,10 @@ if you would change the outcome of this night."</onTalk>
 
   <character>
     <keyword>jack</keyword>
-    <description>
-      It is the figure of a boy.  [Jack] is standing before the portal.
-      Jack: "I see you are weary, but we must (talk)."
-    </description>
-    <onCheck>He looks worried.</onCheck>
-    <onTalk>Jack: "Joss!  You are safe!  But your mother."
+    <description>It is the figure of a boy.  [Jack] is standing before the portal.
+Jack: "I see you are weary, but we must (talk)."</description>
+    <onCheck>He looks relieved.</onCheck>
+    <onTalk>Jack: "Joss!  You are safe!  But your mother—"
       
 Joss's mother: "Is well, or will be after some rest.  The White Wolf has slain the witch."
 

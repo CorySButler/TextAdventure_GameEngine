@@ -13,7 +13,8 @@
   <exit>
     <keyword>woods</keyword>
     <description></description>
-    <onCheck>Thorn plants twist and catch eachother behind the [bushes] like a spider's web.</onCheck>
+    <onCheck>Thorn plants twist and catch each other behind the [bushes] like a spider's web.
+You can just make out a slight path through the thorns.</onCheck>
     <destination>DeepWoods_Jack.xml</destination>
   </exit>
 
@@ -32,7 +33,7 @@ though their bark is dry and brittle.</onCheck>
 
   <prop>
     <keyword>path</keyword>
-    <description>The [path] itself is made of dirt.</description>
+    <description>The [path] itself is of trodden dirt.</description>
     <onCheck>The [path] is clear of root and twig, but [crumbs] lie about it.
 The [crumbs] seem out of place.</onCheck>
   </prop>
@@ -40,20 +41,23 @@ The [crumbs] seem out of place.</onCheck>
   <prop>
     <keyword>crumbs</keyword>
     <description></description>
-    <onCheck>They are bread [crumbs], and they lead into the [woods] through
-a small gap in the [bushes].</onCheck>
+    <onCheck>They are bread [crumbs]. Following each other in a single file,
+they (go) into the [woods] through a small gap in the [bushes].</onCheck>
   </prop>
 
   <character>
     <keyword>jack</keyword>
     <description>[Jack] leads you on, being careful not to get too far ahead of you.
-Jack: "I heard the howls of wolves last night coming from these woods.
-I haven't seen Joss since supper yesterday.  I've been looking
-for a sign, but nothing seems to point to where he might be.  Perhaps
-a witcher like you could (check) out the surrounding and find a clue."
+	
+Jack: "I heard the howls of wolves two nights ago coming from these woods.
+I haven't seen Joss since that afternoon.  I've been looking for a sign,
+but nothing seems to point to where he might be.  Perhaps a witcher like you
+could (check) out the surroundings and find a clue."
 
 To (check) something out, type "check" followed by the name of the thing
-you want to (check) and hit ENTER.</description>
+you want to (check) and hit ENTER.
+
+To (check) the [bushes], type "check bushes" and hit ENTER.</description>
     <onCheck>Jack looks around at the tree tops.</onCheck>
     <onTalk>Jack: "Don't look at me!  I've been searching for a sign all day."</onTalk>
   </character>

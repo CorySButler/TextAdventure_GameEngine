@@ -6,7 +6,7 @@
   <exit>
     <keyword>gate</keyword>
     <description>The magical [gate] remains open.</description>
-    <onCheck>Though freedom stand outside the [gate], a sense of fear attempt to stop you from passing through.</onCheck>
+    <onCheck>Though freedom stand outside the [gate], a sense of fear attempts to stop you from passing through.</onCheck>
     <destination>Basement_JossMother.xml</destination>
   </exit>
 

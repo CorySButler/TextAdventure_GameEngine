@@ -14,7 +14,7 @@ The light is a putrid yellow, but its source is unclear.</description>
   <exit>
     <keyword>gate</keyword>
     <description>The magical [gate] remains open.</description>
-    <onCheck>Though freedom stand outside the [gate], a sense of fear attempt to stop you from passing through.</onCheck>
+    <onCheck>Though freedom stand outside the [gate], a sense of fear attempts to stop you from passing through.</onCheck>
     <destination>Subbasement.xml</destination>
     <onGo>check joss_will_not_leave</onGo>
   </exit>
@@ -61,7 +61,7 @@ The light is a putrid yellow, but its source is unclear.</description>
   <item>
     <keyword>whip</keyword>
     <description></description>
-    <onCheck>A long, leather whip with a frayed and blood-stained end.</onCheck>
+    <onCheck>A long, leather whip with a frayed and blood-stained tip.</onCheck>
     <id>5</id>
   </item>
 
@@ -81,9 +81,9 @@ The light is a putrid yellow, but its source is unclear.</description>
 
   <character>
     <keyword>mother</keyword>
-    <description>A woman hangs from her wrists clasped to a wall with iron [bonds].</description>
+    <description>A woman hangs from her wrists, clasped to a wall with iron [bonds].</description>
     <onCheck>She has been badly beaten and some of her skin is burnt.</onCheck>
-    <onTalk>Joss's mother: "I went look for [Joss] and came across this hut.  The witch let me in,
+    <onTalk>Joss's mother: "I went looking for [Joss] and came across this hut.  The witch let me in,
 but locked the door.  A monster came to her.  They tortured me."</onTalk>
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip|drop whip</onUse>

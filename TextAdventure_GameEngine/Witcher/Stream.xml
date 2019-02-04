@@ -1,25 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>You come across a wooden bridge passing over a dark, shallow stream.</description>
+  <description>A wooden [bridge] passing over a dark, shallow stream.</description>
 
   <exit>
     <keyword>woods</keyword>
-    <description>The black, thorn-ridden [woods] lie on one side of the bridge.</description>
+    <description>The black, thorn-ridden [woods] lie on one side of the [bridge].</description>
     <onCheck>The [woods] are dark, and a chill breeze blows from them.</onCheck>
     <destination>DeepWoods.xml</destination>
   </exit>
 
   <exit>
     <keyword>clearing</keyword>
-    <description>A [clearning] can be seen on the other side.</description>
-    <onCheck>Star speckle the sky above the [clearning].</onCheck>
+    <description>A [clearing] can be seen on the other side.</description>
+    <onCheck>Stars speckle the sky above the [clearing].</onCheck>
     <destination>Clearing.xml</destination>
   </exit>
 
   <prop>
+    <keyword>bridge</keyword>
+    <description></description>
+    <onCheck>Sparse wood planks decay atop two mossy logs.  The planks creak under your weight.</onCheck>
+  </prop>
+
+  <prop>
     <keyword>book</keyword>
-    <description>A thin [book] rests in the middle of the bridge.</description>
+    <description>Though rotting and rarely trod, the [bridge] has seen use of late.
+One who recently crossed this way let fall a thin [book],
+which now rests in the middle of the bridge.</description>
     <onCheck>The cover has a hand-written title: Joss's Survival Guide.
 Most of its pages have been torn out.  One of the remaining pages reads:
 "To see what items you are carrying with you, type "inventory" and hit ENTER."</onCheck>

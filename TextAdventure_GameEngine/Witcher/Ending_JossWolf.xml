@@ -26,13 +26,13 @@ Geralt: "I hate portals.  They make my stomach churn."</onCheck>
   <character>
     <keyword>joss</keyword>
     <description>[Joss] stops before the figure.</description>
-    <onCheck>He face is downcast.</onCheck>
+    <onCheck>His face is downcast.</onCheck>
     <onTalk>Jack: "Joss!  You are safe!  The White Wolf has slain the witch."
 
 Joss: "The grey wolf and the White Wolf have saved me."
 
 Jack: "Glad am I to hear that, but did either save your mother?
-For a beast drag her from your own home this night.
+For a beast drag her from the edge of town this night.
 She was dragged deep into the forest where that pyre now burns."
 
 Geralt: "Could that have been the woman beyond the red gate?"
@@ -54,7 +54,7 @@ Jack: "I see you are weary, but we must (talk)."</description>
 Joss: "The grey wolf and the White Wolf have saved me."
 
 Jack: "Glad am I to hear that, but did either save your mother?
-For a beast drag her from your own home this night.
+For a beast drag her from the edge of town this night.
 She was dragged deep into the forest where that pyre now burns."
 
 Geralt: "Could that have been the woman beyond the red gate?"

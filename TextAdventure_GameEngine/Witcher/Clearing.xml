@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>Star speckle the sky above the clearning.</description>
+  <description>Stars speckle the sky above the clearing.</description>
 
   <exit>
     <keyword>stream</keyword>
@@ -12,7 +12,7 @@
 
   <exit>
     <keyword>hut</keyword>
-    <description>A witch's [hut] crowns a hill overgrown with weeds.</description>
+    <description>A shabby [hut] crowns a hill overgrown with weeds.</description>
     <onCheck>Green and orange light shoots from the windows.  A voice cackles within.</onCheck>
     <destination></destination>
     <isLocked/>

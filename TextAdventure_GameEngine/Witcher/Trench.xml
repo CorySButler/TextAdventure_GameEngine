@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>The floor of the trench slopes steeply downward.  Tree groping roots recoil into
+  <description>The floor of the trench slopes steeply downward.  Groping tree roots recoil into
 the soft dirt walls of the trench.</description>
 
   <exit>
     <keyword>clearing</keyword>
-    <description>The [clearning] is at the top of the slope.</description>
-    <onCheck>Star speckle the sky above the [clearning].</onCheck>
+    <description>The [clearing] is at the top of the slope.</description>
+    <onCheck>Stars speckle the sky above the [clearing].</onCheck>
     <destination>Clearing.xml</destination>
   </exit>
 
   <exit>
     <keyword>gate</keyword>
-    <description>A glowing [gate] fills with swirling purple mist stands at the end of the trench.</description>
+    <description>A glowing [gate] fills with swirling purple mist and stands at the end of the trench.</description>
     <onCheck>One does not simple walk through this gate.  There must be some kind of
 mechanism to open it.</onCheck>
     <destination></destination>
@@ -35,7 +35,7 @@ mechanism to open it.</onCheck>
 
   <prop>
     <keyword>tiles</keyword>
-    <description>A group of polish [tiles] are pressed into the wall need the gate.</description>
+    <description>A group of polished [tiles] are pressed into the wall near the gate.</description>
     <onCheck>At the center of the [tiles] is a small [hole].  A purple, glowing [stone]
 hovers inside.</onCheck>
   </prop>
@@ -50,10 +50,10 @@ hovers inside.</onCheck>
   <prop>
     <keyword>paper</keyword>
     <description>A leaf of [paper] rests on the ground.</description>
-    <onCheck>A note is written in Joss's hand: "To (use) and item in your (inventory)
+    <onCheck>A note is written in Joss's hand: "To (use) an item in your (inventory)
 type 'use' then the item's name and then the name the thing
 you want to use the item on, and then hit ENTER.
-For example, to look a gate, a witch could type 'use stone hole'."</onCheck>
+For example, to lock a gate, a witch could type 'use stone hole'."</onCheck>
   </prop>
 
   <item>

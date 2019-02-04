@@ -6,8 +6,8 @@ of the trench, barring the way out.</description>
 
   <exit>
     <keyword>clearing</keyword>
-    <description>The [clearning] is at the top of the slope, behind the tree roots.</description>
-    <onCheck>Star speckle the sky above the [clearning].</onCheck>
+    <description>The [clearing] is at the top of the slope, behind the tree roots.</description>
+    <onCheck>Stars speckle the sky above the [clearing].</onCheck>
     <destination></destination>
     <isLocked/>
   </exit>
@@ -34,7 +34,7 @@ of the trench, barring the way out.</description>
 
   <prop>
     <keyword>tiles</keyword>
-    <description>A group of polish [tiles] are pressed into the wall need the gate.</description>
+    <description>A group of polished [tiles] are pressed into the wall near the gate.</description>
     <onCheck>At the center of the [tiles] is a small [hole].</onCheck>
   </prop>
 
@@ -49,10 +49,10 @@ of the trench, barring the way out.</description>
   <prop>
     <keyword>paper</keyword>
     <description>A leaf of [paper] rests on the ground.</description>
-    <onCheck>A note is written in Joss's hand: "To (use) and item in your (inventory)
+    <onCheck>A note is written in Joss's hand: "To (use) an item in your (inventory)
 type 'use' then the item's name and then the name the thing
 you want to use the item on, and then hit ENTER.
-For example, to look a gate, a witch could type 'use stone hole'."</onCheck>
+For example, to lock a gate, a witch could type 'use stone hole'."</onCheck>
   </prop>
 
 </root>

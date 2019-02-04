@@ -21,14 +21,14 @@ now stands a wall of solid stone.</description>
 
   <prop>
     <keyword>walls</keyword>
-    <description>The [walls] of the room are close and build of stone.</description>
+    <description>The [walls] of the room are close and built of stone.</description>
     <onCheck>Claw [marks] are carved into one of the [walls].</onCheck>
   </prop>
 
   <prop>
     <keyword>marks</keyword>
     <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
-    <onCheck>Deep stratches like these can only mean one thing: nekkers.  What's a nekker doing in Toussaint?</onCheck>
+    <onCheck>Deep scratches like these can only mean one thing: nekkers.  What's a nekker doing in Toussaint?</onCheck>
   </prop>
 
 </root>

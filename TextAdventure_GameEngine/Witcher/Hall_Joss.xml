@@ -19,20 +19,20 @@
 
   <prop>
     <keyword>walls</keyword>
-    <description>The [walls] of the room are close and build of stone.</description>
+    <description>The [walls] of the room are close and built of stone.</description>
     <onCheck>Claw [marks] are carved into one of the [walls].</onCheck>
   </prop>
 
   <prop>
     <keyword>marks</keyword>
     <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
-    <onCheck>The deep stratches are that of a nekker.  What was that nekker doing in Toussaint?</onCheck>
+    <onCheck>The deep scratches are that of a nekker.  What was that nekker doing in Toussaint?</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
     <description>[Joss] casts his eyes to the floor.</description>
-    <onCheck>He is hunch and rigid, teeming with spite.</onCheck>
+    <onCheck>He is hunched and rigid, teeming with spite.</onCheck>
     <onTalk>Joss: "You killed him.  And all for no reason.  Bring me out of this horrid hut
 that I might depart from you forever."</onTalk>
   </character>
