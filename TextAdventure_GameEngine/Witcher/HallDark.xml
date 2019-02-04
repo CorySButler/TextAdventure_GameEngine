@@ -3,6 +3,8 @@
 
   <description>The room is cold and dark.</description>
 
+  <hint>Geralt: "Maybe I can (use) something in my (inventory) to light up the [darkness]."</hint>
+
   <exit>
     <keyword>gate</keyword>
     <description>The only source of light is star light twinkling in through the [gate].</description>

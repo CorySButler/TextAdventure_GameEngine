@@ -3,6 +3,8 @@
 
   <description>Thorns prick your skin as you push through the deep woods.</description>
 
+  <hint>Geralt: "Jack would just hold me up anyway.  Better take the gift and move on."</hint>
+
   <exit>
     <keyword>deepwoods</keyword>
     <description></description>

@@ -3,6 +3,8 @@
 
   <description>Night lays thick under the [trees] of the woods.</description>
 
+  <hint>Geralt: "Checking my surrounds may reveal more about this place than I noticed at first."</hint>
+
   <exit>
     <keyword>village</keyword>
     <description>The [village] is not far off.  Pale candle light can still be seen in the windows.</description>

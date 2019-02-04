@@ -3,6 +3,8 @@
 
   <description>The trap door opens silently.  The room is bright and warm, but eerie.</description>
 
+  <hint>Geralt: "Only one way to deal with a witch."</hint>
+
   <exit>
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs down through a trap door in the floor.</description>

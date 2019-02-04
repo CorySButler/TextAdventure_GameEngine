@@ -4,6 +4,8 @@
   <description>The mist of the gate vanishes, but the tree roots spring from the walls
 of the trench, barring the way out.</description>
 
+  <hint>Geralt: "Looks like there's only one way to go."</hint>
+
   <exit>
     <keyword>clearing</keyword>
     <description>The [clearing] is at the top of the slope, behind the tree roots.</description>

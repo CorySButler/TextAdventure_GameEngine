@@ -4,6 +4,8 @@
   <description>The Witcher IV
 </description>
 
+  <hint>Geralt: "So this is what a hint look like.  Guess I'll (go) into the [woods]."</hint>
+
   <exit>
     <keyword>woods</keyword>
     <description>As day draws to its close, you walk under the eaves of the dark [woods] in the land of Toussaint.</description>

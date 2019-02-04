@@ -3,6 +3,8 @@
 
   <description>Stars speckle the sky above the clearing.</description>
 
+  <hint>Geralt: "Joss might be in that hut."</hint>
+
   <exit>
     <keyword>stream</keyword>
     <description>A [stream] babble quietly a short way off.</description>

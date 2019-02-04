@@ -3,6 +3,8 @@
 
   <description>A cold, stone cellar is lit only the torch light from the [stairs].</description>
 
+  <hint>Geralt: "Poor kid.  Hope the other prisoner is worth his loss."</hint>
+
   <exit>
     <keyword>stairs</keyword>
     <description>A set of uneven stone [stairs] staggers upward.</description>

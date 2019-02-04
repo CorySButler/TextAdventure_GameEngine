@@ -6,6 +6,8 @@ The entire hut begins to burn.  Orange and green fires rush to the very roots of
 You stomp the front door and its wooden planks splinter and fly into the night.
 You sprint away from the inferno and back to the village, [Joss] stumbling behind you.</description>
 
+  <hint>Geralt: "What a shame!  Better give this another shot."</hint>
+
   <exit>
     <keyword>portal</keyword>
     <description>At the edge of town, a blue [portal] shines behind a small, dark figure.</description>

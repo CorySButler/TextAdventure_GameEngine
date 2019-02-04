@@ -3,6 +3,8 @@
 
   <description>A wooden [bridge] passing over a dark, shallow stream.</description>
 
+  <hint>Geralt: "Hm.  A book in the middle of the woods?  Better take a closer look."</hint>
+
   <exit>
     <keyword>woods</keyword>
     <description>The black, thorn-ridden [woods] lie on one side of the [bridge].</description>

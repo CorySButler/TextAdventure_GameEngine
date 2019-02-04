@@ -2,6 +2,8 @@
 <root>
 
   <description>A cold, stone cellar is lit in a pale red light.</description>
+
+  <hint>Geralt: "Nowhere to go but up."</hint>
   
   <exit>
     <keyword>stairs</keyword>

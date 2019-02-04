@@ -11,6 +11,7 @@ namespace TextAdventure_GameEngine
         private string _savePath;
         private string _filePath;
         private string _description;
+        private string _hint;
         private List<Exit> _exits;
         private List<Item> _items;
         private List<Prop> _props;
@@ -29,6 +30,7 @@ namespace TextAdventure_GameEngine
 
             var data = XElement.Load(_filePath);
             _description = data.Element("description").Value;
+            if (data.Elements("hint").Any()) _hint = data.Element("hint").Value;
             _exits = (from exit in data.Elements("exit")
                      select new Exit
                      {
@@ -103,6 +105,13 @@ namespace TextAdventure_GameEngine
             }
 
             return combinedText;
+        }
+
+        public void ShowHint()
+        {
+            var hint = "";
+            if (_hint == "") hint = "No hint avaiable.";
+            Console.WriteLine("\n{0}\n", hint);
         }
 
         public void AddItem(Item item)

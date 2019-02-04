@@ -4,6 +4,8 @@
   <description>Thorns prick your skin as you push through the deep woods.
 Jack has returned to the village.</description>
 
+  <hint>Geralt: "Can't give up now.  Got to keep moving on."</hint>
+
   <exit>
     <keyword>stream</keyword>
     <description>A [stream] babbles quietly a short way off.</description>

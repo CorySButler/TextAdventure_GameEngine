@@ -3,6 +3,8 @@
 
   <description>The room is lit by the light of your torch hanging in a bracket on the wall.</description>
 
+  <hint>Geralt: "No need to linger in this dungeon any longer."</hint>
+
   <exit>
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>

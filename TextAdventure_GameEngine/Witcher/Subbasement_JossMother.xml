@@ -3,6 +3,8 @@
 
   <description>The key fits and the bonds open.</description>
 
+  <hint>Geralt: "Better get these two out of here."</hint>
+
   <exit>
     <keyword>gate</keyword>
     <description>The magical [gate] remains open.</description>

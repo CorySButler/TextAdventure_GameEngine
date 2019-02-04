@@ -5,6 +5,8 @@
 You can now see everything in this small room, except the gate.  Where it ought to be
 now stands a wall of solid stone.</description>
 
+  <hint>Geralt: "Up into the hut or down into the dungeon?"</hint>
+
   <exit>
     <keyword>ladder</keyword>
     <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>

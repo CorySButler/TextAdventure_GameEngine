@@ -3,6 +3,8 @@
 
   <description>A cold, stone cellar is lit in a pale red light.</description>
 
+  <hint>Geralt: "Poor kid owes hit life to that wolf, but can I just leave the other prisoner behind?"</hint>
+
   <exit>
     <keyword>basement_joss</keyword>
     <description></description>

@@ -4,6 +4,8 @@
   <description>The room is wet and hot and dripping with slime.
 The light is a putrid yellow, but its source is unclear.</description>
 
+  <hint>Geralt: "Is the a key lying around anywhere?"</hint>
+
   <exit>
     <keyword>subbasement_jossmother</keyword>
     <description></description>
