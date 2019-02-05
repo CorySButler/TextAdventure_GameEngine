@@ -10,8 +10,9 @@ namespace TextAdventure_GameEngine
         private TextInput _textInput;
         private Room _room;
         private bool _isGameOver = false;
+        private string _gameLog = "";
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -117,9 +118,14 @@ namespace TextAdventure_GameEngine
                         if (action.StartsWith("restart")) isRestarting = true;
                     }
 
-                    if (isRestarting) return;
+                    if (isRestarting)
+                    {
+                        //TODO: save game log
+                        return;
+                    }
 
                     Console.WriteLine();
+                    Console.Clear();
 
                     _room = _room.Exit(keyword);
                     _player.UpdateLocation(_room);
@@ -129,6 +135,16 @@ namespace TextAdventure_GameEngine
             {
                 Console.WriteLine("\nYou cannot go to the {0}.\n", keyword);
             }
+        }
+
+        public void Hint()
+        {
+            _room.ShowHint();
+        }
+
+        public void Help()
+        {
+            _room.ShowHint();
         }
 
         public void Inventory()

@@ -44,10 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="GameLog.cs" />
     <Compile Include="InteractableObject.cs" />
     <Compile Include="Prop.cs" />
     <Compile Include="UserActions\Discard.cs" />
     <Compile Include="UserActions\DropSilent.cs" />
+    <Compile Include="UserActions\Help.cs" />
+    <Compile Include="UserActions\Hint.cs" />
     <Compile Include="UserActions\Restart.cs" />
     <Compile Include="UserActions\Talk.cs" />
     <Compile Include="UserActions\Use.cs" />

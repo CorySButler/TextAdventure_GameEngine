@@ -65,7 +65,6 @@ C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Stream.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench_GateOpen.xml
-C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Trench_RelockGate.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Village_Jack.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Woods_Jack.xml
@@ -84,3 +83,18 @@ C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\D
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut_JossMother.xml
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut_JossWolf.xml
 C:\Users\coryb\Documents\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Subbasement_JossMother.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Basement_Joss.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Basement_JossMother.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Basement_JossWolf.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Basement_Nekker.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Ending_Joss.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Ending_JossMother.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Ending_JossWolf.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Hall_Joss.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Hall_JossMother.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Hall_JossWolf.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Subbasement.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut_Joss.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut_JossMother.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\WitchsHut_JossWolf.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Witcher\Subbasement_JossMother.xml

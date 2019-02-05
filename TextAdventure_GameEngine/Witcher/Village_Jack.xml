@@ -4,7 +4,7 @@
   <description>The Witcher IV
 </description>
 
-  <hint>Geralt: "So this is what a hint look like.  Guess I'll (go) into the [woods]."</hint>
+  <hint>Geralt: "So this is what a hint looks like.  Guess I'll (go) into the [woods]."</hint>
 
   <exit>
     <keyword>woods</keyword>
@@ -26,7 +26,9 @@ He freezes in play when he spots you.  "You..." he says.  "You're the
 man that rescued me from the Wicked Witch all those years ago.
 You're Geralt, aren't you?  It's me, [Jack].  I need your help again."
 
-To (talk) to [Jack], type "talk jack" and hit ENTER.</description>
+To (talk) to [Jack], type "talk jack" and hit ENTER.
+
+If you need a (hint), type either "hint" or "help" and hit ENTER.</description>
     <onCheck>Jack looks desprate, gasping in panic-breaths.</onCheck>
     <onTalk>Jack: "Another witch has come to haunt these [woods], and Joss is missing.
 He may be a rotten old soul, but he's a neighbor.  If we just let her have him,

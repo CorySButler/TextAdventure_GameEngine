@@ -109,8 +109,8 @@ namespace TextAdventure_GameEngine
 
         public void ShowHint()
         {
-            var hint = "";
-            if (_hint == "") hint = "No hint avaiable.";
+            var hint = _hint;
+            if (hint == "") hint = "No hint avaiable.";
             Console.WriteLine("\n{0}\n", hint);
         }
 
