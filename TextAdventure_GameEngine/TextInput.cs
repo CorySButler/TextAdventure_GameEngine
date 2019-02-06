@@ -2,7 +2,7 @@
 {
     public class TextInput
     {
-        public void Accept(string input, GameController gameController)
+        public string Accept(string input, GameController gameController)
         {
             input = input.ToLower();
             string[] inputWords = input.Split(' ');
@@ -15,11 +15,10 @@
             if (userAction != null)
             {
                 userAction.Respond(gameController, inputWords);
+                return "";
             }
-            else
-            {
-                System.Console.WriteLine("\n\"{0}\" is not an available action.\n", inputWords[0]);
-            }
+
+            return inputWords[0] + " is not an available action.";
         }
     }
 }

@@ -3,7 +3,7 @@
 
   <description>A cold, stone cellar is lit in a pale red light.</description>
 
-  <hint>Geralt: "Can't do much with that nekker in the way."</hint>
+  <hint>Geralt: "Can't do much while that nekker is in the way."</hint>
 
   <exit>
     <keyword>basement_josswolf</keyword>

@@ -7,7 +7,7 @@ You stomp the front door and its wooden planks splinter and fly into the night.
 You sprint away from the inferno and back to the village, [Joss] stumbling behind you,
 his [mother] draw over his shoulder.</description>
 
-  <hint>Geralt: "Change history, huh?  Sounds neat."</hint>
+  <hint>Geralt: "Change history, huh?  Why not?"</hint>
 
   <exit>
     <keyword>portal</keyword>

@@ -10,26 +10,28 @@ namespace TextAdventure_GameEngine
         private TextInput _textInput;
         private Room _room;
         private bool _isGameOver = false;
-        private string _gameLog = "";
+        private GameLog _gameLog;
 
         public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
-            var source_dir = "Witcher";
             var save_dir = "Save";
 
             if (Directory.Exists(save_dir)) Directory.Delete(save_dir, true);
 
+            _gameLog = new GameLog();
             _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _textInput = new TextInput();
-            _room = new Room("Village_Jack.xml");
+            _room = new Room("Village_Jack.xml", _gameLog);
             _player.UpdateLocation(_room);
 
             while (!_isGameOver)
             {
                 var input = Console.ReadLine();
-                _textInput.Accept(input, this);
+                _gameLog.WriteSilent(input);
+                var response = _textInput.Accept(input, this);
+                if (response != "") _gameLog.Write(response);
             }
         }
 
@@ -38,26 +40,26 @@ namespace TextAdventure_GameEngine
             if (_room.HasExit(keyword))
             {
                 Exit exit = _room.GetExit(keyword);
-                Console.WriteLine("\n{0}\n", exit.OnCheck);
+                _gameLog.Write(exit.OnCheck);
             }
             else if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                Console.WriteLine("\n{0}\n", character.OnCheck);
+                _gameLog.Write(character.OnCheck);
             }
             else if (_room.HasProp(keyword))
             {
                 Prop prop = _room.GetProp(keyword);
-                Console.WriteLine("\n{0}\n", prop.OnCheck);
+                _gameLog.Write(prop.OnCheck);
             }
             else if (_room.HasItem(keyword))
             {
                 Item item = _room.GetItem(keyword);
-                Console.WriteLine("\n{0}\n", item.OnCheck);
+                _gameLog.Write(item.OnCheck);
             }
             else
             {
-                Console.WriteLine("\nThere is no {0} to examine.\n", keyword);
+                _gameLog.Write("There is no " + keyword + " to examine.");
             }
         }
 
@@ -70,7 +72,7 @@ namespace TextAdventure_GameEngine
             }
             else
             {
-                Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+                _gameLog.Write("There is no " + keyword + " in your inventory.");
             }
         }
 
@@ -81,11 +83,11 @@ namespace TextAdventure_GameEngine
                 Item item = _player.GetItem(keyword);
                 _room.AddItem(item);
                 _player.RemoveItem(item);
-                Console.WriteLine("\nYou drop the {0}.\n", keyword);
+                _gameLog.Write("You drop the " + keyword + ".");
             }
             else
             {
-                Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+                _gameLog.Write("There is no " + keyword + " in your inventory.");
             }
         }
 
@@ -105,7 +107,7 @@ namespace TextAdventure_GameEngine
             {
                 if (_room.GetExit(keyword).IsLocked)
                 {
-                    Console.WriteLine("\nThe {0} is locked.\n", keyword);
+                    _gameLog.Write("The " + keyword + " is locked.");
                 }
                 else
                 {
@@ -114,7 +116,8 @@ namespace TextAdventure_GameEngine
                     foreach (var action in actions)
                     {
                         if (action == "") continue;
-                        _textInput.Accept(action, this);
+                    var response = _textInput.Accept(action, this);
+                    if (response != "") _gameLog.Write(response);
                         if (action.StartsWith("restart")) isRestarting = true;
                     }
 
@@ -124,7 +127,7 @@ namespace TextAdventure_GameEngine
                         return;
                     }
 
-                    Console.WriteLine();
+                    _gameLog.Write("");
                     Console.Clear();
 
                     _room = _room.Exit(keyword);
@@ -133,29 +136,29 @@ namespace TextAdventure_GameEngine
             }
             else
             {
-                Console.WriteLine("\nYou cannot go to the {0}.\n", keyword);
+                _gameLog.Write("You cannot go to the " + keyword + ".");
             }
         }
 
         public void Hint()
         {
-            _room.ShowHint();
+            _gameLog.Write(_room.GetHint());
         }
 
         public void Help()
         {
-            _room.ShowHint();
+            _gameLog.Write(_room.GetHint());
         }
 
         public void Inventory()
         {
-            string inventory = "\nName: " + _player.Name + "\n";// + "\nGold: " + _player.Gold + "\n";
+            string inventory = "Name: " + _player.Name + "\n";// + "Gold: " + _player.Gold + "";
             foreach (Item item in _player.Items)
             {
                 inventory += item.Keyword + ": " + item.OnCheck + "\n";
             }
 
-            Console.WriteLine(inventory);
+            _gameLog.Write(inventory);
         }
 
         public void Restart()
@@ -172,25 +175,26 @@ namespace TextAdventure_GameEngine
                 Item item = _room.GetItem(keyword);
                 _player.AddItem(item);
                 _room.RemoveItem(item);
-                Console.WriteLine("\nYou take the {0}.\n", keyword);
+                _gameLog.Write("You take the " + keyword + ".");
                 var actions = item.OnTake.Split('|');
                 foreach (var action in actions)
                 {
                     if (action == "") continue;
-                    _textInput.Accept(action, this);
+                    var response = _textInput.Accept(action, this);
+                    if (response != "") _gameLog.Write(response);
                 }
             }
             else if (_room.HasProp(keyword))
             {
-                Console.WriteLine("\nYou cannot take the {0}.\n", keyword);
+                _gameLog.Write("You cannot take the " + keyword + ".");
             }
             else if (_room.HasCharacter(keyword))
             {
-                Console.WriteLine("\nYou cannot take {0}.\n", keyword);
+                _gameLog.Write("You cannot take " + keyword + ".");
             }
             else
             {
-                Console.WriteLine("\nThere is no {0} to take.\n", keyword);
+                _gameLog.Write("There is no " + keyword + " to take.");
             }
         }
 
@@ -199,11 +203,11 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                Console.WriteLine("\n{0}\n", character.OnTalk);
+                _gameLog.Write(character.OnTalk);
             }
             else
             {
-                Console.WriteLine("\nYou cannot talk to the {0}.\n", keyword);
+                _gameLog.Write("You cannot talk to the " + keyword + ".");
             }
         }
 
@@ -216,7 +220,7 @@ namespace TextAdventure_GameEngine
             }
             else
             {
-                Console.WriteLine("\nThere is no {0} in your inventory.\n", keyword);
+                _gameLog.Write("There is no " + keyword + " in your inventory.");
                 return;
             }
 
@@ -238,22 +242,23 @@ namespace TextAdventure_GameEngine
             }
             else
             {
-                Console.WriteLine("\nThere is no {0}.\n", targetKeyword);
+                _gameLog.Write("There is no " + keyword + ".");
                 return;
             }
 
             if (target.WantsItemId != item.Id)
             {
-                Console.WriteLine("\nYou cannot use the {0} on the {1}.", keyword, targetKeyword);
+                _gameLog.Write("You cannot use the " + keyword + " on the " + targetKeyword + ".");
                 return;
             }
 
-            Console.WriteLine("\nYou used the {0} on the {1}.\n", keyword, targetKeyword);
+            _gameLog.Write("You used the " + keyword + " on the " + targetKeyword + ".");
             var actions = target.OnUse.Split('|');
             foreach (var action in actions)
             {
                 if (action == "") continue;
-                _textInput.Accept(action, this);
+                var response = _textInput.Accept(action, this);
+                if (response != "") _gameLog.Write(response);
             }
         }
     }

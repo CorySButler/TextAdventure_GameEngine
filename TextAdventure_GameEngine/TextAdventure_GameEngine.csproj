@@ -74,137 +74,106 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GameData\CaveEntrance.xml">
+    <Content Include="Orig_GameData\CaveEntrance.xml" />
+    <Content Include="Orig_GameData\CaveMouth.xml" />
+    <Content Include="Orig_GameData\Cell_Player.xml" />
+    <Content Include="Orig_GameData\Cell_Player_FirstTime.xml" />
+    <Content Include="Orig_GameData\Cell_Player_RepeatOffender.xml" />
+    <Content Include="Orig_GameData\Clearing_Intro.xml" />
+    <Content Include="Orig_GameData\DungeonEntrance.xml" />
+    <Content Include="Orig_GameData\DungeonHall.xml" />
+    <Content Include="Orig_GameData\DungeonHall_FirstTime.xml" />
+    <Content Include="Orig_GameData\Dungeon_B2.xml" />
+    <Content Include="Orig_GameData\Dungeon_B2_Hall2.xml" />
+    <Content Include="Orig_GameData\Dungeon_B2_Hall2_Room1.xml" />
+    <Content Include="Orig_GameData\GapInTrees.xml" />
+    <Content Include="Orig_GameData\TestRoom_2.xml" />
+    <Content Include="Orig_GameData\TestRoom_1.xml" />
+    <Content Include="Orig_GameData\TestRoom_0.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GameData\Basement_Joss.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\CaveMouth.xml">
+    <Content Include="GameData\Basement_JossMother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\Cell_Player.xml">
+    <Content Include="GameData\Basement_JossWolf.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\Cell_Player_FirstTime.xml">
+    <Content Include="GameData\Basement_Nekker.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\Cell_Player_RepeatOffender.xml">
+    <Content Include="GameData\Clearing.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\Clearing_Intro.xml">
+    <Content Include="GameData\DeepWoods.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameData\DungeonEntrance.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\DungeonHall.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\DungeonHall_FirstTime.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Dungeon_B2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Dungeon_B2_Hall2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Dungeon_B2_Hall2_Room1.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\GapInTrees.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\TestRoom_2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\TestRoom_1.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\TestRoom_0.xml">
+    <Content Include="GameData\DeepWoods_Jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Witcher\Basement_Joss.xml">
+    <Content Include="GameData\Ending.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Basement_JossMother.xml">
+    <Content Include="GameData\Ending_Joss.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Basement_JossWolf.xml">
+    <Content Include="GameData\Ending_JossMother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Basement_Nekker.xml">
+    <Content Include="GameData\Ending_JossWolf.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Clearing.xml">
+    <Content Include="GameData\Hall.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\DeepWoods.xml">
+    <Content Include="GameData\HallDark.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\DeepWoods_Jack.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Witcher\Ending.xml">
+    <Content Include="GameData\Hall_Joss.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Ending_Joss.xml">
+    <Content Include="GameData\Hall_JossMother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Ending_JossMother.xml">
+    <Content Include="GameData\Hall_JossWolf.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Ending_JossWolf.xml">
+    <Content Include="GameData\Stream.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Hall.xml">
+    <Content Include="GameData\Subbasement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\HallDark.xml">
+    <Content Include="GameData\Trench.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Hall_Joss.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Hall_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Hall_JossWolf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Stream.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Subbasement.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Trench.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Witcher\Trench_GateOpen.xml">
+    <Content Include="GameData\Trench_GateOpen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Witcher\Village_Jack.xml">
+    <Content Include="GameData\Village_Jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut_Joss.xml">
+    <Content Include="GameData\WitchsHut_Joss.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut.xml">
+    <Content Include="GameData\WitchsHut.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut_JossMother.xml">
+    <Content Include="GameData\WitchsHut_JossMother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\WitchsHut_JossWolf.xml">
+    <Content Include="GameData\WitchsHut_JossWolf.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Witcher\Woods_Jack.xml">
+    <Content Include="GameData\Woods_Jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Witcher\Subbasement_JossMother.xml">
+    <Content Include="GameData\Subbasement_JossMother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

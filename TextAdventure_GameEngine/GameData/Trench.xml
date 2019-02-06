@@ -4,7 +4,8 @@
   <description>The floor of the trench slopes steeply downward.  Groping tree roots recoil into
 the soft dirt walls of the trench.</description>
 
-  <hint>Geralt: "Don't need to power up this gate.  I've got to (take) the power away somehow."</hint>
+  <hint>Geralt: "Don't need to power up this gate.  I've got to (take) the power away somehow.
+I'll (check) the things around me to find out."</hint>
 
   <exit>
     <keyword>clearing</keyword>

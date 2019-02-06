@@ -16,17 +16,19 @@ namespace TextAdventure_GameEngine
         private List<Item> _items;
         private List<Prop> _props;
         private List<Character> _characters;
+        private GameLog _gameLog;
 
         public string FilePath { get { return _filePath; } }
 
-        public Room(string fileName)
+        public Room(string fileName, GameLog gameLog)
         {
+            _gameLog = gameLog;
             _savePath = "Save\\" + fileName;
 
             if (File.Exists(_savePath))
                 _filePath = _savePath;
             else
-                _filePath = "Witcher\\" + fileName;
+                _filePath = "GameData\\" + fileName;
 
             var data = XElement.Load(_filePath);
             _description = data.Element("description").Value;
@@ -77,7 +79,7 @@ namespace TextAdventure_GameEngine
                          OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();
 
-            Console.WriteLine(Describe());
+            _gameLog.Write(Describe());
         }
 
         public string Describe()
@@ -107,11 +109,9 @@ namespace TextAdventure_GameEngine
             return combinedText;
         }
 
-        public void ShowHint()
+        public string GetHint()
         {
-            var hint = _hint;
-            if (hint == "") hint = "No hint avaiable.";
-            Console.WriteLine("\n{0}\n", hint);
+            return _hint != "" ? _hint : "No hint available.";
         }
 
         public void AddItem(Item item)
@@ -206,7 +206,7 @@ namespace TextAdventure_GameEngine
                 {
                     if (exit.IsLocked) return this;
                     Save();
-                    return new Room(exit.Destination);
+                    return new Room(exit.Destination, _gameLog);
                 }
             }
             return this;
@@ -216,7 +216,7 @@ namespace TextAdventure_GameEngine
         {
             if (!Directory.Exists("Save")) Directory.CreateDirectory("Save");
 
-            var data = new XElement("root", new XElement("description", _description));
+            var data = new XElement("root", new XElement("description", _description), new XElement("hint", _hint));
             data = AddCharactersToXElement(data);
             data = AddExitsToXElement(data);
             data = AddPropsToXElement(data);

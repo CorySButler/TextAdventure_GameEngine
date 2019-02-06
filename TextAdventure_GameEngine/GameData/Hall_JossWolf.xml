@@ -4,7 +4,7 @@
   <description>The room is lit by the light of your torch hanging in a bracket on the wall.</description>
 
   <hint>Geralt: "If the kid wants to keep that wolf alive,
-I'll head to lead them both up and out of here."</hint>
+I'll have to lead them both up and out of here."</hint>
 
   <exit>
     <keyword>ladder</keyword>

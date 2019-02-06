@@ -3,7 +3,7 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Witcher\Stream.xml</location>
+  <location>Witcher\Village_Jack.xml</location>
   <item>
     <keyword>crowns</keyword>
     <description>12</description>
@@ -28,10 +28,5 @@
     <keyword>silverblade</keyword>
     <description></description>
     <detailedDescription>Ideal for slaying monsters.</detailedDescription>
-  </item>
-  <item>
-    <keyword>torch</keyword>
-    <description>Jack holds an unlit [torch] in his outstretched arm.</description>
-    <detailedDescription>This can light up dark places.</detailedDescription>
   </item>
 </root>
