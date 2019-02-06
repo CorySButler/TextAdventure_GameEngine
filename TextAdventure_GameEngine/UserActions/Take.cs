@@ -5,7 +5,8 @@
         public override string Keyword { get { return "take"; } }
         public override void Respond(GameController gameController, string[] inputWords)
         {
-            gameController.Take(inputWords[1]);
+            var keyword = inputWords.Length > 1 ? inputWords[1] : "";
+            gameController.Take(keyword);
         }
     }
 }

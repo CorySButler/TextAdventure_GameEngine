@@ -57,9 +57,13 @@ namespace TextAdventure_GameEngine
                 Item item = _room.GetItem(keyword);
                 _gameLog.Write(item.OnCheck);
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("There is no " + keyword + " to examine.");
+            }
+            else
+            {
+                _gameLog.Write("You cannot check nothing.  Specify something to check.");
             }
         }
 
@@ -70,9 +74,13 @@ namespace TextAdventure_GameEngine
                 Item item = _player.GetItem(keyword);
                 _player.RemoveItem(item);
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("There is no " + keyword + " in your inventory.");
+            }
+            else
+            {
+                _gameLog.Write("You cannot discard nothing.  Specify something to discard.");
             }
         }
 
@@ -85,9 +93,13 @@ namespace TextAdventure_GameEngine
                 _player.RemoveItem(item);
                 _gameLog.Write("You drop the " + keyword + ".");
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("There is no " + keyword + " in your inventory.");
+            }
+            else
+            {
+                _gameLog.Write("You cannot check drop.  Specify something to drop.");
             }
         }
 
@@ -134,9 +146,13 @@ namespace TextAdventure_GameEngine
                     _player.UpdateLocation(_room);
                 }
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("You cannot go to the " + keyword + ".");
+            }
+            else
+            {
+                _gameLog.Write("You cannot go nowhere.  Specify somewhere to go.");
             }
         }
 
@@ -192,9 +208,13 @@ namespace TextAdventure_GameEngine
             {
                 _gameLog.Write("You cannot take " + keyword + ".");
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("There is no " + keyword + " to take.");
+            }
+            else
+            {
+                _gameLog.Write("You cannot take nothing.  Specify something to take.");
             }
         }
 
@@ -205,9 +225,13 @@ namespace TextAdventure_GameEngine
                 Character character = _room.GetCharacter(keyword);
                 _gameLog.Write(character.OnTalk);
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("You cannot talk to the " + keyword + ".");
+            }
+            else
+            {
+                _gameLog.Write("You cannot talk to no one.  Specify someone to talk to.");
             }
         }
 
@@ -218,12 +242,17 @@ namespace TextAdventure_GameEngine
             {
                 item = _player.GetItem(keyword);
             }
-            else
+            else if (keyword != "")
             {
                 _gameLog.Write("There is no " + keyword + " in your inventory.");
                 return;
             }
-
+            else
+            {
+                _gameLog.Write("You cannot use nothing.  Specify something to use.");
+                return;
+            }            
+            
             InteractableObject target;
             if (_room.HasExit(targetKeyword))
             {
@@ -240,9 +269,14 @@ namespace TextAdventure_GameEngine
             {
                 target = _room.GetItem(targetKeyword);
             }
+            else if (targetKeyword != "")
+            {
+                _gameLog.Write("There is no " + targetKeyword + ".");
+                return;
+            }
             else
             {
-                _gameLog.Write("There is no " + keyword + ".");
+                _gameLog.Write("Yor cannot use the " + keyword + " on nothing.  Specify a target: use " + keyword + " tagret");
                 return;
             }
 

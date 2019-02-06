@@ -5,10 +5,9 @@
         public override string Keyword { get { return "use"; } }
         public override void Respond(GameController gameController, string[] inputWords)
         {
-            var targetKeyword = "";
-            if (inputWords.Length >= 3)
-                targetKeyword = inputWords[2];
-            gameController.Use(inputWords[1], targetKeyword);
+            var keyword = inputWords.Length > 1 ? inputWords[1] : "";
+            var targetKeyword = inputWords.Length > 2 ? inputWords[2] : "";
+            gameController.Use(keyword, targetKeyword);
         }
     }
 }

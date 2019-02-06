@@ -3,7 +3,7 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Witcher\Village_Jack.xml</location>
+  <location>GameData\Hall.xml</location>
   <item>
     <keyword>crowns</keyword>
     <description>12</description>
@@ -28,5 +28,10 @@
     <keyword>silverblade</keyword>
     <description></description>
     <detailedDescription>Ideal for slaying monsters.</detailedDescription>
+  </item>
+  <item>
+    <keyword>stone</keyword>
+    <description></description>
+    <detailedDescription>It glows purple as though it is full of energy.</detailedDescription>
   </item>
 </root>
