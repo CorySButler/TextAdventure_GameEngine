@@ -2,40 +2,35 @@
 <root>
 
   <description>The Witcher IV:  Days of Night
-</description>
+  
+  </description>
 
-  <hint>Geralt: "So this is what a hint looks like.  Guess I'll (go) into the [woods]."</hint>
+  <hint>Geralt: "So this is what a hint looks like.  Guess I'll @go^ into the #woods^."</hint>
 
   <exit>
     <keyword>woods</keyword>
-    <description>As day draws to its close, you walk under the eaves of the dark [woods] in the land of Toussaint.</description>
-    <onCheck>Night lays thick under the trees of the [woods].</onCheck>
+    <description>As day draws to its close, you walk under the eaves of the dark #woods^ in the land of Toussaint.</description>
+    <onCheck>Night lays thick under the trees of the #woods^.</onCheck>
     <destination>Woods_Jack.xml</destination>
   </exit>
 
   <prop>
     <keyword>village</keyword>
-    <description>The windows of the houses in the [village] behind you are aglow with candle light.</description>
+    <description>The windows of the houses in the #village^ behind you are aglow with candle light.</description>
     <onCheck>The homes look warm on this chill night.</onCheck>
   </prop>
 
   <character>
     <keyword>jack</keyword>
-    <description>A boy dashes out of the [woods], returning to the [village].
-He freezes in play when he spots you.  "You..." he says.  "You're the
-man that rescued me from the Wicked Witch all those years ago.
-You're Geralt, aren't you?  It's me, [Jack].  I need your help again."
+    <description>A boy dashes out of the #woods^, returning to the #village^. He freezes in play when he spots you.  "You..." he says.  "You're the man that rescued me from the Wicked Witch all those years ago. You're Geralt, aren't you?  It's me, #Jack^.  I need your help again."
 
-To (talk) to [Jack], type "talk jack" and hit ENTER.
+To @talk^ to #Jack^, type "talk jack" and hit ENTER.
 
-If you need a (hint), type either "hint" or "help" and hit ENTER.</description>
+If you need a @hint^, type either "hint" or "help" and hit ENTER.</description>
     <onCheck>Jack looks desprate, gasping in panic-breaths.</onCheck>
-    <onTalk>Jack: "Another witch has come to haunt these [woods], and Joss is missing.
-He may be a rotten old soul, but he's a neighbor.  If we just let her have him,
-who knows whom she'll make off with next?  Follow me.  We need to (go) back into
-the [woods] to find Joss."
+    <onTalk>Jack: "Another witch has come to haunt these #woods^, and Joss is missing. He may be a rotten old soul, but he's a neighbor.  If we just let her have him, who knows whom she'll make off with next?  Follow me.  We need to @go^ back into the #woods^ to find Joss."
 
-To (go) into the [woods], type "go woods" and hit ENTER.</onTalk>
+To @go^ into the #woods^, type "go woods" and hit ENTER.</onTalk>
   </character>
 
 </root>

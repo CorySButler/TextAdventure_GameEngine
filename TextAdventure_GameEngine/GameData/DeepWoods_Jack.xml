@@ -20,10 +20,9 @@
 
   <character>
     <keyword>jack</keyword>
-    <description>Jack is caught in the thorns.  "Ouch!  I can't make it any further.
-Here, (take) my [torch].  You can (use) it to light up dark places.
+    <description>Jack is caught in the thorns.  "Ouch!  I can't make it any further. Here, @take^ my #torch^.  You can @use^ it to light up dark places.
 
-To (take) the [torch], type "take torch" and hit ENTER.
+To @take^ the #torch^, type "take torch" and hit ENTER.
     </description>
     <onCheck>Jack is too weak to make is through the thorns.</onCheck>
     <onTalk>Jack: "I'm going back home.  I'll leave it to you to find Joss."</onTalk>
@@ -31,7 +30,7 @@ To (take) the [torch], type "take torch" and hit ENTER.
 
   <item>
     <keyword>torch</keyword>
-    <description>Jack holds an unlit [torch] in his outstretched arm.</description>
+    <description>Jack holds an unlit #torch^ in his outstretched arm.</description>
     <onCheck>This can light up dark places.</onCheck>
     <id>0</id>
     <onTake>go deepwoods</onTake>

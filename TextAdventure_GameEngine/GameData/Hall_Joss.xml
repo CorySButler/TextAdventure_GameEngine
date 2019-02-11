@@ -7,36 +7,35 @@
 
   <exit>
     <keyword>ladder</keyword>
-    <description>A wooden [ladder] climbs up to a trap door in the ceiling.</description>
+    <description>A wooden #ladder^ climbs up to a trap door in the ceiling.</description>
     <onCheck>It looks sturdy enough to hold your weight.  A cackling voice can be heard above.</onCheck>
     <destination>WitchsHut_Joss.xml</destination>
   </exit>
 
   <exit>
     <keyword>stairs</keyword>
-    <description>A set of uneven stone [stairs] tumbles downward.</description>
+    <description>A set of uneven stone #stairs^ tumbles downward.</description>
     <onCheck>The air grows colder this way, but nothing can be heard.</onCheck>
     <destination>Basement_Joss.xml</destination>
   </exit>
 
   <prop>
     <keyword>walls</keyword>
-    <description>The [walls] of the room are close and built of stone.</description>
-    <onCheck>Claw [marks] are carved into one of the [walls].</onCheck>
+    <description>The #walls^ of the room are close and built of stone.</description>
+    <onCheck>Claw #marks^ are carved into one of the #walls^.</onCheck>
   </prop>
 
   <prop>
     <keyword>marks</keyword>
-    <description>Deep claw [marks] score one of the walls.  The [marks] fleck the walls of the [stairs].</description>
+    <description>Deep claw #marks^ score one of the walls.  The #marks^ fleck the walls of the #stairs^.</description>
     <onCheck>The deep scratches are that of a nekker.  What was that nekker doing in Toussaint?</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
-    <description>[Joss] casts his eyes to the floor.</description>
+    <description>#Joss^ casts his eyes to the floor.</description>
     <onCheck>He is hunched and rigid, teeming with spite.</onCheck>
-    <onTalk>Joss: "You killed him.  And all for no reason.  Bring me out of this horrid hut
-that I might depart from you forever."</onTalk>
+    <onTalk>Joss: "You killed him.  And all for no reason.  Bring me out of this horrid hut that I might depart from you forever."</onTalk>
   </character>
 
 </root>

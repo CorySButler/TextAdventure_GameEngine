@@ -20,5 +20,13 @@
 
             return inputWords[0] + " is not an available action.";
         }
+
+        private object ParseInput(string input)
+        {
+            input = input.ToLower();
+            string[] inputWords = input.Split(' ');
+
+            return new object();
+        }
     }
 }

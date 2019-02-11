@@ -7,7 +7,7 @@
 
   <exit>
     <keyword>ladder</keyword>
-    <description>A wooden [ladder] climbs down through a trap door in the floor.</description>
+    <description>A wooden #ladder^ climbs down through a trap door in the floor.</description>
     <onCheck>Pale torch light flickers below.</onCheck>
     <destination>Hall_Joss.xml</destination>
   </exit>
@@ -21,23 +21,22 @@
 
   <prop>
     <keyword>cauldron</keyword>
-    <description>Fumes and flames erupt from a bubbling [cauldron].</description>
+    <description>Fumes and flames erupt from a bubbling #cauldron^.</description>
     <onCheck>Teeming with energy, it shakes and rattles at the witch's words.</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
-    <description>[Joss] glares at you.</description>
-    <onCheck>He clenches the rungs of the [ladder] below you.</onCheck>
+    <description>#Joss^ glares at you.</description>
+    <onCheck>He clenches the rungs of the #ladder^ below you.</onCheck>
     <onTalk>Joss: "I know not which of you I despise more."</onTalk>
   </character>
 
   <character>
     <keyword>witch</keyword>
-    <description>Lurching and cackling, a [witch] cries some incantation in a hoarse voice.</description>
+    <description>Lurching and cackling, a #witch^ cries some incantation in a hoarse voice.</description>
     <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
-	<onTalk>Witch: "Duplex duplus labos et tribulatio;
-        ignis uro et lebes bullio."</onTalk>
+	<onTalk>Witch: "Duplex duplus labos et tribulatio; ignis uro et lebes bullio."</onTalk>
     <wantsItemId>3</wantsItemId>
     <onUse>go ending</onUse>
   </character>

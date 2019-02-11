@@ -44,13 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Container.cs" />
     <Compile Include="GameLog.cs" />
     <Compile Include="InteractableObject.cs" />
+    <Compile Include="OpenContainer.cs" />
     <Compile Include="Prop.cs" />
     <Compile Include="UserActions\Discard.cs" />
     <Compile Include="UserActions\DropSilent.cs" />
     <Compile Include="UserActions\Help.cs" />
     <Compile Include="UserActions\Hint.cs" />
+    <Compile Include="UserActions\Open.cs" />
     <Compile Include="UserActions\Restart.cs" />
     <Compile Include="UserActions\Talk.cs" />
     <Compile Include="UserActions\Use.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="Room.cs" />
     <Compile Include="TextInput.cs" />
     <Compile Include="UserActions\UserAction.cs" />
+    <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -146,6 +150,7 @@
     </Content>
     <Content Include="GameData\Subbasement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="GameData\Trench.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

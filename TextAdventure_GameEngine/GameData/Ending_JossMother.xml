@@ -1,17 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 
-  <description>The witch screams in agony and perishes.  Flames spew from the cauldron.
-The entire hut begins to burn.  Orange and green fires rush to the very roots of the hill.
-You stomp the front door and its wooden planks splinter and fly into the night.
-You sprint away from the inferno and back to the village, [Joss] stumbling behind you,
-his [mother] draw over his shoulder.</description>
+  <description>The witch screams in agony and perishes.  Flames spew from the cauldron. The entire hut begins to burn.  Orange and green fires rush to the very roots of the hill. You stomp the front door and its wooden planks splinter and fly into the night. You sprint away from the inferno and back to the village, #Joss^ stumbling behind you, his #mother^ draw over his shoulder.</description>
 
   <hint>Geralt: "Change history, huh?  Why not?"</hint>
 
   <exit>
     <keyword>portal</keyword>
-    <description>At the edge of town, a blue [portal] shines behind a small, dark figure.</description>
+    <description>At the edge of town, a blue #portal^ shines behind a small, dark figure.</description>
     <onCheck>Dawn is coming soon, but the portal reminds you of dusk.
 
 Geralt: "I hate portals.  They make my stomach churn."</onCheck>
@@ -22,18 +18,18 @@ Geralt: "I hate portals.  They make my stomach churn."</onCheck>
   <prop>
     <keyword>geralt_whip</keyword>
     <description></description>
-    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to further torture this tortured soul."</onCheck>
+    <onCheck>Geralt: "What a curse is on this #whip^!  Almost I used it to further torture this tortured soul."</onCheck>
   </prop>
 
   <prop>
     <keyword>geralt_whip_jack</keyword>
     <description></description>
-    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to harm this harmless soul."</onCheck>
+    <onCheck>Geralt: "What a curse is on this #whip^!  Almost I used it to harm this harmless soul."</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
-    <description>[Joss] stops before the figure.</description>
+    <description>#Joss^ stops before the figure.</description>
     <onCheck>He is out of breath.</onCheck>
     <onTalk>Jack: "Joss!  You are safe!  But your mother—"
 
@@ -41,17 +37,14 @@ Joss's mother: "Is well, or will be after some rest.  The White Wolf has slain t
 
 Joss: "Jack, will you help us to our house.  Mother needs a proper bed."
 
-Jack: "Of course I will.  Geralt, we have not the means to repay you for all your service.
-If you would know what other fates may have befallen these folk had you acted otherwise,
-this [portal] will give you a chance to write a new history.  (Go) through the [portal]
-if you would change the outcome of this night."</onTalk>
+Jack: "Of course I will.  Geralt, we have not the means to repay you for all your service. If you would know what other fates may have befallen these folk had you acted otherwise, this #portal^ will give you a chance to write a new history.  @Go^ through the #portal^ if you would change the outcome of this night."</onTalk>
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip|drop whip</onUse>
   </character>
 
   <character>
     <keyword>mother</keyword>
-    <description>He rests his [mother] on a grassy hillock.</description>
+    <description>He rests his #mother^ on a grassy hillock.</description>
     <onCheck>She is spent and will not move further without some rest.</onCheck>
     <onTalk>Joss's mother: "Bless you, Geralt."</onTalk>
     <wantsItemId>5</wantsItemId>
@@ -60,8 +53,7 @@ if you would change the outcome of this night."</onTalk>
 
   <character>
     <keyword>jack</keyword>
-    <description>It is the figure of a boy.  [Jack] is standing before the portal.
-Jack: "I see you are weary, but we must (talk)."</description>
+    <description>It is the figure of a boy.  #Jack^ is standing before the portal. Jack: "I see you are weary, but we must @talk^."</description>
     <onCheck>He looks relieved.</onCheck>
     <onTalk>Jack: "Joss!  You are safe!  But your mother—"
       
@@ -69,10 +61,7 @@ Joss's mother: "Is well, or will be after some rest.  The White Wolf has slain t
 
 Joss: "Jack, will you help us to our house.  Mother needs a proper bed."
 
-Jack: "Of course I will.  Geralt, we have not the means to repay you for all your service.
-If you would know what other fates may have befallen these folk had you acted otherwise,
-this [portal] will give you a chance to write a new history.  (Go) through the [portal]
-if you would change the outcome of this night."</onTalk>
+Jack: "Of course I will.  Geralt, we have not the means to repay you for all your service. If you would know what other fates may have befallen these folk had you acted otherwise, this #portal^ will give you a chance to write a new history.  @Go^ through the #portal^ if you would change the outcome of this night."</onTalk>
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip_jack|drop whip</onUse>
   </character>

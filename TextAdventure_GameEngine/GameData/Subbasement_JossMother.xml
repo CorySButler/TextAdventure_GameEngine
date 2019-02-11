@@ -7,28 +7,28 @@
 
   <exit>
     <keyword>gate</keyword>
-    <description>The magical [gate] remains open.</description>
-    <onCheck>Though freedom stand outside the [gate], a sense of fear attempts to stop you from passing through.</onCheck>
+    <description>The magical #gate^ remains open.</description>
+    <onCheck>Though freedom stand outside the #gate^, a sense of fear attempts to stop you from passing through.</onCheck>
     <destination>Basement_JossMother.xml</destination>
   </exit>
 
   <prop>
     <keyword>table</keyword>
-    <description>A [table] is pushed against one of the walls.  It is covered with various items.</description>
-    <onCheck>On the [table] rest various items of little importance.</onCheck>
+    <description>A #table^ is pushed against one of the walls.  It is covered with various items.</description>
+    <onCheck>On the #table^ rest various items of little importance.</onCheck>
   </prop>
 
   <prop>
     <keyword>geralt_whip</keyword>
     <description></description>
-    <onCheck>Geralt: "What a curse is on this [whip]!  Almost I used it to further torture this tortured soul."</onCheck>
+    <onCheck>Geralt: "What a curse is on this #whip^!  Almost I used it to further torture this tortured soul."</onCheck>
   </prop>
 
   <character>
     <keyword>joss</keyword>
-    <description>[Joss] catches his [mother] as she begins to slump down when the bonds release her.</description>
-    <onCheck>He holds up his [mother]'s weight, her arm pulled over his shoulders.</onCheck>
-    <onTalk>Joss: "My [mother] is weak.  We must get her home so she can rest."</onTalk>
+    <description>#Joss^ catches his #mother^ as she begins to slump down when the bonds release her.</description>
+    <onCheck>He holds up his #mother^'s weight, her arm pulled over his shoulders.</onCheck>
+    <onTalk>Joss: "My #mother^ is weak.  We must get her home so she can rest."</onTalk>
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip|drop whip</onUse>
   </character>

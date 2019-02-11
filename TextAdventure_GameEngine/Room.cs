@@ -15,9 +15,11 @@ namespace TextAdventure_GameEngine
         private List<Exit> _exits;
         private List<Item> _items;
         private List<Prop> _props;
+        private List<Container> _containers;
         private List<Character> _characters;
         private GameLog _gameLog;
 
+        public List<Container> Containers { get { return _containers; } }
         public string FilePath { get { return _filePath; } }
 
         public Room(string fileName, GameLog gameLog)
@@ -67,6 +69,27 @@ namespace TextAdventure_GameEngine
                           OnUse = character.Elements("onUse").Any() ? character.Element("onUse").Value : ""
                       }).ToList();
 
+            _containers = (from container in data.Elements("container")
+                      select new Container
+                      {
+                          Keyword = container.Element("keyword").Value,
+                          Description = container.Element("description").Value,
+                          OnCheck = container.Element("onCheck").Value,
+                          WantsItemId = container.Elements("wantsItemId").Any() ? container.Element("wantsItemId").Value : "",
+                          OnUse = container.Elements("onUse").Any() ? container.Element("onUse").Value : "",
+                          Inventory = (from item in container.Elements("item")
+                         select new Item
+                         {
+                             Keyword = item.Element("keyword").Value,
+                             Description = item.Element("description").Value,
+                             OnCheck = item.Element("onCheck").Value,
+                             Id = item.Element("id").Value,
+                             OnTake = item.Elements("onTake").Any() ? item.Element("onTake").Value : "",
+                             WantsItemId = item.Elements("wantsItemId").Any() ? item.Element("wantsItemId").Value : "",
+                             OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
+                         }).ToList()
+                      }).ToList();
+
             _items = (from item in data.Elements("item")
                      select new Item
                      {
@@ -84,26 +107,31 @@ namespace TextAdventure_GameEngine
 
         public string Describe()
         {
-            string combinedText = _description + "\n";
+            string combinedText = _description + " ";
 
             foreach (Exit exit in _exits)
             {
-                if (exit.Description != "") combinedText += exit.Description + "\n";
+                if (exit.Description != "") combinedText += exit.Description + " ";
             }
 
             foreach (Prop prop in _props)
             {
-                if (prop.Description != "") combinedText += prop.Description + "\n";
+                if (prop.Description != "") combinedText += prop.Description + " ";
+            }
+
+            foreach (Container container in _containers)
+            {
+                if (container.Description != "") combinedText += container.Description + " ";
             }
 
             foreach (Character character in _characters)
             {
-                if (character.Description != "") combinedText += character.Description + "\n";
+                if (character.Description != "") combinedText += character.Description + " ";
             }
 
             foreach (Item item in _items)
             {
-                if (item.Description != "") combinedText += item.Description + "\n";
+                if (item.Description != "") combinedText += item.Description + " ";
             }
 
             return combinedText;
@@ -156,6 +184,15 @@ namespace TextAdventure_GameEngine
             return false;
         }
 
+        public bool HasContainer(string keyword)
+        {
+            foreach (Container container in _containers)
+            {
+                if (container.Keyword == keyword) return true;
+            }
+            return false;
+        }
+
         public Character GetCharacter(string keyword)
         {
             foreach (Character character in _characters)
@@ -192,6 +229,16 @@ namespace TextAdventure_GameEngine
             return null;
         }
 
+
+        public Container GetContainer(string keyword)
+        {
+            foreach (Container container in _containers)
+            {
+                if (container.Keyword == keyword) return container;
+            }
+            return null;
+        }
+
         public void RemoveItem(Item item)
         {
             _items.Remove(item);
@@ -218,6 +265,7 @@ namespace TextAdventure_GameEngine
 
             var data = new XElement("root", new XElement("description", _description), new XElement("hint", _hint));
             data = AddCharactersToXElement(data);
+            data = AddContainersToXElement(data);
             data = AddExitsToXElement(data);
             data = AddPropsToXElement(data);
             data = AddItemsToXElement(data);
@@ -236,6 +284,35 @@ namespace TextAdventure_GameEngine
                     new XElement("wantsItemId", character.WantsItemId),
                     new XElement("onUse", character.OnUse)
                     ));
+            }
+
+            return xElement;
+        }
+
+        private XElement AddContainersToXElement(XElement xElement)
+        {
+            foreach (Container container in _containers)
+            {
+                xElement.Add(new XElement("container",
+                    new XElement("keyword", container.Keyword),
+                    new XElement("description", container.Description),
+                    new XElement("onCheck", container.OnCheck),
+                    new XElement("wantsItemId", container.WantsItemId),
+                    new XElement("onUse", container.OnUse)
+                    ));
+
+                foreach (var item in container.Inventory)
+                {
+                    xElement.LastNode.AddAfterSelf(new XElement("item",
+                        new XElement("keyword", item.Keyword),
+                        new XElement("description", item.Description),
+                        new XElement("onCheck", item.OnCheck),
+                        new XElement("id", item.Id),
+                        new XElement("onTake", item.OnTake),
+                        new XElement("wantsItemId", item.WantsItemId),
+                        new XElement("onUse", item.OnUse)
+                        ));
+                }
             }
 
             return xElement;

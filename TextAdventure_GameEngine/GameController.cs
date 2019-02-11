@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace TextAdventure_GameEngine
 {
@@ -12,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -23,11 +24,12 @@ namespace TextAdventure_GameEngine
             _gameLog = new GameLog();
             _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _textInput = new TextInput();
-            _room = new Room("Village_Jack.xml", _gameLog);
+            _room = new Room("Subbasement.xml", _gameLog);
             _player.UpdateLocation(_room);
 
             while (!_isGameOver)
             {
+                _gameLog.Write("\n >>");
                 var input = Console.ReadLine();
                 _gameLog.WriteSilent(input);
                 var response = _textInput.Accept(input, this);
@@ -46,6 +48,11 @@ namespace TextAdventure_GameEngine
             {
                 Character character = _room.GetCharacter(keyword);
                 _gameLog.Write(character.OnCheck);
+            }
+            else if (_room.HasContainer(keyword))
+            {
+                Container container = _room.GetContainer(keyword);
+                _gameLog.Write(container.OnCheck);
             }
             else if (_room.HasProp(keyword))
             {
@@ -99,7 +106,7 @@ namespace TextAdventure_GameEngine
             }
             else
             {
-                _gameLog.Write("You cannot check drop.  Specify something to drop.");
+                _gameLog.Write("You cannot drop nothing.  Specify something to drop.");
             }
         }
 
@@ -177,6 +184,21 @@ namespace TextAdventure_GameEngine
             _gameLog.Write(inventory);
         }
 
+        public void Open(string keyword)
+        {
+            if (!_room.HasContainer(keyword))
+            {
+                _gameLog.Write("There is no " + keyword + ".");
+                return;
+            }
+            else if (_room.GetContainer(keyword).Inventory.Count == 0)
+            {
+                _gameLog.Write("The " + keyword + " is empty.");
+                return;
+            }
+            _gameLog.Write("Opening the " + keyword + " reveals:\n" + _room.GetContainer(keyword).ListInventory());
+        }
+
         public void Restart()
         {
             Directory.Delete("Save", true);
@@ -192,6 +214,21 @@ namespace TextAdventure_GameEngine
                 _player.AddItem(item);
                 _room.RemoveItem(item);
                 _gameLog.Write("You take the " + keyword + ".");
+                var actions = item.OnTake.Split('|');
+                foreach (var action in actions)
+                {
+                    if (action == "") continue;
+                    var response = _textInput.Accept(action, this);
+                    if (response != "") _gameLog.Write(response);
+                }
+            }
+            else if (_room.Containers.Any(c => c.Inventory.Any(i => i.Keyword == keyword)))
+            {
+                Container container = _room.Containers.Where(c => c.Inventory.Any(i => i.Keyword == keyword)).ToList()[0];
+                Item item = container.GetItem(keyword);
+                _player.AddItem(item);
+                container.RemoveItem(item);
+                _gameLog.Write("You take the " + keyword + " from the " + container.Keyword + ".");
                 var actions = item.OnTake.Split('|');
                 foreach (var action in actions)
                 {
