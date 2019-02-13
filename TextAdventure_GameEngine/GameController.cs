@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDialogue(), new Inventory(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -173,6 +173,17 @@ namespace TextAdventure_GameEngine
             _gameLog.Write(_room.GetHint());
         }
 
+        public void IncDialogue(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                character.CurrentDialogue++;
+                if (character.CurrentDialogue == character.Dialogues.Count)
+                    character.Dialogues = new List<string> { "I don't have anything else to say." };
+            }
+        }
+
         public void Inventory()
         {
             string inventory = "Name: " + _player.Name + "\n";// + "Gold: " + _player.Gold + "";
@@ -260,7 +271,9 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                _gameLog.Write(character.OnTalk);
+                _gameLog.Write(character.Dialogues[character.CurrentDialogue]);
+                //character.CurrentDialogue++;
+                //character.CurrentDialogue %= character.Dialogues.Count;
             }
             else if (keyword != "")
             {

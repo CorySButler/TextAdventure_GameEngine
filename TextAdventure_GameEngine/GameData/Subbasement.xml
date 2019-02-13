@@ -56,6 +56,7 @@
       <description>a small, iron #key^</description>
       <onCheck>A small, iron key.</onCheck>
       <id>4</id>
+      <onTake>incdialogue mother</onTake>
     </item>
     
   </container>
@@ -72,7 +73,7 @@
     <description></description>
     <onCheck>They are wrought of iron.  There is a small keyhole in the center.</onCheck>
     <wantsItemId>4</wantsItemId>
-    <onUse>discard key|go subbasement_jossmother</onUse>
+    <onUse>discard key|incdialogue mother</onUse>
   </prop>
 
   <prop>

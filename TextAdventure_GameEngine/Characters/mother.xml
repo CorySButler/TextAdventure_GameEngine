@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <room>
+        <filename>Subbasement.xml</filename>
+        <currentDialogue>0</currentDialogue>
+        <dialogue>You need to find a #key^.</dialogue>
+        <dialogue>Use that #key^ on these #bonds^.</dialogue>
+        <dialogue>I am free!</dialogue>
+    </room>
+</root>

@@ -66,7 +66,8 @@ namespace TextAdventure_GameEngine
                           OnCheck = character.Element("onCheck").Value,
                           OnTalk = character.Element("onTalk").Value,
                           WantsItemId = character.Elements("wantsItemId").Any() ? character.Element("wantsItemId").Value : "",
-                          OnUse = character.Elements("onUse").Any() ? character.Element("onUse").Value : ""
+                          OnUse = character.Elements("onUse").Any() ? character.Element("onUse").Value : "",
+                          CurrentDialogue = 0
                       }).ToList();
 
             _containers = (from container in data.Elements("container")
@@ -103,6 +104,21 @@ namespace TextAdventure_GameEngine
                      }).ToList();
 
             _gameLog.Write(Describe());
+
+            foreach (var character in _characters)
+            {
+                if (!File.Exists("Characters//" + character.Keyword + ".xml"))
+                {
+                    character.Dialogues = new List<string> { character.OnTalk };
+                    return;
+                }
+                var dialogueData = XElement.Load("Characters//" + character.Keyword + ".xml");
+                var dialogues = (from dialogue in dialogueData.Element("room").Elements("dialogue")
+                                 select (string)dialogue.Value).ToList();
+
+                character.Dialogues = dialogues;
+            }
+
         }
 
         public string Describe()
