@@ -180,7 +180,10 @@ namespace TextAdventure_GameEngine
                 var character = _room.GetCharacter(keyword);
                 character.CurrentDialogue++;
                 if (character.CurrentDialogue == character.Dialogues.Count)
+                {
                     character.Dialogues = new List<string> { "I don't have anything else to say." };
+                    character.CurrentDialogue = 0;
+                }
             }
         }
 

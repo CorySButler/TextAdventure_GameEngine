@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-    <room>
-        <filename>Subbasement.xml</filename>
-        <currentDialogue>0</currentDialogue>
-        <dialogue>You need to find a #key^.</dialogue>
-        <dialogue>Use that #key^ on these #bonds^.</dialogue>
-        <dialogue>I am free!</dialogue>
-    </room>
+  <room>
+    <filename>Subbasement.xml</filename>
+    <currentDialogue>0</currentDialogue>
+    <dialogue>Joss's mother: "You need to find a #key^."</dialogue>
+    <dialogue>Joss's mother: "Use that #key^ on these #bonds^."</dialogue>
+    <dialogue>Joss's mother: "I am free!"</dialogue>
+  </room>
+  <room>
+    <filename>Subbasement_JossMother.xml</filename>
+    <currentDialogue>0</currentDialogue>
+    <dialogue>Joss's mother: "We're in the basement now."</dialogue>
+    <dialogue>Joss's mother: "We are still here."</dialogue>
+  </room>
 </root>

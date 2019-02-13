@@ -110,13 +110,18 @@ namespace TextAdventure_GameEngine
                 if (!File.Exists("Characters//" + character.Keyword + ".xml"))
                 {
                     character.Dialogues = new List<string> { character.OnTalk };
-                    return;
+                    continue;
                 }
                 var dialogueData = XElement.Load("Characters//" + character.Keyword + ".xml");
-                var dialogues = (from dialogue in dialogueData.Element("room").Elements("dialogue")
-                                 select (string)dialogue.Value).ToList();
+                //var rooms = (from room in dialogueData.Elements("room")
+                //             select (string)room.Element("filename").Value).ToList();
+                
+                    var dialogues = (from room in dialogueData.Elements("room")
+                                     where room.Element("filename").Value == fileName
+                                     select (from dialogue in room.Elements("dialogue")
+                                             select dialogue.Value).ToList()).ToList();
 
-                character.Dialogues = dialogues;
+                    character.Dialogues = dialogues[0];
             }
 
         }
