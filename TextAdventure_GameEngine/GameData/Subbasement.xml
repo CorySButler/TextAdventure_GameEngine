@@ -73,7 +73,7 @@
     <description></description>
     <onCheck>They are wrought of iron.  There is a small keyhole in the center.</onCheck>
     <wantsItemId>4</wantsItemId>
-    <onUse>discard key|incdialogue mother</onUse>
+    <onUse>discard key|incdialogue mother|talk mother|joinparty mother</onUse>
   </prop>
 
   <prop>

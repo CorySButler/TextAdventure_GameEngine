@@ -10,6 +10,7 @@ namespace TextAdventure_GameEngine
         public string Name;
         public Genders Gender;
         public int Gold;
+        public List<Character> Party = new List<Character>();
         private List<Item> _items = new List<Item> { new Item
                      {
                          Keyword = "crowns",

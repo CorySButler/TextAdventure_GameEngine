@@ -3,7 +3,7 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>GameData\Subbasement.xml</location>
+  <location>GameData\Subbasement_JossMother.xml</location>
   <item>
     <keyword>crowns</keyword>
     <description>12</description>

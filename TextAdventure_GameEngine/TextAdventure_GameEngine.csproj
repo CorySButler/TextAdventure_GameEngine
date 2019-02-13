@@ -54,6 +54,7 @@
     <Compile Include="UserActions\Help.cs" />
     <Compile Include="UserActions\Hint.cs" />
     <Compile Include="UserActions\IncDialogue.cs" />
+    <Compile Include="UserActions\JoinParty.cs" />
     <Compile Include="UserActions\Open.cs" />
     <Compile Include="UserActions\Restart.cs" />
     <Compile Include="UserActions\Talk.cs" />

@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDialogue(), new Inventory(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDialogue(), new Inventory(), new JoinParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -24,7 +24,7 @@ namespace TextAdventure_GameEngine
             _gameLog = new GameLog();
             _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _textInput = new TextInput();
-            _room = new Room("Subbasement.xml", _gameLog);
+            _room = new Room("Subbasement.xml", _gameLog, _player);
             _player.UpdateLocation(_room);
 
             while (!_isGameOver)
@@ -149,7 +149,7 @@ namespace TextAdventure_GameEngine
                     _gameLog.Write("");
                     Console.Clear();
 
-                    _room = _room.Exit(keyword);
+                    _room = _room.Exit(keyword, _player);
                     _player.UpdateLocation(_room);
                 }
             }
@@ -196,6 +196,15 @@ namespace TextAdventure_GameEngine
             }
 
             _gameLog.Write(inventory);
+        }
+
+        public void JoinParty(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                _player.Party.Add(character);
+            }
         }
 
         public void Open(string keyword)

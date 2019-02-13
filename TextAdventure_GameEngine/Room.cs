@@ -22,7 +22,7 @@ namespace TextAdventure_GameEngine
         public List<Container> Containers { get { return _containers; } }
         public string FilePath { get { return _filePath; } }
 
-        public Room(string fileName, GameLog gameLog)
+        public Room(string fileName, GameLog gameLog, Player player)
         {
             _gameLog = gameLog;
             _savePath = "Save\\" + fileName;
@@ -103,6 +103,8 @@ namespace TextAdventure_GameEngine
                          OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();
 
+            foreach (var member in player.Party) _characters.Add(member);
+
             _gameLog.Write(Describe());
 
             foreach (var character in _characters)
@@ -119,9 +121,13 @@ namespace TextAdventure_GameEngine
                     var dialogues = (from room in dialogueData.Elements("room")
                                      where room.Element("filename").Value == fileName
                                      select (from dialogue in room.Elements("dialogue")
-                                             select dialogue.Value).ToList()).ToList();
+                                             select dialogue.Value).ToList()).ToList()[0];
 
-                    character.Dialogues = dialogues[0];
+                    character.Dialogues = dialogues;
+
+                    character.CurrentDialogue = (from room in dialogueData.Elements("room")
+                                                 where room.Element("filename").Value == fileName
+                                                 select int.Parse(room.Element("currentDialogue").Value)).ToList()[0];
             }
 
         }
@@ -266,7 +272,7 @@ namespace TextAdventure_GameEngine
             Save();
         }
 
-        public Room Exit(string keyword)
+        public Room Exit(string keyword, Player player)
         {
             foreach (Exit exit in _exits)
             {
@@ -274,7 +280,7 @@ namespace TextAdventure_GameEngine
                 {
                     if (exit.IsLocked) return this;
                     Save();
-                    return new Room(exit.Destination, _gameLog);
+                    return new Room(exit.Destination, _gameLog, player);
                 }
             }
             return this;

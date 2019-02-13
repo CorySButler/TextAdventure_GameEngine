@@ -32,7 +32,7 @@
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip|drop whip</onUse>
   </character>
-
+<!--
   <character>
     <keyword>mother</keyword>
     <description></description>
@@ -40,6 +40,6 @@
     <onTalk>Joss's mother: "Bless you, Geralt."</onTalk>
     <wantsItemId>5</wantsItemId>
     <onUse>check geralt_whip|drop whip</onUse>
-  </character>
+  </character>-->
 
 </root>
