@@ -13,6 +13,13 @@
   </exit>
 
   <exit>
+    <keyword>b</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Basement.xml</destination>
+  </exit>
+
+  <exit>
     <keyword>gate</keyword>
     <description>The magical #gate^ remains open.</description>
     <onCheck>Though freedom stand outside the #gate^, a sense of fear attempts to stop you from passing through.</onCheck>

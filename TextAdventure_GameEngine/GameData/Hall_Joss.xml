@@ -16,7 +16,7 @@
     <keyword>stairs</keyword>
     <description>A set of uneven stone #stairs^ tumbles downward.</description>
     <onCheck>The air grows colder this way, but nothing can be heard.</onCheck>
-    <destination>Basement_Joss.xml</destination>
+    <destination>Basement.xml</destination>
   </exit>
 
   <prop>

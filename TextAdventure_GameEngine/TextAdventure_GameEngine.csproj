@@ -83,6 +83,9 @@
     <Content Include="Characters\mother.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameData\Basement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Orig_GameData\CaveEntrance.xml" />
     <Content Include="Orig_GameData\CaveMouth.xml" />
     <Content Include="Orig_GameData\Cell_Player.xml" />

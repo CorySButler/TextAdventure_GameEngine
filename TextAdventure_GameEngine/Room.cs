@@ -117,7 +117,15 @@ namespace TextAdventure_GameEngine
                 var dialogueData = XElement.Load("Characters//" + character.Keyword + ".xml");
                 //var rooms = (from room in dialogueData.Elements("room")
                 //             select (string)room.Element("filename").Value).ToList();
-                
+                if (!dialogueData.Elements("room").Any(r => r.Element("filename").Value == fileName))
+                {
+                    character.Dialogues = new List<string>();
+                    character.CurrentDialogue = 0;
+                }
+                else
+                {
+                    character.DisplayName = dialogueData.Element("displayName").Value;
+
                     var dialogues = (from room in dialogueData.Elements("room")
                                      where room.Element("filename").Value == fileName
                                      select (from dialogue in room.Elements("dialogue")
@@ -128,6 +136,7 @@ namespace TextAdventure_GameEngine
                     character.CurrentDialogue = (from room in dialogueData.Elements("room")
                                                  where room.Element("filename").Value == fileName
                                                  select int.Parse(room.Element("currentDialogue").Value)).ToList()[0];
+                }
             }
 
         }
@@ -264,6 +273,12 @@ namespace TextAdventure_GameEngine
                 if (container.Keyword == keyword) return container;
             }
             return null;
+        }
+
+        public void RemoveCharacter(Character character)
+        {
+            _characters.Remove(character);
+            Save();
         }
 
         public void RemoveItem(Item item)

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>A cold, stone cellar is lit only the torch light from the #stairs^.</description>
+
+  <hint>Geralt: "Poor kid.  Hope the other prisoner is worth his loss."</hint>
+
+  <exit>
+    <keyword>stairs</keyword>
+    <description>A set of uneven stone #stairs^ staggers upward.</description>
+    <onCheck>Warmth and torch light flow down the #stairs^.</onCheck>
+    <destination>Hall_Joss.xml</destination>
+    <onGo>incDialogue mother|incDialogue joss</onGo>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>Satisfied with your sacrifice the magical #gate^ clears away its red mist.</description>
+    <onCheck>Eerie yellow light pours out of the open #gate^.</onCheck>
+    <destination>Subbasement.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>nekker</keyword>
+    <description>The #nekker^ sprawls on the floor, vanquished by the thrust of your silver blade.</description>
+    <onCheck>It haunts this world no more, though looking upon it still brings dread.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>carcasses</keyword>
+    <description>Two wolf #carcasses^ now rest before the open #gate^.</description>
+    <onCheck>One was stabbed several times.  The other was felled with one swift thrust.</onCheck>
+  </prop>
+
+</root>

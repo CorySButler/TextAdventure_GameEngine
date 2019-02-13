@@ -130,6 +130,7 @@ namespace TextAdventure_GameEngine
                 }
                 else
                 {
+                    foreach (var character in _player.Party) character.Save();
                     bool isRestarting = false;
                     var actions = _room.GetExit(keyword).OnGo.Split('|');
                     foreach (var action in actions)
@@ -180,10 +181,7 @@ namespace TextAdventure_GameEngine
                 var character = _room.GetCharacter(keyword);
                 character.CurrentDialogue++;
                 if (character.CurrentDialogue == character.Dialogues.Count)
-                {
-                    character.Dialogues = new List<string> { "I don't have anything else to say." };
-                    character.CurrentDialogue = 0;
-                }
+                    character.CurrentDialogue--;
             }
         }
 
@@ -283,7 +281,10 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                _gameLog.Write(character.Dialogues[character.CurrentDialogue]);
+                var dialogue = character.DisplayName + " has nothing to say.";
+                if (character.Dialogues.Count > 0)
+                    dialogue = character.DisplayName + ": " + character.Dialogues[character.CurrentDialogue];
+                _gameLog.Write(dialogue);
                 //character.CurrentDialogue++;
                 //character.CurrentDialogue %= character.Dialogues.Count;
             }
