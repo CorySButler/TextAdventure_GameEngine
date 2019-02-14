@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDialogue(), new Inventory(), new JoinParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -24,7 +24,7 @@ namespace TextAdventure_GameEngine
             _gameLog = new GameLog();
             _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _textInput = new TextInput();
-            _room = new Room("Subbasement.xml", _gameLog, _player);
+            _room = new Room("Village.xml", _gameLog, _player);
             _player.UpdateLocation(_room);
 
             while (!_isGameOver)
@@ -47,7 +47,7 @@ namespace TextAdventure_GameEngine
             else if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                _gameLog.Write(character.OnCheck);
+                _gameLog.Write(character.DescribeDetails(_room));
             }
             else if (_room.HasContainer(keyword))
             {
@@ -130,16 +130,17 @@ namespace TextAdventure_GameEngine
                 }
                 else
                 {
-                    foreach (var character in _player.Party) character.Save();
                     bool isRestarting = false;
                     var actions = _room.GetExit(keyword).OnGo.Split('|');
                     foreach (var action in actions)
                     {
                         if (action == "") continue;
-                    var response = _textInput.Accept(action, this);
-                    if (response != "") _gameLog.Write(response);
+                        var response = _textInput.Accept(action, this);
+                        if (response != "") _gameLog.Write(response);
                         if (action.StartsWith("restart")) isRestarting = true;
                     }
+
+                    foreach (var character in _player.Party) character.Save();
 
                     if (isRestarting)
                     {
@@ -174,14 +175,30 @@ namespace TextAdventure_GameEngine
             _gameLog.Write(_room.GetHint());
         }
 
+        public void IncDescription(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                character.IncDescription(_room);
+            }
+        }
+
+        public void IncDetailedDescription(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                character.IncDetailedDescription(_room);
+            }
+        }
+
         public void IncDialogue(string keyword)
         {
             if (_room.HasCharacter(keyword))
             {
                 var character = _room.GetCharacter(keyword);
-                character.CurrentDialogue++;
-                if (character.CurrentDialogue == character.Dialogues.Count)
-                    character.CurrentDialogue--;
+                character.IncDialogue(_room);
             }
         }
 
@@ -201,7 +218,8 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 var character = _room.GetCharacter(keyword);
-                _player.Party.Add(character);
+                if (!_player.Party.Contains(character))
+                    _player.Party.Add(character);
             }
         }
 
@@ -281,12 +299,7 @@ namespace TextAdventure_GameEngine
             if (_room.HasCharacter(keyword))
             {
                 Character character = _room.GetCharacter(keyword);
-                var dialogue = character.DisplayName + " has nothing to say.";
-                if (character.Dialogues.Count > 0)
-                    dialogue = character.DisplayName + ": " + character.Dialogues[character.CurrentDialogue];
-                _gameLog.Write(dialogue);
-                //character.CurrentDialogue++;
-                //character.CurrentDialogue %= character.Dialogues.Count;
+                _gameLog.Write(character.Talk(_room));
             }
             else if (keyword != "")
             {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <displayName>Joss's mother</displayName>
-  <room>
-    <filename>Subbasement.xml</filename>
+  <dataBlock>
+    <id>Subbasement.xml</id>
     <currentDialogue>0</currentDialogue>
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
@@ -13,9 +13,9 @@
     <description>A woman hangs from her wrists, clasped to a wall with iron #bonds^.</description>
     <detailedDescription>She has been badly beaten and some of her skin is burnt.</detailedDescription>
     <detailedDescription>Her wrists are raw and bruised. She can hardly keep her eyes open.</detailedDescription>
-  </room>
-  <room>
-    <filename>Basement.xml</filename>
+  </dataBlock>
+  <dataBlock>
+    <id>Basement.xml</id>
     <currentDialogue>0</currentDialogue>
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
@@ -23,5 +23,5 @@
     <dialogue>Why did we come back here?</dialogue>
     <description>Joss's #mother^ staggers along, clinging to her son.</description>
     <detailedDescription>She can hardly keep her eyes open.</detailedDescription>
-  </room>
+  </dataBlock>
 </root>

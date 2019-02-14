@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <displayName>Jack</displayName>
+  <dataBlock>
+    <id>Village.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <description>A boy dashes out of the #woods^, returning to the #village^. He freezes in play when he spots you.
+    
+Boy: "You— You're the man that rescued me from the Wicked Witch all those years ago. You're Geralt, aren't you?  It's me, #Jack^.  I need your help again."
+
+To @talk^ to #Jack^, type "talk jack" and hit ENTER.
+
+If you need a @hint^, type either "hint" or "help" and hit ENTER.</description>
+    <description>#Jack^ follows you, but is unwilling to leave the #woods^ and Joss behind.</description>
+    <detailedDescription>Jack looks desprate, gasping in panic-breaths.</detailedDescription>
+    <detailedDescription>#Jack^ looks useasy about returning to the #village^.</detailedDescription>
+    <dialogue>Another witch has come to haunt these #woods^, and Joss is missing. He may be a rotten old soul, but he's a neighbor.  If we just let her have him, who knows whom she'll make off with next?  Follow me.  We need to @go^ back into the #woods^ to find Joss.
+
+To @go^ into the #woods^, type 'go woods' and hit ENTER.</dialogue>
+    <dialogue>We should @go^ back to the #woods^ to look for Joss.</dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>Woods.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <description>#Jack^ leads you on, being careful not to get too far ahead of you.
+	
+Jack: "I heard the howls of wolves two nights ago coming from these woods. I haven't seen Joss since that afternoon.  I've been looking for a sign, but nothing seems to point to where he might be.  Perhaps a witcher like you could @check^ out the surroundings and find a clue."
+
+To @check^ something out, type "check" followed by the name of the thing you want to @check^ and hit ENTER.
+
+To @check^ the #bushes^, type "check bushes" and hit ENTER.</description>
+    <detailedDescription>He looks around at the tree tops.</detailedDescription>
+    <dialogue>Don't look at me!  I've been searching for a sign all day.</dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>DeepWoods.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <description>#Jack^ is caught in the thorns.
+    
+Jack: "Ouch!  I can't make it any further. Here, @take^ my #torch^.  You can @use^ it to light up dark places."
+
+To @take^ the #torch^, type "take torch" and hit ENTER.</description>
+    <detailedDescription>He is too weak to make it through the thorns.</detailedDescription>
+    <dialogue>I'm going back to the village.  I'll leave it to you to find Joss.</dialogue>
+  </dataBlock>
+</root>

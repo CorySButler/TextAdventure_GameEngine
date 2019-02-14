@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterDataBlock.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="GameLog.cs" />
     <Compile Include="InteractableObject.cs" />
@@ -53,6 +54,8 @@
     <Compile Include="UserActions\DropSilent.cs" />
     <Compile Include="UserActions\Help.cs" />
     <Compile Include="UserActions\Hint.cs" />
+    <Compile Include="UserActions\IncDescription.cs" />
+    <Compile Include="UserActions\IncDetailedDescription.cs" />
     <Compile Include="UserActions\IncDialogue.cs" />
     <Compile Include="UserActions\JoinParty.cs" />
     <Compile Include="UserActions\Open.cs" />
@@ -80,10 +83,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Characters\mother.xml">
+    <Content Include="Characters\jack.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Characters\mother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="GameData\Basement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Village.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Woods.xml">
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Orig_GameData\CaveEntrance.xml" />

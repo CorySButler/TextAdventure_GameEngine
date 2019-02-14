@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The Witcher IV:  Days of Night
+
+</description>
+
+  <hint>Geralt: "So this is what a hint looks like.  Guess I'll @go^ into the #woods^."</hint>
+
+  <exit>
+    <keyword>woods</keyword>
+    <description>As day draws to its close, you walk under the eaves of the dark #woods^ in the land of Toussaint.</description>
+    <onCheck>Night lays thick under the trees of the #woods^.</onCheck>
+    <destination>Woods.xml</destination>
+    <onGo>incdialogue jack|incdescription jack|incdetaileddescription jack|joinparty jack</onGo>
+  </exit>
+
+  <prop>
+    <keyword>village</keyword>
+    <description>The windows of the houses in the #village^ behind you are aglow with candle light.</description>
+    <onCheck>The homes look warm on this chill night.</onCheck>
+  </prop>
+
+  <character>
+    <keyword>jack</keyword>
+  </character>
+
+</root>

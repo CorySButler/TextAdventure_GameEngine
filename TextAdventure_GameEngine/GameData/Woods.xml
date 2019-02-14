@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>Night lays thick under the #trees^ of the woods.</description>
+
+  <hint>Geralt: "Checking my surrounds may reveal more about this place than I noticed at first."</hint>
+
+  <exit>
+    <keyword>village</keyword>
+    <description>The #village^ is not far off.  Pale candle light can still be seen in the windows.</description>
+    <onCheck>The #village^ seems more cheerful and inviting with every step you take away from it.</onCheck>
+    <destination>Village.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>woods</keyword>
+    <description></description>
+    <onCheck>Thorn plants twist and catch each other behind the #bushes^ like a spider's web. You can just make out a slight path through the thorns.</onCheck>
+    <destination>DeepWoods_Jack.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>trees</keyword>
+    <description>The #trees^ are dense and black.</description>
+    <onCheck>The #trees^ have no scratches or markings on them, though their bark is dry and brittle.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>bushes</keyword>
+    <description>Small #bushes^ hem the #path^.</description>
+    <onCheck>They are blackberry #bushes^.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>path</keyword>
+    <description>The #path^ itself is of trodden dirt.</description>
+    <onCheck>The #path^ is clear of root and twig, but #crumbs^ lie about it. The #crumbs^ seem out of place.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>crumbs</keyword>
+    <description></description>
+    <onCheck>They are bread #crumbs^. Following each other in a single file,
+they @go^ into the #woods^ through a small gap in the #bushes^.</onCheck>
+  </prop>
+
+</root>

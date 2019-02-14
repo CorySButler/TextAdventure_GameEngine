@@ -8,6 +8,7 @@ namespace TextAdventure_GameEngine
 {
     public class Room
     {
+        public string Id { get; private set; }
         private string _savePath;
         private string _filePath;
         private string _description;
@@ -16,7 +17,7 @@ namespace TextAdventure_GameEngine
         private List<Item> _items;
         private List<Prop> _props;
         private List<Container> _containers;
-        private List<Character> _characters;
+        private List<Character> _characters = new List<Character>();
         private GameLog _gameLog;
 
         public List<Container> Containers { get { return _containers; } }
@@ -24,6 +25,7 @@ namespace TextAdventure_GameEngine
 
         public Room(string fileName, GameLog gameLog, Player player)
         {
+            Id = fileName;
             _gameLog = gameLog;
             _savePath = "Save\\" + fileName;
 
@@ -58,17 +60,8 @@ namespace TextAdventure_GameEngine
                           OnUse = prop.Elements("onUse").Any() ? prop.Element("onUse").Value : ""
                       }).ToList();
 
-            _characters = (from character in data.Elements("character")
-                      select new Character
-                      {
-                          Keyword = character.Element("keyword").Value,
-                          Description = character.Element("description").Value,
-                          OnCheck = character.Element("onCheck").Value,
-                          OnTalk = character.Element("onTalk").Value,
-                          WantsItemId = character.Elements("wantsItemId").Any() ? character.Element("wantsItemId").Value : "",
-                          OnUse = character.Elements("onUse").Any() ? character.Element("onUse").Value : "",
-                          CurrentDialogue = 0
-                      }).ToList();
+            var characterKeywords = (from character in data.Elements("character")
+                      select character.Element("keyword").Value).ToList();
 
             _containers = (from container in data.Elements("container")
                       select new Container
@@ -103,41 +96,12 @@ namespace TextAdventure_GameEngine
                          OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();
 
-            foreach (var member in player.Party) _characters.Add(member);
+            foreach (var member in player.Party.Where(m => !characterKeywords.Any(ck => ck == m.Keyword))) _characters.Add(member);
+
+            foreach (var characterKeyword in characterKeywords)
+                _characters.Add(new Character(characterKeyword));
 
             _gameLog.Write(Describe());
-
-            foreach (var character in _characters)
-            {
-                if (!File.Exists("Characters//" + character.Keyword + ".xml"))
-                {
-                    character.Dialogues = new List<string> { character.OnTalk };
-                    continue;
-                }
-                var dialogueData = XElement.Load("Characters//" + character.Keyword + ".xml");
-                //var rooms = (from room in dialogueData.Elements("room")
-                //             select (string)room.Element("filename").Value).ToList();
-                if (!dialogueData.Elements("room").Any(r => r.Element("filename").Value == fileName))
-                {
-                    character.Dialogues = new List<string>();
-                    character.CurrentDialogue = 0;
-                }
-                else
-                {
-                    character.DisplayName = dialogueData.Element("displayName").Value;
-
-                    var dialogues = (from room in dialogueData.Elements("room")
-                                     where room.Element("filename").Value == fileName
-                                     select (from dialogue in room.Elements("dialogue")
-                                             select dialogue.Value).ToList()).ToList()[0];
-
-                    character.Dialogues = dialogues;
-
-                    character.CurrentDialogue = (from room in dialogueData.Elements("room")
-                                                 where room.Element("filename").Value == fileName
-                                                 select int.Parse(room.Element("currentDialogue").Value)).ToList()[0];
-                }
-            }
 
         }
 
@@ -162,7 +126,7 @@ namespace TextAdventure_GameEngine
 
             foreach (Character character in _characters)
             {
-                if (character.Description != "") combinedText += character.Description + " ";
+                if (character.Description != "") combinedText += character.Describe(this) + " ";
             }
 
             foreach (Item item in _items)
@@ -264,7 +228,6 @@ namespace TextAdventure_GameEngine
             }
             return null;
         }
-
 
         public Container GetContainer(string keyword)
         {

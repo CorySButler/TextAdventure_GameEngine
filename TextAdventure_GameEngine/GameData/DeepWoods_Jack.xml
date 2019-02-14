@@ -24,7 +24,7 @@
 
 To @take^ the #torch^, type "take torch" and hit ENTER.
     </description>
-    <onCheck>Jack is too weak to make is through the thorns.</onCheck>
+    <onCheck>Jack is too weak to make it through the thorns.</onCheck>
     <onTalk>Jack: "I'm going back home.  I'll leave it to you to find Joss."</onTalk>
   </character>
 

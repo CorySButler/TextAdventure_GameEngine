@@ -10,7 +10,7 @@
     <description>A set of uneven stone #stairs^ staggers upward.</description>
     <onCheck>Warmth and torch light flow down the #stairs^.</onCheck>
     <destination>Hall_Joss.xml</destination>
-    <onGo>incDialogue mother|incDialogue joss</onGo>
+    <onGo>incdialogue mother</onGo>
   </exit>
 
   <exit>
