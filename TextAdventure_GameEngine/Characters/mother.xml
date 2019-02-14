@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <displayName>Joss's mother</displayName>
+  <needsItemId>whipFromBasement</needsItemId>
   <dataBlock>
     <id>Subbasement.xml</id>
     <currentDialogue>0</currentDialogue>

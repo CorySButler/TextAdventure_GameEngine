@@ -33,7 +33,7 @@ To @take^ the #torch^, type "take torch" and hit ENTER.
     <description>Jack holds an unlit #torch^ in his outstretched arm.</description>
     <onCheck>This can light up dark places.</onCheck>
     <id>0</id>
-    <onTake>go deepwoods</onTake>
+    <onTake>incdetaileddescription jack|check jack|destory jack</onTake>
   </item>
 
 </root>

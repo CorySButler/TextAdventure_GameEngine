@@ -30,7 +30,7 @@
   <prop>
     <keyword>joss_will_not_leave</keyword>
     <description></description>
-    <onCheck>Joss: "Hold it!  We are not leaving without my #mother^."</onCheck>
+    <onCheck>Joss: Hold it! We are not leaving without my #mother^.</onCheck>
   </prop>
 
   <prop>
@@ -63,7 +63,7 @@
       <description>a small, iron #key^</description>
       <onCheck>A small, iron key.</onCheck>
       <id>4</id>
-      <onTake>incdialogue mother</onTake>
+      <onTake>incdialogue mother|incdialogue joss</onTake>
     </item>
     
   </container>
@@ -91,20 +91,6 @@
 
   <character>
     <keyword>mother</keyword>
-    <description>A woman hangs from her wrists, clasped to a wall with iron #bonds^.</description>
-    <onCheck>She has been badly beaten and some of her skin is burnt.</onCheck>
-    <onTalk>Joss's mother: "I went looking for #Joss^ and came across this hut.  The witch let me in, but locked the door.  A monster came to her.  They tortured me."</onTalk>
-    <wantsItemId>5</wantsItemId>
-    <onUse>check geralt_whip|drop whip</onUse>
   </character>
-
-  <character>
-    <keyword>joss</keyword>
-    <description>#Joss^ seeing the woman cries out at once, "#Mother^!"</description>
-    <onCheck>He pulls fruitlessly at the iron #bonds^.</onCheck>
-    <onTalk>Joss: "It's my #mother^! We need to unlock her #bonds^."</onTalk>
-    <wantsItemId>5</wantsItemId>
-    <onUse>check geralt_whip|drop whip</onUse>
-  </character>
-
+  
 </root>

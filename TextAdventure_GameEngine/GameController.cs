@@ -165,6 +165,16 @@ namespace TextAdventure_GameEngine
             }
         }
 
+        public void Destroy(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                LeaveParty(keyword);
+                _room.DestroyCharacter(character);
+            }
+        }
+
         public void Hint()
         {
             _gameLog.Write(_room.GetHint());
@@ -220,6 +230,16 @@ namespace TextAdventure_GameEngine
                 var character = _room.GetCharacter(keyword);
                 if (!_player.Party.Contains(character))
                     _player.Party.Add(character);
+            }
+        }
+
+        public void LeaveParty(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                if (_player.Party.Contains(character))
+                    _player.Party.Remove(character);
             }
         }
 

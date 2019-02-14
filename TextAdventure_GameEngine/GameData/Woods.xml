@@ -16,7 +16,7 @@
     <keyword>woods</keyword>
     <description></description>
     <onCheck>Thorn plants twist and catch each other behind the #bushes^ like a spider's web. You can just make out a slight path through the thorns.</onCheck>
-    <destination>DeepWoods_Jack.xml</destination>
+    <destination>DeepWoods.xml</destination>
   </exit>
 
   <prop>

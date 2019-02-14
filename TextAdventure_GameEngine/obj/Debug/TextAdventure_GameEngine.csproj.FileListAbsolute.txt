@@ -87,3 +87,4 @@ C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Characters\jack.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\GameData\Village.xml
 C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\GameData\Woods.xml
+C:\Users\csb\Desktop\TextAdventure_GameEngine\TextAdventure_GameEngine\bin\Debug\Characters\joss.xml

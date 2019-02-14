@@ -3,7 +3,7 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Save\Village.xml</location>
+  <location>GameData\DeepWoods.xml</location>
   <item>
     <keyword>crowns</keyword>
     <description>12</description>

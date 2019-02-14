@@ -8,7 +8,7 @@ namespace TextAdventure_GameEngine
     public class Character : InteractableObject
     {
         public string DisplayName { get; private set; }
-        public string OnTalk { get; set; }
+        public string NeedsItemId { get; set; }
         private List<CharacterDataBlock> _dataBlocks;
 
         public Character(string keyword)
@@ -18,8 +18,9 @@ namespace TextAdventure_GameEngine
             if (!File.Exists("Characters//" + Keyword + ".xml")) return;
 
             var characterData = XElement.Load("Characters//" + Keyword + ".xml");
-
+            
             DisplayName = characterData.Element("displayName").Value;
+            NeedsItemId = characterData.Element("needsItemId").Value;
 
             _dataBlocks = (from dataBlock in characterData.Elements("dataBlock")
                           select new CharacterDataBlock

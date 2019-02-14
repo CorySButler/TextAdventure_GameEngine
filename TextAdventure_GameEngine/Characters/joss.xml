@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <displayName>Joss</displayName>
+  <needsItemId>whipFromBasement</needsItemId>
+  <dataBlock>
+    <id>Basement.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description>The boy is indeed #Joss^. He has grown much in the past few years.</description>
+    <description>#Joss^ throws himself upon the newly slain wolf.</description>
+    <description>#Joss^ is following you closely and supporting his #mother^.</description>
+    <detailedDescription>His sour attitude seems diminished. The terror of the #nekker^ and the support of the #wolf^ may have caused a change in him.</detailedDescription>
+    <detailedDescription>He is filled with despair and spite.</detailedDescription>
+    <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
+    <dialogue>Can it be you? First this grey #wolf^ and now the White Wolf come to my aid! I am Joss, and I beg you to forgive me for my misleading words I spoke to you at our last meeting. I have been shaken to my core, and have grown because of it.
+
+Geralt: Good. So you can give me the truth, and all the truth. Are you alone down here?
+
+Joss: I have this #wolf^ with me. I followed him and his mate to the clearing in the woods. I thought they would kill me when they finally spotted me, but then that monster appeared from the hut and chased us down here. A can't tell you how many days ago that was.
+
+Geralt: What can you tell me?
+
+Joss: That the wolves hated the monster more than they hated me. And that this is a witch's hut! That monster obeys her and watches us. She killed the second wolf tonight to open the #gate^. She threw some poor woman in there. I covered my face when the witch came, but I think the woman my have come from my own village.
+
+Geralt: A sacrifice to open the #gate^, huh?
+
+Joss: I suppose, but you mustn't hurt this #wolf^. He has saved my life.</dialogue>
+    <dialogue>How could you? You are a monster yourself.
+
+Geralt: The gate needed a sacrifice. The nekker didn't cut it. It was either the wolf or you."
+
+Joss: Whoever's through that gate can't be worth the life of this wolf.</dialogue>
+    <dialogue>My #mother^ is weak.  We must get her home so she can rest.</dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>Subbasement.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description>#Joss^ seeing the woman cries out at once, "#Mother^!"</description>
+    <description>#Joss^ catches his #mother^ as she begins to slump down when the bonds release her.</description>
+    <detailedDescription>He pulls fruitlessly at the iron #bonds^.</detailedDescription>
+    <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
+    <dialogue>It's my #mother^! We need to unlock her #bonds^.</dialogue>
+    <dialogue>Here, Geralt. Unlock the #bonds^.</dialogue>
+    <dialogue>My #mother^ is weak.  We must get her home so she can rest.</dialogue>
+  
+</dataBlock>
+</root>

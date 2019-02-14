@@ -148,6 +148,11 @@ namespace TextAdventure_GameEngine
             Save();
         }
 
+        public void DestroyCharacter(Character character)
+        {
+            _characters.Remove(character);
+        }
+
         public bool HasCharacter(string keyword)
         {
             foreach (Character character in _characters)
@@ -285,7 +290,7 @@ namespace TextAdventure_GameEngine
                     new XElement("keyword", character.Keyword),
                     new XElement("description", character.Description),
                     new XElement("onCheck", character.OnCheck),
-                    new XElement("onTalk", character.OnTalk),
+                    //new XElement("onTalk", character.OnTalk),
                     new XElement("wantsItemId", character.WantsItemId),
                     new XElement("onUse", character.OnUse)
                     ));

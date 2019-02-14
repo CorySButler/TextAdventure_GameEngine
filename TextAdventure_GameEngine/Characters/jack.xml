@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <displayName>Jack</displayName>
+  <needsItemId>null</needsItemId>
   <dataBlock>
     <id>Village.xml</id>
     <currentDialogue>0</currentDialogue>
@@ -47,6 +48,7 @@ Jack: "Ouch!  I can't make it any further. Here, @take^ my #torch^.  You can @us
 
 To @take^ the #torch^, type "take torch" and hit ENTER.</description>
     <detailedDescription>He is too weak to make it through the thorns.</detailedDescription>
+    <detailedDescription>Jack returns to the village.</detailedDescription>
     <dialogue>I'm going back to the village.  I'll leave it to you to find Joss.</dialogue>
   </dataBlock>
 </root>
