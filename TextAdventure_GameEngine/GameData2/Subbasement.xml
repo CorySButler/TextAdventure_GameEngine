@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is wet and hot and dripping with slime. The light is a putrid yellow, but its source is unclear.</description>
+
+  <hint>Geralt: "Is there a key lying around anywhere?"</hint>
+
+  <exit>
+    <keyword>subbasement_jossmother</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Subbasement_JossMother.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>b</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Basement.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>The magical #gate^ remains open.</description>
+    <onCheck>Though freedom stand outside the #gate^, a sense of fear attempts to stop you from passing through.</onCheck>
+    <destination>Subbasement.xml</destination>
+    <onGo>check joss_will_not_leave</onGo>
+  </exit>
+
+  <prop>
+    <keyword>joss_will_not_leave</keyword>
+    <description></description>
+    <onCheck>Joss: Hold it! We are not leaving without my #mother^.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>table</keyword>
+    <description>A #table^ is pushed against one of the walls.  It is covered with various items.</description>
+    <onCheck>On the #table^ rest #papers^, a glass #bottle^, a wooden #box^, and a #whip^.</onCheck>
+  </prop>
+
+  <item>
+    <keyword>papers</keyword>
+    <description>loose #papers^</description>
+    <onCheck>They have been torn and trampled.  The writing of them can no longer be read.</onCheck>
+    <id>00</id>
+  </item>
+
+  <item>
+    <keyword>bottle</keyword>
+    <description>a glass #bottle^</description>
+    <onCheck>A wide, empty bottle with a cork lid.</onCheck>
+    <id>00</id>
+  </item>
+
+  <container>
+    <keyword>box</keyword>
+    <description>a wooden #box^</description>
+    <onCheck>The #box^ is made of wood and has no lock.</onCheck>
+
+    <item>
+      <keyword>key</keyword>
+      <description>a small, iron #key^</description>
+      <onCheck>A small, iron key.</onCheck>
+      <id>4</id>
+      <onTake>incdialogue mother|incdialogue joss</onTake>
+    </item>
+    
+  </container>
+
+  <item>
+    <keyword>whip</keyword>
+    <description>a #whip^ that has seen much use</description>
+    <onCheck>A long, leather whip with a frayed and blood-stained tip.</onCheck>
+    <id>5</id>
+  </item>
+
+  <prop>
+    <keyword>bonds</keyword>
+    <description></description>
+    <onCheck>They are wrought of iron.  There is a small keyhole in the center.</onCheck>
+    <wantsItemId>4</wantsItemId>
+    <onUse>discard key|incdialogue mother|talk mother|joinparty mother</onUse>
+  </prop>
+
+  <prop>
+    <keyword>geralt_whip</keyword>
+    <description></description>
+    <onCheck>Geralt: "What a curse is on this #whip^!  Almost I used it to further torture this tortured soul."</onCheck>
+  </prop>
+
+  <character>
+    <keyword>mother</keyword>
+  </character>
+  
+</root>

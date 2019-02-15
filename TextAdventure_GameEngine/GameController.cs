@@ -42,7 +42,7 @@ namespace TextAdventure_GameEngine
         {
             if (!_room.HasCharacter(keyword))
             {
-                var character = new Character(keyword);
+                var character = new Character(keyword, _room);
                 character.IncNumVisits(_room);
                 _room.AddCharacter(character);
             }
@@ -82,6 +82,15 @@ namespace TextAdventure_GameEngine
             else
             {
                 _gameLog.Write("You cannot check nothing.  Specify something to check.");
+            }
+        }
+
+        public void Describe(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                Character character = _room.GetCharacter(keyword);
+                _gameLog.Write(character.Describe(_room));
             }
         }
 

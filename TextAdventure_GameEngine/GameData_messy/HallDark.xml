@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <description>The room is cold and dark.</description>
+
+  <hint>Geralt: "Maybe I can @use^ something in my @inventory^ to light up the #darkness^."</hint>
+
+  <exit>
+    <keyword>gate</keyword>
+    <description>The only source of light is star light twinkling in through the #gate^.</description>
+    <onCheck>The #gate^ is the only path you can see.</onCheck>
+    <destination>Trench_GateOpen.xml</destination>
+  </exit>
+
+  <exit>
+    <keyword>hall</keyword>
+    <description></description>
+    <onCheck></onCheck>
+    <destination>Hall.xml</destination>
+  </exit>
+
+  <prop>
+    <keyword>darkness</keyword>
+    <description>The #darkness^ is so dense it is almost blinding.</description>
+    <onCheck>The #darkness^ is just waiting to be lit up.</onCheck>
+    <wantsItemId>0</wantsItemId>
+    <onUse>discard torch|go hall</onUse>
+  </prop>
+
+  <prop>
+    <keyword>walls</keyword>
+    <description>The sound of your breath echoes in your ears.  The #walls^ of this room must be close.</description>
+    <onCheck>You cannot see anything, but reaching out your hand, you feel #marks^ carved into one of the #walls^.</onCheck>
+  </prop>
+
+  <prop>
+    <keyword>marks</keyword>
+    <description></description>
+    <onCheck>It's hard to tell what cause the marks without seeing them.</onCheck>
+  </prop>
+
+</root>

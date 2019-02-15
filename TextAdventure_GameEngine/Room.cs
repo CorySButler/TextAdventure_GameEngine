@@ -99,7 +99,7 @@ namespace TextAdventure_GameEngine
             foreach (var member in player.Party) _characters.Add(member);
 
             foreach (var characterKeyword in characterKeywords.Where(ck => !_characters.Any(c => c.Keyword == ck)))
-                _characters.Add(new Character(characterKeyword));
+                _characters.Add(new Character(characterKeyword, this));
 
             foreach (var character in _characters)
                 character.IncNumVisits(this);

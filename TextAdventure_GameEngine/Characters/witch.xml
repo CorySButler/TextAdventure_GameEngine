@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <displayName>Witch</displayName>
+  <dataBlock>
+    <id>WitchsHut.xml</id>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go ending</onUse>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <dialogue>Duplex duplus labos et tribulatio; ignis uro et lebes bullio.</dialogue>
+    <description>Lurching and cackling, a #witch^ cries some incantation in a hoarse voice.</description>
+    <detailedDescription>She is fat and aged, brimming with dark magic and a vile spirit.</detailedDescription>
+  </dataBlock>
+</root>

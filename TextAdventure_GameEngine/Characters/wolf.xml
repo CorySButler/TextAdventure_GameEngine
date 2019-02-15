@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <displayName>Joss</displayName>
+  <needsItemId>whipFromBasement</needsItemId>
+  <dataBlock>
+    <id>Basement.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description skipIf="!isInParty wolf">The #wolf^ stands next to the boy.</description>
+    <description>A second #wolf^ now lies dead before the door.</description>
+    <detailedDescription skipIf="!isInParty wolf">It is calm, and yet it appears protective of #Joss^.</detailedDescription>
+    <detailedDescription>The #wolf^ was felled with one swift thrust.</detailedDescription>
+    <dialogue></dialogue>
+    <wantsItemId>2</wantsItemId>
+    <onUse>leaveparty wolf|check wolf|describe joss</onUse>
+  </dataBlock>
+  <dataBlock>
+    <id>Hall.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description>The #wolf^ follows close to #Joss^.</description>
+    <detailedDescription>It is calm, and yet it appears protective of #Joss^.</detailedDescription>
+    <dialogue></dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>WitchsHut.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description>The #wolf^ climbs into the room without a sound.</description>
+    <detailedDescription>It glares at the #witch^ but does not move.</detailedDescription>
+    <dialogue></dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>Ending.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description></description>
+    <detailedDescription>It is panting next to #Joss^.</detailedDescription>
+    <dialogue></dialogue>
+  </dataBlock>
+</root>

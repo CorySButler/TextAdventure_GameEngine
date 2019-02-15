@@ -27,6 +27,11 @@
 
   <character>
     <keyword>witch</keyword>
+    <description>Lurching and cackling, a #witch^ cries some incantation in a hoarse voice.</description>
+    <onCheck>She is fat and aged, brimming with dark magic and a vile spirit.</onCheck>
+	<onTalk>Witch: "Duplex duplus labos et tribulatio; ignis uro et lebes bullio."</onTalk>
+    <wantsItemId>3</wantsItemId>
+    <onUse>go ending</onUse>
   </character>
 
 </root>

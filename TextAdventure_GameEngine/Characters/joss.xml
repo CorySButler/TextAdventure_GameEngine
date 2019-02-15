@@ -81,7 +81,7 @@ Joss: Whoever's through that gate can't be worth the life of this wolf.</dialogu
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
     <currentDialogue>0</currentDialogue>
-    <description>>#Joss^ stops before the figure.</description>
+    <description>#Joss^ stops before the figure.</description>
     <detailedDescription>He is out of breath.</detailedDescription>
     <dialogue skipIf="!isInParty wolf">It's the village!
 	

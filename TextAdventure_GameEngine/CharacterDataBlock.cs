@@ -5,6 +5,8 @@ namespace TextAdventure_GameEngine
     public class CharacterDataBlock
     {
         public string Id { get; set; }
+        public string WantsItemId { get; set; }
+        public string OnUse { get; set; }
         public int NumVisits { get; set; }
         public int CurrentDescription { get; set; }
         public int CurrentDetailedDescription { get; set; }

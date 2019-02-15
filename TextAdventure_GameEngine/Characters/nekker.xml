@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <displayName>Nekker</displayName>
+  <dataBlock>
+    <id>Basement.xml</id>
+    <wantsItemId>3</wantsItemId>
+    <onUse>destroy boy|destroy wolf|add wolf|add joss|joinparty wolf|joinparty joss|describe nekker|describe joss|describe wolf</onUse>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <dialogue skipIf="isInParty joss">(Its vile speech is full of spitting and croaking.)</dialogue>
+    <dialogue>Why did we come back here?</dialogue>
+    <description skipIf="isInParty joss">A vicious #nekker^ leaps about the room, spitting and flailing and avoiding the #wolf^.</description>
+    <description>The #nekker^ sprawls on the floor, vanquished by the thrust of your silver blade.</description>
+    <detailedDescription skipIf="isInParty joss">It is naked and enraged.  Its eyes are on you, but is glances to #wolf^ as well.</detailedDescription>
+    <detailedDescription>It haunts this world no more, though looking upon it still brings dread.</detailedDescription>
+  </dataBlock>
+</root>

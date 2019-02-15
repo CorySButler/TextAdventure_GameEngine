@@ -19,9 +19,36 @@
     <currentDialogue>0</currentDialogue>
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
-    <dialogue>Get us out of here, Geralt.</dialogue>
+    <dialogue skipIf="numVisitsGreaterThan 1">Get us out of here, Geralt.</dialogue>
     <dialogue>Why did we come back here?</dialogue>
     <description>Joss's #mother^ staggers along, clinging to her son.</description>
     <detailedDescription>She can hardly keep her eyes open.</detailedDescription>
+  </dataBlock>
+  <dataBlock>
+    <id>Hall.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <dialogue>Get us out of here, Geralt.</dialogue>
+    <description>Joss's #mother^ staggers along, clinging to her son.</description>
+    <detailedDescription>She can hardly keep her eyes open.</detailedDescription>
+  </dataBlock>
+  <dataBlock>
+    <id>WitchsHut.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <dialogue>(whispering) Kill that monster, Geralt. It's our only hope.</dialogue>
+    <description>She suppresses her panicked breaths.</description>
+    <detailedDescription>She leans over her son, nearly spent.</detailedDescription>
+  </dataBlock>
+  <dataBlock>
+    <id>Ending.xml</id>
+    <currentDialogue>0</currentDialogue>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <dialogue>Bless you, Geralt.</dialogue>
+    <description>He rests his #mother^ on a grassy hillock.</description>
+    <detailedDescription>She is spent and will not move further without some rest.</detailedDescription>
   </dataBlock>
 </root>

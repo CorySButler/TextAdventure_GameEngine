@@ -3,7 +3,7 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location />
+  <location>GameData\Basement.xml</location>
   <item>
     <keyword>crowns</keyword>
     <description>12</description>
@@ -33,5 +33,11 @@
     <description></description>
     <onCheck>Ideal for slaying monsters.</onCheck>
     <id>3</id>
+  </item>
+  <item>
+    <keyword>stone</keyword>
+    <description></description>
+    <onCheck>It glows purple as though it is full of energy.</onCheck>
+    <id>1</id>
   </item>
 </root>

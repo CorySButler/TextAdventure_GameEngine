@@ -1,4 +1,6 @@
-﻿namespace TextAdventure_GameEngine
+﻿using System.Linq;
+
+namespace TextAdventure_GameEngine
 {
     public class ConditionalData
     {
@@ -54,7 +56,7 @@
         private bool IsInParty(string keyword)
         {
             var player = new Player().Load();
-            return player.Party.Contains(new Character(keyword));
+            return player.Party.Any(member => member.Keyword == keyword);
         }
 
         private bool NumVisitsGreaterThan(string number, CharacterDataBlock dataBlock)

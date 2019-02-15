@@ -8,24 +8,53 @@ namespace TextAdventure_GameEngine
     public class Character : InteractableObject
     {
         public string DisplayName { get; private set; }
-        public string NeedsItemId { get; set; }
+        public Room CurrentRoom { get; set; }
+
+        public string WantsItemId
+        {
+            get
+            {
+                try
+                {
+                    var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == CurrentRoom.Id).ToList()[0]);
+                    return _dataBlocks[i].WantsItemId;
+                }
+                catch { return ""; }
+            }
+        }
+
+        public string OnUse
+        {
+            get
+            {
+                try
+                {
+                    var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == CurrentRoom.Id).ToList()[0]);
+                    return _dataBlocks[i].OnUse;
+                }
+                catch { return ""; }
+            }
+        }
+
         private List<CharacterDataBlock> _dataBlocks;
 
-        public Character(string keyword)
+        public Character(string keyword, Room room)
         {
             Keyword = keyword;
+            CurrentRoom = room;
 
             if (!File.Exists("Characters//" + Keyword + ".xml")) return;
 
             var characterData = XElement.Load("Characters//" + Keyword + ".xml");
             
             DisplayName = characterData.Element("displayName").Value;
-            NeedsItemId = characterData.Element("needsItemId").Value;
 
             _dataBlocks = (from dataBlock in characterData.Elements("dataBlock")
                           select new CharacterDataBlock
                           {
                               Id = dataBlock.Element("id").Value,
+                              WantsItemId = dataBlock.Elements("wantsItemId").Any() ? dataBlock.Element("wantsItemId").Value : "",
+                              OnUse = dataBlock.Elements("onUse").Any() ? dataBlock.Element("onUse").Value : "",
                               NumVisits = dataBlock.Elements("numVisits").Any() ? int.Parse(dataBlock.Element("numVisit").Value) : 0,
                               CurrentDescription = int.Parse(dataBlock.Element("currentDescription").Value),
                               CurrentDetailedDescription = int.Parse(dataBlock.Element("currentDetailedDescription").Value),

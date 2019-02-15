@@ -51,6 +51,8 @@
     <Compile Include="InteractableObject.cs" />
     <Compile Include="OpenContainer.cs" />
     <Compile Include="Prop.cs" />
+    <Compile Include="UserActions\Add.cs" />
+    <Compile Include="UserActions\Describe.cs" />
     <Compile Include="UserActions\Destroy.cs" />
     <Compile Include="UserActions\Discard.cs" />
     <Compile Include="UserActions\DropSilent.cs" />
@@ -96,14 +98,60 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Characters\nekker.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Characters\witch.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Characters\wolf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData2\Basement.xml" />
+    <Content Include="GameData2\Village.xml" />
+    <Content Include="GameData2\Woods.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="GameData\Basement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Clearing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\DeepWoods.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Ending.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Hall.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\HallDark.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Stream.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Subbasement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Subbasement_JossMother.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Trench.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameData\Trench_GateOpen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="GameData\Village.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameData\WitchsHut.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="GameData\Woods.xml">
-      <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Orig_GameData\CaveEntrance.xml" />
@@ -124,91 +172,41 @@
     <Content Include="Orig_GameData\TestRoom_0.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GameData\Basement_Joss.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Basement_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Basement_JossWolf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Basement_Nekker.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Clearing.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\DeepWoods.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\DeepWoods_Jack.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="GameData2\Basement_Joss.xml" />
+    <Content Include="GameData2\Basement_JossMother.xml" />
+    <Content Include="GameData2\Basement_JossWolf.xml" />
+    <Content Include="GameData2\Basement_Nekker.xml" />
+    <Content Include="GameData2\Clearing.xml" />
+    <Content Include="GameData2\DeepWoods.xml" />
+    <Content Include="GameData2\DeepWoods_Jack.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GameData\Ending.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Ending_Joss.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Ending_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Ending_JossWolf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Hall.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\HallDark.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Hall_Joss.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Hall_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Hall_JossWolf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Stream.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Subbasement.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="GameData2\Ending.xml" />
+    <Content Include="GameData2\Ending_Joss.xml" />
+    <Content Include="GameData2\Ending_JossMother.xml" />
+    <Content Include="GameData2\Ending_JossWolf.xml" />
+    <Content Include="GameData2\Hall.xml" />
+    <Content Include="GameData2\HallDark.xml" />
+    <Content Include="GameData2\Hall_Joss.xml" />
+    <Content Include="GameData2\Hall_JossMother.xml" />
+    <Content Include="GameData2\Hall_JossWolf.xml" />
+    <Content Include="GameData2\Stream.xml" />
+    <Content Include="GameData2\Subbasement.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GameData\Trench.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Trench_GateOpen.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="GameData2\Trench.xml" />
+    <Content Include="GameData2\Trench_GateOpen.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GameData\Village_Jack.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\WitchsHut_Joss.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\WitchsHut.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\WitchsHut_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\WitchsHut_JossWolf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameData\Woods_Jack.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="GameData2\Village_Jack.xml" />
+    <Content Include="GameData2\WitchsHut_Joss.xml" />
+    <Content Include="GameData2\WitchsHut.xml" />
+    <Content Include="GameData2\WitchsHut_JossMother.xml" />
+    <Content Include="GameData2\WitchsHut_JossWolf.xml" />
+    <Content Include="GameData2\Woods_Jack.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GameData\Subbasement_JossMother.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="GameData2\Subbasement_JossMother.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
