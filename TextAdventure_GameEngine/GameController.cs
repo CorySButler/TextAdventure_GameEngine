@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Destroy(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new LeaveParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {

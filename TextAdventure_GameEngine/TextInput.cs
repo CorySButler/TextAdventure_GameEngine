@@ -4,7 +4,7 @@
     {
         public string Accept(string input, GameController gameController)
         {
-            input = input.ToLower();
+            input = input.ToLower().Trim();
             string[] inputWords = input.Split(' ');
 
             UserAction userAction = null;

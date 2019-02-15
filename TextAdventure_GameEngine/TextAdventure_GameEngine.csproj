@@ -50,6 +50,7 @@
     <Compile Include="InteractableObject.cs" />
     <Compile Include="OpenContainer.cs" />
     <Compile Include="Prop.cs" />
+    <Compile Include="UserActions\Destroy.cs" />
     <Compile Include="UserActions\Discard.cs" />
     <Compile Include="UserActions\DropSilent.cs" />
     <Compile Include="UserActions\Help.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="UserActions\IncDetailedDescription.cs" />
     <Compile Include="UserActions\IncDialogue.cs" />
     <Compile Include="UserActions\JoinParty.cs" />
+    <Compile Include="UserActions\LeaveParty.cs" />
     <Compile Include="UserActions\Open.cs" />
     <Compile Include="UserActions\Restart.cs" />
     <Compile Include="UserActions\Talk.cs" />

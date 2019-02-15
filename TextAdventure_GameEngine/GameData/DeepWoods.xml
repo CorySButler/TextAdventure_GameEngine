@@ -12,4 +12,12 @@
     <destination>Stream.xml</destination>
   </exit>
 
+  <item>
+    <keyword>torch</keyword>
+    <description>Jack holds an unlit #torch^ in his outstretched arm.</description>
+    <onCheck>This can light up dark places.</onCheck>
+    <id>0</id>
+    <onTake>incdetaileddescription jack|check jack|destroy jack</onTake>
+  </item>
+
 </root>
