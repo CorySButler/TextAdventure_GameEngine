@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Check(), new Destroy(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new LeaveParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Add(), new Check(), new Destroy(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new LeaveParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -35,6 +35,16 @@ namespace TextAdventure_GameEngine
                 _gameLog.WriteSilent(input);
                 var response = _textInput.Accept(input, this);
                 if (response != "") _gameLog.Write(response);
+            }
+        }
+
+        public void Add(string keyword)
+        {
+            if (!_room.HasCharacter(keyword))
+            {
+                var character = new Character(keyword);
+                character.IncNumVisits(_room);
+                _room.AddCharacter(character);
             }
         }
 
@@ -72,6 +82,22 @@ namespace TextAdventure_GameEngine
             else
             {
                 _gameLog.Write("You cannot check nothing.  Specify something to check.");
+            }
+        }
+
+        public void Destroy(string keyword)
+        {
+            if (_room.HasCharacter(keyword))
+            {
+                var character = _room.GetCharacter(keyword);
+                LeaveParty(keyword);
+                _room.DestroyCharacter(character);
+            }
+            if (_room.HasProp(keyword))
+            {
+                var prop = _room.GetProp(keyword);
+                LeaveParty(keyword);
+                _room.DestroyProp(prop);
             }
         }
 
@@ -163,16 +189,6 @@ namespace TextAdventure_GameEngine
             else
             {
                 _gameLog.Write("You cannot go nowhere.  Specify somewhere to go.");
-            }
-        }
-
-        public void Destroy(string keyword)
-        {
-            if (_room.HasCharacter(keyword))
-            {
-                var character = _room.GetCharacter(keyword);
-                LeaveParty(keyword);
-                _room.DestroyCharacter(character);
             }
         }
 

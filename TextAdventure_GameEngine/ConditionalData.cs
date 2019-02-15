@@ -11,7 +11,7 @@
             Data = data;
         }
 
-        public bool MeetsSkipCondition(CharacterDataBlock dataBlock)
+        public bool MeetsSkipConditions(CharacterDataBlock dataBlock)
         {
             if (string.IsNullOrWhiteSpace(Condition)) return false;
 
@@ -28,11 +28,17 @@
                     case "isInParty":
                         allConditionsMet = IsInParty(conditionWords[1]);
                         break;
+                    case "!isInParty":
+                        allConditionsMet = !IsInParty(conditionWords[1]);
+                        break;
                     case "numVisitsGreaterThan":
                         allConditionsMet = NumVisitsGreaterThan(conditionWords[1], dataBlock);
                         break;
                     case "playerHas":
                         allConditionsMet = PlayerHas(conditionWords[1]);
+                        break;
+                    case "!playerHas":
+                        allConditionsMet = !PlayerHas(conditionWords[1]);
                         break;
                     default:
                         allConditionsMet = false;

@@ -51,7 +51,7 @@
     <onCheck>It is naked and enraged.  Its eyes are on you, but is glances to #wolf^ as well.</onCheck>
     <onTalk>Its vile speech is full of spitting and croaking.</onTalk>
     <wantsItemId>3</wantsItemId>
-    <onUse>go basement_josswolf</onUse>
+    <onUse>destroy nekker|destroy boy|destroy wolf|add wolf|add joss|joinparty wolf|joinparty joss</onUse>
   </character>
 
 </root>

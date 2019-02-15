@@ -144,6 +144,11 @@ namespace TextAdventure_GameEngine
             return _hint != "" ? _hint : "No hint available.";
         }
 
+        public void AddCharacter(Character character)
+        {
+            _characters.Add(character);
+        }
+
         public void AddItem(Item item)
         {
             _items.Add(item);
@@ -153,6 +158,12 @@ namespace TextAdventure_GameEngine
         public void DestroyCharacter(Character character)
         {
             _characters.Remove(character);
+            character.Describe(this);
+        }
+
+        public void DestroyProp(Prop prop)
+        {
+            _props.Remove(prop);
         }
 
         public bool HasCharacter(string keyword)

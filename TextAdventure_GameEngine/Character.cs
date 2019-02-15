@@ -140,7 +140,7 @@ namespace TextAdventure_GameEngine
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
                 foreach (var data in _dataBlocks[i].Descriptions)
                 {
-                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
                         return data.Data;
                 }
                 return "";
@@ -158,7 +158,7 @@ namespace TextAdventure_GameEngine
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
                 foreach (var data in _dataBlocks[i].DetailedDescriptions)
                 {
-                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
                         return data.Data;
                 }
                 return "";
@@ -176,7 +176,7 @@ namespace TextAdventure_GameEngine
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
                 foreach (var data in _dataBlocks[i].Dialogues)
                 {
-                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
                         return DisplayName + ": " + data.Data;
                 }
                 return "";

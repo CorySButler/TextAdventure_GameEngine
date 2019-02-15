@@ -7,13 +7,13 @@
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
     <currentDialogue>0</currentDialogue>
-    <description>The boy is indeed #Joss^. He has grown much in the past few years.</description>
-    <description>#Joss^ throws himself upon the newly slain wolf.</description>
+    <description skipIf="!isInParty wolf">The boy is indeed #Joss^. He has grown much in the past few years.</description>
+    <description skipIf="isInParty mother">#Joss^ throws himself upon the newly slain wolf.</description>
     <description>#Joss^ is following you closely and supporting his #mother^.</description>
-    <detailedDescription>His sour attitude seems diminished. The terror of the #nekker^ and the support of the #wolf^ may have caused a change in him.</detailedDescription>
-    <detailedDescription>He is filled with despair and spite.</detailedDescription>
+    <detailedDescription skipIf="!isInParty wolf">His sour attitude seems diminished. The terror of the #nekker^ and the support of the #wolf^ may have caused a change in him.</detailedDescription>
+    <detailedDescription skipIf="isInParty mother">He is filled with despair and spite.</detailedDescription>
     <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
-    <dialogue>Can it be you? First this grey #wolf^ and now the White Wolf come to my aid! I am Joss, and I beg you to forgive me for my misleading words I spoke to you at our last meeting. I have been shaken to my core, and have grown because of it.
+    <dialogue skipIf="!isInParty wolf">Can it be you? First this grey #wolf^ and now the White Wolf come to my aid! I am Joss, and I beg you to forgive me for my misleading words I spoke to you at our last meeting. I have been shaken to my core, and have grown because of it.
 
 Geralt: Good. So you can give me the truth, and all the truth. Are you alone down here?
 
@@ -26,7 +26,7 @@ Joss: That the wolves hated the monster more than they hated me. And that this i
 Geralt: A sacrifice to open the #gate^, huh?
 
 Joss: I suppose, but you mustn't hurt this #wolf^. He has saved my life.</dialogue>
-    <dialogue>How could you? You are a monster yourself.
+    <dialogue skipIf="isInParty mother">How could you? You are a monster yourself.
 
 Geralt: The gate needed a sacrifice. The nekker didn't cut it. It was either the wolf or you.
 
@@ -38,13 +38,87 @@ Joss: Whoever's through that gate can't be worth the life of this wolf.</dialogu
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
     <currentDialogue>0</currentDialogue>
-    <description>#Joss^ seeing the woman cries out at once, "#Mother^!"</description>
+    <description skipIf="isInParty mother">#Joss^ seeing the woman cries out at once, "#Mother^!"</description>
     <description>#Joss^ catches his #mother^ as she begins to slump down when the bonds release her.</description>
-    <detailedDescription>He pulls fruitlessly at the iron #bonds^.</detailedDescription>
+    <detailedDescription skipIf="isInParty mother">He pulls fruitlessly at the iron #bonds^.</detailedDescription>
     <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
-    <dialogue>It's my #mother^! We need to unlock her #bonds^.</dialogue>
-    <dialogue>Here, Geralt. Unlock the #bonds^.</dialogue>
+    <dialogue skipIf="playerHas key + !isInParty mother">It's my #mother^! We need to unlock her #bonds^.</dialogue>
+    <dialogue skipIf="isInParty mother">Here, Geralt. Unlock the #bonds^.</dialogue>
     <dialogue>My #mother^ is weak.  We must get her home so she can rest.</dialogue>
-  
-</dataBlock>
+  </dataBlock>
+  <dataBlock>
+    <id>Hall.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description skipIf="!isInParty wolf">#Joss^ pets the wolf nervously on the head.</description>
+    <description skipIf="isInParty mother">#Joss^ casts his eyes to the floor.</description>
+    <description>#Joss^ is following you closely and supporting his #mother^.</description>
+    <detailedDescription skipIf="!isInParty wolf">He looks afraid to go on and even more afraid to go back.</detailedDescription>
+    <detailedDescription skipIf="isInParty mother">He is hunched and rigid, teeming with spite.</detailedDescription>
+    <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
+    <dialogue skipIf="!isInParty wolf">Let's get out of here.  Lead the way.</dialogue>
+    <dialogue skipIf="isInParty mother">You killed him.  And all for no reason.  Bring me out of this horrid hut that I might depart from you forever.</dialogue>
+    <dialogue>My #mother^ is weak.  We must get her home so she can rest.</dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>WitchsHut.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description skipIf="!isInParty wolf">#Joss^ clings to the #wolf^ with one arm.</description>
+    <description skipIf="isInParty mother">#Joss^ glares at you.</description>
+    <description>#Joss^ pulls his #mother^ through the trap door.</description>
+    <detailedDescription skipIf="!isInParty wolf">He is nearest to the trap door.</detailedDescription>
+    <detailedDescription skipIf="isInParty mother">He clenches the rungs of the #ladder^ below you.</detailedDescription>
+    <detailedDescription>He crouches low, pulling his #mother^'s arm over his shoulder.</detailedDescription>
+    <dialogue skipIf="!isInParty wolf">(whispering) Kill the devil.</dialogue>
+    <dialogue skipIf="isInParty mother">I know not which of you I despise more.</dialogue>
+    <dialogue>(whispering) Hurry, Geralt. Do something about the witch.</dialogue>
+  </dataBlock>
+  <dataBlock>
+    <id>Ending.xml</id>
+    <currentDescription>0</currentDescription>
+    <currentDetailedDescription>0</currentDetailedDescription>
+    <currentDialogue>0</currentDialogue>
+    <description>>#Joss^ stops before the figure.</description>
+    <detailedDescription>He is out of breath.</detailedDescription>
+    <dialogue skipIf="!isInParty wolf">It's the village!
+	
+Jack: Joss! You are safe! The White Wolf has slain the witch.
+
+Joss: The grey wolf and the White Wolf have saved me.
+
+Jack: Glad am I to hear that, but did either save your mother? For a beast drag her from the edge of town this night. She was dragged deep into the forest where that pyre now burns.
+
+Geralt: Could that have been the woman beyond the red gate?
+
+Joss: No one can survive that burning!  And all to spare this #wolf^.
+
+Jack: This #portal^ will not send you far away from this fate, but will instead give you a chance to avoid it.  @Go^ through the #portal^ if you would not carry this death on your shoulders for the rest of your days.</dialogue>
+    <dialogue skipIf="isInParty mother">Well, we have reached the village.
+
+Jack: Joss! You are safe! The White Wolf has slain the witch.
+
+Joss: In that I take but little cheer.  He has also slain my dear protect.
+
+Jack: Say not your 'dear protect' was your dear mother!  For a beast drag her from the edge of town this night.
+
+Geralt: Of course I did not slay his mother.  Where did they go?
+
+Jack: She was dragged deep into the forest where that pyre now burns.
+
+Joss: She was the woman beyond the red gate!  No one can survive that burning. My protector and my mother you have taken from me.
+
+Jack: This #portal^ will not send you far away from your misdeeds, but will instead give you a chance to atone for them.  @Go^ through the #portal^ if you would not carry these deaths on your shoulders for the rest of your days.</dialogue>
+    <dialogue>We've nearly made it, Mother.
+
+Jack: Joss! You are safe! But your mother—
+
+Joss's mother: Is well, or will be after some rest. The White Wolf has slain the witch.
+
+Joss: Jack, will you help us to our house. Mother needs a proper bed.
+
+Jack: Of course I will. Geralt, we have not the means to repay you for all your service. If you would know what other fates may have befallen these folk had you acted otherwise, this #portal^ will give you a chance to write a new history.  @Go^ through the #portal^ if you would change the outcome of this night.</dialogue>
+  </dataBlock>
 </root>
