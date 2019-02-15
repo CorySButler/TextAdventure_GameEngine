@@ -7,10 +7,9 @@
     <currentDialogue>0</currentDialogue>
     <currentDescription>0</currentDescription>
     <currentDetailedDescription>0</currentDetailedDescription>
-    <dialogue>I went looking for #Joss^ and came across this hut. The witch let me in, but locked the door. A monster came to her. They tortured me.</dialogue>
-    <dialogue>You found the #key^! Please release me from these #bonds^.</dialogue>
-    <dialogue>I am free!</dialogue>
-    <dialogue>Bless you, Geralt!</dialogue>
+    <dialogue skipIf="playerHas key">I went looking for #Joss^ and came across this hut. The witch let me in, but locked the door. A monster came to her. They tortured me.</dialogue>
+    <dialogue skipIf="isInParty mother">You found the #key^! Please release me from these #bonds^.</dialogue>
+    <dialogue>I am free! Bless you, Geralt!</dialogue>
     <description>A woman hangs from her wrists, clasped to a wall with iron #bonds^.</description>
     <detailedDescription>She has been badly beaten and some of her skin is burnt.</detailedDescription>
     <detailedDescription>Her wrists are raw and bruised. She can hardly keep her eyes open.</detailedDescription>

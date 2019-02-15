@@ -42,7 +42,7 @@ Joss: Whoever's through that gate can't be worth the life of this wolf.</dialogu
     <description>#Joss^ catches his #mother^ as she begins to slump down when the bonds release her.</description>
     <detailedDescription skipIf="isInParty mother">He pulls fruitlessly at the iron #bonds^.</detailedDescription>
     <detailedDescription>He holds up his #mother^'s weight, her arm pulled over his shoulders.</detailedDescription>
-    <dialogue skipIf="playerHas key + !isInParty mother">It's my #mother^! We need to unlock her #bonds^.</dialogue>
+    <dialogue skipIf="playerHas key">It's my #mother^! We need to unlock her #bonds^.</dialogue>
     <dialogue skipIf="isInParty mother">Here, Geralt. Unlock the #bonds^.</dialogue>
     <dialogue>My #mother^ is weak.  We must get her home so she can rest.</dialogue>
   </dataBlock>

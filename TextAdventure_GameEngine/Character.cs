@@ -138,10 +138,17 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                foreach (var data in _dataBlocks[i].Descriptions)
+                var dataBlock = _dataBlocks[i];
+                var currentDatum = dataBlock.CurrentDescription;
+                var data = dataBlock.Descriptions;
+
+                for (var j = currentDatum; j < data.Count; j++)
                 {
-                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
-                        return data.Data;
+                    if (!data[j].MeetsSkipConditions(dataBlock))
+                    {
+                        _dataBlocks[i].CurrentDescription = data.IndexOf(data[j]);
+                        return data[j].Data;
+                    }
                 }
                 return "";
             }
@@ -156,10 +163,17 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                foreach (var data in _dataBlocks[i].DetailedDescriptions)
+                var dataBlock = _dataBlocks[i];
+                var currentDatum = dataBlock.CurrentDetailedDescription;
+                var data = dataBlock.DetailedDescriptions;
+
+                for (var j = currentDatum; j < data.Count; j++)
                 {
-                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
-                        return data.Data;
+                    if (!data[j].MeetsSkipConditions(dataBlock))
+                    {
+                        _dataBlocks[i].CurrentDetailedDescription = data.IndexOf(data[j]);
+                        return data[j].Data;
+                    }
                 }
                 return "";
             }
@@ -174,10 +188,17 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                foreach (var data in _dataBlocks[i].Dialogues)
+                var dataBlock = _dataBlocks[i];
+                var currentDatum = dataBlock.CurrentDialogue;
+                var data = dataBlock.Dialogues;
+
+                for (var j = currentDatum; j < data.Count; j++)
                 {
-                    if (!data.MeetsSkipConditions(_dataBlocks[i]))
-                        return DisplayName + ": " + data.Data;
+                    if (!data[j].MeetsSkipConditions(dataBlock))
+                    {
+                        _dataBlocks[i].CurrentDialogue = data.IndexOf(data[j]);
+                        return DisplayName + ": " + data[j].Data;
+                    }
                 }
                 return "";
             }
