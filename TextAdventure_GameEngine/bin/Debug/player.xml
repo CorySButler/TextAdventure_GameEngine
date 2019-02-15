@@ -3,35 +3,35 @@
   <name>Geralt</name>
   <gender>MALE</gender>
   <gold>12</gold>
-  <location>Save\Stream.xml</location>
+  <location />
   <item>
     <keyword>crowns</keyword>
     <description>12</description>
-    <detailedDescription>12</detailedDescription>
+    <onCheck>12</onCheck>
+    <id>00</id>
   </item>
   <item>
     <keyword>florens</keyword>
     <description>2</description>
-    <detailedDescription>2</detailedDescription>
+    <onCheck>2</onCheck>
+    <id>00</id>
   </item>
   <item>
     <keyword>orens</keyword>
     <description>1</description>
-    <detailedDescription>1</detailedDescription>
+    <onCheck>1</onCheck>
+    <id>00</id>
   </item>
   <item>
     <keyword>steelblade</keyword>
     <description></description>
-    <detailedDescription>Best for thwarting men and elves.</detailedDescription>
+    <onCheck>Best for thwarting men and elves.</onCheck>
+    <id>2</id>
   </item>
   <item>
     <keyword>silverblade</keyword>
     <description></description>
-    <detailedDescription>Ideal for slaying monsters.</detailedDescription>
-  </item>
-  <item>
-    <keyword>torch</keyword>
-    <description>Jack holds an unlit #torch^ in his outstretched arm.</description>
-    <detailedDescription>This can light up dark places.</detailedDescription>
+    <onCheck>Ideal for slaying monsters.</onCheck>
+    <id>3</id>
   </item>
 </root>

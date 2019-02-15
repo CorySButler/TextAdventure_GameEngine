@@ -26,12 +26,17 @@ namespace TextAdventure_GameEngine
                           select new CharacterDataBlock
                           {
                               Id = dataBlock.Element("id").Value,
+                              NumVisits = dataBlock.Elements("numVisits").Any() ? int.Parse(dataBlock.Element("numVisit").Value) : 1,
                               CurrentDescription = int.Parse(dataBlock.Element("currentDescription").Value),
                               CurrentDetailedDescription = int.Parse(dataBlock.Element("currentDetailedDescription").Value),
                               CurrentDialogue = int.Parse(dataBlock.Element("currentDialogue").Value),
 
                               Descriptions = (from description in dataBlock.Elements("description")
-                                              select description.Value).ToList(),
+                                              select new ConditionalData(
+                                                description.Attribute("skipIf") != null ?
+                                                    description.Attribute("skipIf").Value : "",
+                                                description.Value)
+                                              ).ToList(),
 
                               DetailedDescriptions = (from detailedDescription in dataBlock.Elements("detailedDescription")
                                               select detailedDescription.Value).ToList(),
@@ -90,6 +95,7 @@ namespace TextAdventure_GameEngine
             {
                 var block = new XElement("dataBlock",
                     new XElement("id", dataBlock.Id),
+                    new XElement("numVisits", dataBlock.NumVisits),
                     new XElement("currentDescription", dataBlock.CurrentDescription),
                     new XElement("currentDetailedDescription", dataBlock.CurrentDetailedDescription),
                     new XElement("currentDialogue", dataBlock.CurrentDialogue));
@@ -114,7 +120,12 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                return _dataBlocks[i].Descriptions[_dataBlocks[i].CurrentDescription];
+                foreach (var description in _dataBlocks[i].Descriptions)
+                {
+                    if (!description.MeetsSkipCondition(_dataBlocks[i]))
+                        return description.Data;
+                }
+                return "";
             }
             catch
             {

@@ -102,7 +102,6 @@ namespace TextAdventure_GameEngine
                 _characters.Add(new Character(characterKeyword));
 
             _gameLog.Write(Describe());
-
         }
 
         public string Describe()
