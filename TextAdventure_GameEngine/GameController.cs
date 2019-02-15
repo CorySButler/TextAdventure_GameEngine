@@ -26,7 +26,7 @@ namespace TextAdventure_GameEngine
             _player.Save();
             _textInput = new TextInput();
             _room = new Room("Village.xml", _gameLog, _player);
-            //_player.UpdateLocation(_room);
+            _player.UpdateLocation(_room);
 
             while (!_isGameOver)
             {

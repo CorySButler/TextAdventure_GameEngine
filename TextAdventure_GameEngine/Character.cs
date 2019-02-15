@@ -26,7 +26,7 @@ namespace TextAdventure_GameEngine
                           select new CharacterDataBlock
                           {
                               Id = dataBlock.Element("id").Value,
-                              NumVisits = dataBlock.Elements("numVisits").Any() ? int.Parse(dataBlock.Element("numVisit").Value) : 1,
+                              NumVisits = dataBlock.Elements("numVisits").Any() ? int.Parse(dataBlock.Element("numVisit").Value) : 0,
                               CurrentDescription = int.Parse(dataBlock.Element("currentDescription").Value),
                               CurrentDetailedDescription = int.Parse(dataBlock.Element("currentDetailedDescription").Value),
                               CurrentDialogue = int.Parse(dataBlock.Element("currentDialogue").Value),
@@ -82,6 +82,16 @@ namespace TextAdventure_GameEngine
 
                 if (_dataBlocks[i].CurrentDialogue == _dataBlocks[i].Dialogues.Count)
                     _dataBlocks[i].CurrentDialogue--;
+            }
+            catch { /* NOOP */ }
+        }
+
+        public void IncNumVisits(Room room)
+        {
+            try
+            {
+                var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == room.Id).ToList()[0]);
+                _dataBlocks[i].NumVisits++;
             }
             catch { /* NOOP */ }
         }

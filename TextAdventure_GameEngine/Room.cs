@@ -96,10 +96,13 @@ namespace TextAdventure_GameEngine
                          OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
                      }).ToList();
 
-            foreach (var member in player.Party.Where(m => !characterKeywords.Any(ck => ck == m.Keyword))) _characters.Add(member);
+            foreach (var member in player.Party) _characters.Add(member);
 
-            foreach (var characterKeyword in characterKeywords)
+            foreach (var characterKeyword in characterKeywords.Where(ck => !_characters.Any(c => c.Keyword == ck)))
                 _characters.Add(new Character(characterKeyword));
+
+            foreach (var character in _characters)
+                character.IncNumVisits(this);
 
             _gameLog.Write(Describe());
         }
