@@ -39,10 +39,18 @@ namespace TextAdventure_GameEngine
                                               ).ToList(),
 
                               DetailedDescriptions = (from detailedDescription in dataBlock.Elements("detailedDescription")
-                                              select detailedDescription.Value).ToList(),
+                                              select new ConditionalData(
+                                                detailedDescription.Attribute("skipIf") != null ?
+                                                    detailedDescription.Attribute("skipIf").Value : "",
+                                                detailedDescription.Value)
+                                              ).ToList(),
 
                               Dialogues = (from dialogue in dataBlock.Elements("dialogue")
-                                              select dialogue.Value).ToList()
+                                              select new ConditionalData(
+                                                dialogue.Attribute("skipIf") != null ?
+                                                    dialogue.Attribute("skipIf").Value : "",
+                                                dialogue.Value)
+                                              ).ToList()
 
                           }).ToList();
         }
@@ -130,10 +138,10 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                foreach (var description in _dataBlocks[i].Descriptions)
+                foreach (var data in _dataBlocks[i].Descriptions)
                 {
-                    if (!description.MeetsSkipCondition(_dataBlocks[i]))
-                        return description.Data;
+                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                        return data.Data;
                 }
                 return "";
             }
@@ -148,7 +156,12 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                return _dataBlocks[i].DetailedDescriptions[_dataBlocks[i].CurrentDetailedDescription];
+                foreach (var data in _dataBlocks[i].DetailedDescriptions)
+                {
+                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                        return data.Data;
+                }
+                return "";
             }
             catch
             {
@@ -161,7 +174,12 @@ namespace TextAdventure_GameEngine
             try
             {
                 var i = _dataBlocks.IndexOf(_dataBlocks.First(db => db.Id == room.Id));
-                return DisplayName + ": " + _dataBlocks[i].Dialogues[_dataBlocks[i].CurrentDialogue];
+                foreach (var data in _dataBlocks[i].Dialogues)
+                {
+                    if (!data.MeetsSkipCondition(_dataBlocks[i]))
+                        return DisplayName + ": " + data.Data;
+                }
+                return "";
             }
             catch
             {

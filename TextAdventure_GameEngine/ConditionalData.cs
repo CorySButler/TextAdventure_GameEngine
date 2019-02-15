@@ -15,19 +15,34 @@
         {
             if (string.IsNullOrWhiteSpace(Condition)) return false;
 
-            var conditionWords = Condition.Split(' ');
+            bool allConditionsMet = true;
 
-            switch(conditionWords[0])
+            var conditions = Condition.Split('+');
+
+            foreach (var condition in conditions)
             {
-                case "isInParty":
-                    return IsInParty(conditionWords[1]);
-                case "numVisitsGreaterThan":
-                    return NumVisitsGreaterThan(conditionWords[1], dataBlock);
-                case "playerHas":
-                    return PlayerHas(conditionWords[1]);
-                default:
-                    return false;
+                var conditionWords = condition.Trim().Split(' ');
+
+                switch (conditionWords[0])
+                {
+                    case "isInParty":
+                        allConditionsMet = IsInParty(conditionWords[1]);
+                        break;
+                    case "numVisitsGreaterThan":
+                        allConditionsMet = NumVisitsGreaterThan(conditionWords[1], dataBlock);
+                        break;
+                    case "playerHas":
+                        allConditionsMet = PlayerHas(conditionWords[1]);
+                        break;
+                    default:
+                        allConditionsMet = false;
+                        break;
+                }
+
+                if (!allConditionsMet) return allConditionsMet;
             }
+
+            return allConditionsMet;
         }
 
         private bool IsInParty(string keyword)

@@ -9,7 +9,7 @@
     <currentDetailedDescription>0</currentDetailedDescription>
     <description skipIf="numVisitsGreaterThan 1">A boy dashes out of the #woods^, returning to the #village^. He freezes in play when he spots you.
     
-Boy: "You— You're the man that rescued me from the Wicked Witch all those years ago. You're Geralt, aren't you?  It's me, #Jack^.  I need your help again."
+Boy: You— You're the man that rescued me from the Wicked Witch all those years ago. You're Geralt, aren't you?  It's me, #Jack^.  I need your help again.
 
 To @talk^ to #Jack^, type "talk jack" and hit ENTER.
 

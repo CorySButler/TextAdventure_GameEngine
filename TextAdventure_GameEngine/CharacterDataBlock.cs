@@ -10,7 +10,7 @@ namespace TextAdventure_GameEngine
         public int CurrentDetailedDescription { get; set; }
         public int CurrentDialogue { get; set; }
         public List<ConditionalData> Descriptions { get; set; }
-        public List<string> DetailedDescriptions { get; set; }
-        public List<string> Dialogues { get; set; }
+        public List<ConditionalData> DetailedDescriptions { get; set; }
+        public List<ConditionalData> Dialogues { get; set; }
     }
 }
