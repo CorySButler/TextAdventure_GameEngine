@@ -9,33 +9,6 @@ namespace TextAdventure_GameEngine
     {
         public string DisplayName { get; private set; }
         public Room CurrentRoom { get; set; }
-
-        public string WantsItemId
-        {
-            get
-            {
-                try
-                {
-                    var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == CurrentRoom.Id).ToList()[0]);
-                    return _dataBlocks[i].WantsItemId;
-                }
-                catch { return ""; }
-            }
-        }
-
-        public string OnUse
-        {
-            get
-            {
-                try
-                {
-                    var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == CurrentRoom.Id).ToList()[0]);
-                    return _dataBlocks[i].OnUse;
-                }
-                catch { return ""; }
-            }
-        }
-
         private List<CharacterDataBlock> _dataBlocks;
 
         public Character(string keyword, Room room)
@@ -82,6 +55,10 @@ namespace TextAdventure_GameEngine
                                               ).ToList()
 
                           }).ToList();
+
+            var i = _dataBlocks.IndexOf(_dataBlocks.Where(db => db.Id == CurrentRoom.Id).ToList()[0]);
+            WantsItemId = _dataBlocks[i].WantsItemId;
+            OnUse = _dataBlocks[i].OnUse;
         }
 
         public void IncDetailedDescription(Room room)

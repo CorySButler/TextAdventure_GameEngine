@@ -13,7 +13,7 @@ namespace TextAdventure_GameEngine
         private bool _isGameOver = false;
         private GameLog _gameLog;
 
-        public List<UserAction> AvailableActions = new List<UserAction>() { new Add(), new Check(), new Destroy(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new IncDescription(), new IncDetailedDescription(), new IncDialogue(), new Inventory(), new JoinParty(), new LeaveParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
+        public List<UserAction> AvailableActions = new List<UserAction>() { new Add(), new Check(), new Describe(), new Destroy(), new Discard(), new Drop(), new DropSilent(), new Go(), new Hint(), new Help(), new Inventory(), new JoinParty(), new LeaveParty(), new Open(), new Restart(), new Take(), new Talk(), new Use() };
 
         public GameController()
         {
@@ -25,7 +25,7 @@ namespace TextAdventure_GameEngine
             _player = new Player() { Name = "Geralt", Gender = Genders.MALE, Gold = 12 };
             _player.Save();
             _textInput = new TextInput();
-            _room = new Room("Village.xml", _gameLog, _player);
+            _room = new Room("Hall.xml", _gameLog, _player);
             _player.UpdateLocation(_room);
 
             while (!_isGameOver)
@@ -255,7 +255,7 @@ namespace TextAdventure_GameEngine
             {
                 var character = _room.GetCharacter(keyword);
                 if (!_player.Party.Contains(character))
-                    _player.Party.Add(character);
+                    _player.JoinParty(character);
             }
         }
 
@@ -265,7 +265,7 @@ namespace TextAdventure_GameEngine
             {
                 var character = _room.GetCharacter(keyword);
                 if (_player.Party.Contains(character))
-                    _player.Party.Remove(character);
+                    _player.LeaveParty(character);
             }
         }
 

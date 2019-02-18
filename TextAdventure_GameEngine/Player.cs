@@ -86,6 +86,18 @@ namespace TextAdventure_GameEngine
             return null;
         }
 
+        public void JoinParty(Character character)
+        {
+            Party.Add(character);
+            Save();
+        }
+
+        public void LeaveParty(Character character)
+        {
+            Party.Remove(character);
+            Save();
+        }
+
         public void RemoveItem(Item item)
         {
             _items.Remove(item);

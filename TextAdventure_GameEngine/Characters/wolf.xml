@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <displayName>Joss</displayName>
-  <needsItemId>whipFromBasement</needsItemId>
+  <displayName>Wolf</displayName>
+  <needsItemId>null</needsItemId>
   <dataBlock>
     <id>Basement.xml</id>
     <currentDescription>0</currentDescription>
@@ -11,7 +11,6 @@
     <description>A second #wolf^ now lies dead before the door.</description>
     <detailedDescription skipIf="!isInParty wolf">It is calm, and yet it appears protective of #Joss^.</detailedDescription>
     <detailedDescription>The #wolf^ was felled with one swift thrust.</detailedDescription>
-    <dialogue></dialogue>
     <wantsItemId>2</wantsItemId>
     <onUse>leaveparty wolf|check wolf|describe joss</onUse>
   </dataBlock>

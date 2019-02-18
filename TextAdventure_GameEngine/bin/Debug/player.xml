@@ -34,10 +34,4 @@
     <onCheck>Ideal for slaying monsters.</onCheck>
     <id>3</id>
   </item>
-  <item>
-    <keyword>stone</keyword>
-    <description></description>
-    <onCheck>It glows purple as though it is full of energy.</onCheck>
-    <id>1</id>
-  </item>
 </root>
