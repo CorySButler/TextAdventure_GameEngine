@@ -59,6 +59,7 @@ namespace TextAdventure_GameEngine
                          WantsItemId = ""
                      }};
         private string _location;
+        private Room _currentRoom;
 
         public List<Item> Items { get { return _items; } private set { _items = value; } }
 
@@ -106,6 +107,7 @@ namespace TextAdventure_GameEngine
 
         public void UpdateLocation(Room room)
         {
+            CurrentRoom.Value = room;
             _location = room.FilePath;
             Save();
         }
@@ -117,6 +119,10 @@ namespace TextAdventure_GameEngine
                 new XElement("gender", Gender),
                 new XElement("gold", Gold),
                 new XElement("location", _location));
+            foreach (var member in Party)
+            {
+                data.Add(new XElement("partyMember", member.Keyword));
+            }
             data = AddItemsToXElement(data);
             data.Save("player.xml");
         }
@@ -155,7 +161,9 @@ namespace TextAdventure_GameEngine
                              OnTake = item.Elements("onTake").Any() ? item.Element("onTake").Value : "",
                              WantsItemId = item.Elements("wantsItemId").Any() ? item.Element("wantsItemId").Value : "",
                              OnUse = item.Elements("onUse").Any() ? item.Element("onUse").Value : ""
-                         }).ToList()
+                         }).ToList(),
+                Party = (from member in playerData.Elements("partyMember")
+                         select new Character(member.Value, CurrentRoom.Value)).ToList()
             };
 
             return player;

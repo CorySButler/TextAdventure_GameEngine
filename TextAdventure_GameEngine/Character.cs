@@ -33,6 +33,8 @@ namespace TextAdventure_GameEngine
                               CurrentDetailedDescription = int.Parse(dataBlock.Element("currentDetailedDescription").Value),
                               CurrentDialogue = int.Parse(dataBlock.Element("currentDialogue").Value),
 
+
+                              //TODO: if there are any descriptions...
                               Descriptions = (from description in dataBlock.Elements("description")
                                               select new ConditionalData(
                                                 description.Attribute("skipIf") != null ?
@@ -125,13 +127,25 @@ namespace TextAdventure_GameEngine
                     new XElement("currentDialogue", dataBlock.CurrentDialogue));
 
                 foreach (var description in dataBlock.Descriptions)
-                    block.Add(new XElement("description", description));
+                {
+                    var e = new XElement("description", description.Data);
+                    e.Add(new XAttribute("skipIf", description.Condition));
+                    block.Add(e);
+                }
 
                 foreach (var detailedDescription in dataBlock.DetailedDescriptions)
-                    block.Add(new XElement("detailedDescription", detailedDescription));
+                {
+                    var e = new XElement("detailedDescription", detailedDescription.Data);
+                    e.Add(new XAttribute("skipIf", detailedDescription.Condition));
+                    block.Add(e);
+                }
 
                 foreach (var dialogue in dataBlock.Dialogues)
-                    block.Add(new XElement("dialogue", dialogue));
+                {
+                    var e = new XElement("dialogue", dialogue.Data);
+                    e.Add(new XAttribute("skipIf", dialogue.Condition));
+                    block.Add(e);
+                }
 
                 data.Add(block);
             }
@@ -206,7 +220,7 @@ namespace TextAdventure_GameEngine
                         return DisplayName + ": " + data[j].Data;
                     }
                 }
-                return "";
+                return DisplayName + " has nothing to say.";
             }
             catch
             {

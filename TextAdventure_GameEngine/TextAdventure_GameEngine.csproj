@@ -47,6 +47,7 @@
     <Compile Include="CharacterDataBlock.cs" />
     <Compile Include="ConditionalData.cs" />
     <Compile Include="Container.cs" />
+    <Compile Include="CurrentRoom.cs" />
     <Compile Include="GameLog.cs" />
     <Compile Include="InteractableObject.cs" />
     <Compile Include="OpenContainer.cs" />
